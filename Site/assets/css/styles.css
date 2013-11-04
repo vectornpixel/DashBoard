@@ -244,8 +244,25 @@ li.sortable-placeholder {
 
 
 /* collapse menu */
+.view{
+    
+}
+.view li{
+    list-style: none;
+    font-size: 18px;
+    background-color: #e2e2e2;
+    padding:20px;
+    margin: 5px;
+}
+.view-right li{
+    list-style: none;
+    font-size: 18px;
+    background-color: #ededed;
+    padding:20px;
+    margin: 5px;
+}
 .panel-default > .panel-heading{
-    background-color: #cfcfcf;
+    background-color: #e2e2e2;
     
 }
 .panel-heading {
@@ -256,7 +273,7 @@ li.sortable-placeholder {
     margin-top: 0px;
 }
 .headcolor2{
-    background-color: #e2e2e2 !important;
+    background-color: #ececec !important;
     
 }
 ul.tab-info li{
