@@ -95,7 +95,7 @@
     
     <div class="jumbotron">
       <div class="container">
-        <h1>Showcase</h1>
+        <h1>Highlighted Events</h1>
       </div>
     </div>
 
@@ -104,45 +104,33 @@
       <div class="row">
           <div class="col-lg-4">
           <p>
-        <select class="cd-dropdown cd-select">
-                <option value="-1" selected>View: All Content</option>
-                <option value="1">All Content</option>
-                <option value="2">Highlighted Artist</option>
-                <option value="3">Highlighted Events</option>
-                <option value="4">Highlighted Venues</option>
-                <option value="5">Contents</option>
+        <select id="cd-dropdown" class="cd-select">
+                <option value="-1" selected>Where: National</option>
+                <option value="1">Detroit, MI</option>
         </select>
           </p>
         </div>
           <div class="col-lg-4">
           <p>
-        <select class="cd-dropdown cd-select">
-                <option value="-1" selected>View: All Content</option>
-                <option value="1">All Content</option>
-                <option value="2">Highlighted Artist</option>
-                <option value="3">Highlighted Events</option>
-                <option value="4">Highlighted Venues</option>
-                <option value="5">Contents</option>
+        <select id="type" class="cd-select">
+                <option value="-1" selected>Type: All</option>
+                <option value="1">Active</option>
+                <option value="2">Inactive</option>
+        </select>
+          </p>
+        </div>
+          <div class="col-lg-4">
+          <p>
+        <select id="sort" class="cd-select">
+                <option value="-1" selected>Sort By: Event Date</option>
+                <option value="1">A-Z</option>
         </select>
           </p>
         </div>
 
       </div>
       
-      
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-lg-4">
-          <p><a class="btn btn-large btn-green" href="#">Edit Entire Order</a></p>
-        </div>
-          <div class="col-lg-4">
-          <p><a class="btn btn-large btn-green" href="#">Edit Entire Order</a></p>
-        </div>
-          <div class="col-lg-4">
-          <p><a class="btn btn-large btn-green" href="#">Detroit, MI</a></p>
-        </div>
-   
-      </div>
+
 <!--Content Order / Sortable Area -->
       <div class="row">
           <div class="col-lg-9">
@@ -152,63 +140,120 @@
       </div>
       <hr>
       <div class="row">
-        <div class="col-lg-4 pull-left">
-        <p><a class="btn btn-large btn-blue">Search</a></p>
+          <form class="navbar-form pull-left">
+
+        <div class="form-group input-prepend">
+            <button type="submit" class="btn glyphicon glyphicon-search"></button>
+            <input type="text" placeholder="search events" class="form-control">
         </div>
-      <div class="col-lg-4 pull-right">
-          <p><a class="btn btn-large btn-blue">Add New Content</a></p>
+        </form>
+      <div class="pull-right">
+          <p><a class="all-btns all-btns-green"><span class="glyphicon glyphicon-plus"></span>Create New Event</a></p>
       </div>
+    
       </div>
-      <div class="row col-lg-12">
+      <div class="container">
+      <div class="row">
           
 <div class="panel-group" id="accordion">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-            <h6>Eminem</h6>
-        </a>
-      </h4>
+        <div class="col-lg-2">
+        <span class="date">
+            <h5 class="subtitle">12/3/13</h5>
+        </span>
+        </div>
+        <div class="col-lg-8">
+        <h3 class="panel-title">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+              Eminem
+          </a>
+      </h3>
+       <h5 class="subtitle">Detroit, MI - Fox Theater</h5>
+        </div>
+       <div class="col-lg-2">
+       
+       <span class="glyphicon content-icons glyphicon-remove  pull-right"></span>
+       <span class="glyphicon content-icons glyphicon-pencil pull-right"></span>
+       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+       <span class="glyphicon content-icons glyphicon-chevron-down pull-right"></span>
+       </a>
+       </div>
     </div>
     <div id="collapseOne" class="panel-collapse collapse in">
       <div class="panel-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
     </div>
+  
   </div>
-  <div class="panel panel-default">
+<div class="panel panel-default">
     <div class="panel-heading headcolor2">
-      <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          <h6>Kesha</h6>
-        </a>
-      </h4>
+        <div class="col-lg-2">
+        <span class="date">
+            <h5 class="subtitle">12/3/13</h5>
+        </span>
+        </div>
+        <div class="col-lg-8">
+        <h3 class="panel-title">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+              Taylor Swift
+          </a>
+      </h3>
+       <h5 class="subtitle">Detroit, MI - Fox Theater</h5>
+        </div>
+       <div class="col-lg-2">
+       
+       <span class="glyphicon content-icons glyphicon-remove  pull-right"></span>
+       <span class="glyphicon content-icons glyphicon-pencil pull-right"></span>
+       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+       <span class="glyphicon content-icons glyphicon-chevron-down pull-right"></span>
+       </a>
+       </div>
     </div>
     <div id="collapseTwo" class="panel-collapse collapse in">
       <div class="panel-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
     </div>
+  
   </div>
-  <div class="panel panel-default">
+    <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-          <h6>Big Sean</h6>
-        </a>
-      </h4>
+        <div class="col-lg-2">
+        <span class="date">
+            <h5 class="subtitle">12/3/13</h5>
+        </span>
+        </div>
+        <div class="col-lg-8">
+        <h3 class="panel-title">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+              Kesha
+          </a>
+      </h3>
+       <h5 class="subtitle">Detroit, MI - Fox Theater</h5>
+        </div>
+       <div class="col-lg-2">
+       
+       <span class="glyphicon content-icons glyphicon-remove  pull-right"></span>
+       <span class="glyphicon content-icons glyphicon-pencil pull-right"></span>
+       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+       <span class="glyphicon content-icons glyphicon-chevron-down pull-right"></span>
+       </a>
+       </div>
     </div>
     <div id="collapseThree" class="panel-collapse collapse in">
       <div class="panel-body">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
     </div>
+  
   </div>
 </div>
 
    
       </div>
-      
+      </div>
 
       <hr>
 
@@ -222,15 +267,21 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     
-    <script src="assets/js/modernizr.custom.63321.js"></script>
+      <script src="assets/js/modernizr.custom.63321.js"></script>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.sortable.js"></script>
     <script src="assets/js/jquery.dropdown.js"></script>
     <script>
-         $( function() {
+       $( function() {
 
-        $( '.cd-dropdown' ).dropdown({
+        $( '#cd-dropdown' ).dropdown({
+        stack : false
+        });
+        $( '#type' ).dropdown({
+        stack : false
+        });
+        $( '#sort' ).dropdown({
         stack : false
         });
 

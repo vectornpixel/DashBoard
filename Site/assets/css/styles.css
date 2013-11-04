@@ -18,6 +18,17 @@ root {
 h1,h2,h3,h4,h5{
     color: #3668a1 !important;
 }
+.subtitle{
+    color: #898989 !important;
+    font-size: 18px;
+    font-weight: normal;
+}
+.date{
+    float:left;
+    padding:10px 35px 15px 15px;
+    border-right: 1px solid #898989;
+
+}
 .nav-icon{
     text-align: center;
     font-size:24px;
@@ -124,7 +135,11 @@ padding-top:18px;
 .all-btns-green:active {
 	box-shadow: 0px 1px 0px 0px #0bd396;
 }
-
+.content-icons{
+     color:#3d8399;  
+  padding:20px 10px 20px 10px;
+  margin-right: 1px !important;
+}
 .showcase-icons {
   color:#3d8399;  
   background-color: #d1d1d1;
@@ -185,7 +200,7 @@ overflow: hidden;
         -ms-user-select: none;
         user-select: none;
 }
-.sortable.grid {s
+.sortable.grid {
         overflow: hidden;
 }
 .sortable li{
@@ -235,7 +250,7 @@ li.sortable-placeholder {
 }
 .panel-heading {
 
-    padding: 10px 15px;
+        height:85px;
 }
 .panel-group .panel + .panel {
     margin-top: 0px;
