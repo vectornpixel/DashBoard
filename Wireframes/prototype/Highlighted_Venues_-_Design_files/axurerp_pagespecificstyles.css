@@ -1,0 +1,794 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../Content_Master_files/u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:10px;
+    top:10px;
+    width:960px;
+    height:678px;
+}
+
+#u0_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:966px;
+    height:684px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:331px;
+    width:956px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u2 {
+    position:absolute;
+    left:29px;
+    top:83px;
+    width:221px;
+    height:17px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u4_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u4_normal.png');
+}
+
+.u4_container {
+    position:absolute;
+    left:818px;
+    top:620px;
+    width:109px;
+    height:36px;
+}
+
+#u4_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:109px;
+    height:36px;
+}
+
+.u5 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:105px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u6 {
+    position:absolute;
+    left:818px;
+    top:631px;
+    width:104px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u7 {
+    position:absolute;
+    left:539px;
+    top:145px;
+    width:201px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u8 {
+    position:absolute;
+    left:540px;
+    top:180px;
+    width:23px;
+    height:25px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u9 {
+    position:absolute;
+    left:540px;
+    top:228px;
+    width:100px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10 {
+    position:absolute;
+    left:540px;
+    top:212px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u11 {
+    position:absolute;
+    left:563px;
+    top:183px;
+    width:117px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u4_normal.png');
+}
+
+.u12_container {
+    position:absolute;
+    left:29px;
+    top:620px;
+    width:109px;
+    height:36px;
+}
+
+#u12_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:109px;
+    height:36px;
+}
+
+.u13 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:105px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u14 {
+    position:absolute;
+    left:29px;
+    top:631px;
+    width:104px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u15_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u15_normal.png');
+}
+
+.u15_container {
+    position:absolute;
+    left:541px;
+    top:345px;
+    width:74px;
+    height:63px;
+}
+
+#u15_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:80px;
+    height:69px;
+}
+
+.u16 {
+    position:absolute;
+    left:2px;
+    top:24px;
+    width:70px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u17_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u15_normal.png');
+}
+
+.u17_container {
+    position:absolute;
+    left:619px;
+    top:344px;
+    width:74px;
+    height:63px;
+}
+
+#u17_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:80px;
+    height:69px;
+}
+
+.u18 {
+    position:absolute;
+    left:2px;
+    top:24px;
+    width:70px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u19_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u15_normal.png');
+}
+
+.u19_container {
+    position:absolute;
+    left:698px;
+    top:344px;
+    width:74px;
+    height:63px;
+}
+
+#u19_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:80px;
+    height:69px;
+}
+
+.u20 {
+    position:absolute;
+    left:2px;
+    top:24px;
+    width:70px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u22 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:6px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u24 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:6px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u26 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:6px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u27 {
+    position:absolute;
+    left:541px;
+    top:315px;
+    width:184px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:'Arial';
+    font-size: 14px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u28 {
+    position:absolute;
+    left:540px;
+    top:289px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u29 {
+    position:absolute;
+    left:544px;
+    top:443px;
+    width:269px;
+    height:21px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u30_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u30_normal.png');
+}
+
+.u30_container {
+    position:absolute;
+    left:540px;
+    top:468px;
+    width:289px;
+    height:48px;-webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+
+}
+
+#u30_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:289px;
+    height:48px;
+}
+
+.u31 {
+    position:absolute;
+    left:2px;
+    top:16px;
+    width:285px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u32 {
+    position:absolute;
+    left:754px;
+    top:482px;
+    width:60px;
+    height:19px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u33_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u33_normal.png');
+}
+
+.u33_container {
+    position:absolute;
+    left:212px;
+    top:149px;
+    width:281px;
+    height:371px;
+}
+
+#u33_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:287px;
+    height:377px;
+}
+
+.u34 {
+    position:absolute;
+    left:2px;
+    top:178px;
+    width:277px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u35_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u35_normal.png');
+}
+
+.u35_container {
+    position:absolute;
+    left:240px;
+    top:420px;
+    width:155px;
+    height:40px;
+}
+
+#u35_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:161px;
+    height:46px;
+}
+
+.u36 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:151px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u37 {
+    position:absolute;
+    left:263px;
+    top:424px;
+    width:120px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u38_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u38_normal.png');
+}
+
+.u38_container {
+    position:absolute;
+    left:240px;
+    top:390px;
+    width:128px;
+    height:26px;
+}
+
+#u38_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:134px;
+    height:32px;
+}
+
+.u39 {
+    position:absolute;
+    left:2px;
+    top:5px;
+    width:124px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u40 {
+    position:absolute;
+    left:248px;
+    top:397px;
+    width:123px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u41 {
+    position:absolute;
+    left:333px;
+    top:492px;
+    width:154px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u42_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u42_normal.png');
+}
+
+.u42_container {
+    position:absolute;
+    left:210px;
+    top:20px;
+    width:180px;
+    height:44px;
+}
+
+#u42_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:50px;
+}
+
+.u43 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:176px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u44_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u42_normal.png');
+}
+
+.u44_container {
+    position:absolute;
+    left:29px;
+    top:20px;
+    width:180px;
+    height:44px;
+}
+
+#u44_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:50px;
+}
+
+.u45 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:176px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u46_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u46_normal.png');
+}
+
+.u46_container {
+    position:absolute;
+    left:389px;
+    top:20px;
+    width:180px;
+    height:44px;
+}
+
+#u46_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:50px;
+}
+
+.u47 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:176px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u48_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u42_normal.png');
+}
+
+.u48_container {
+    position:absolute;
+    left:567px;
+    top:20px;
+    width:180px;
+    height:44px;
+}
+
+#u48_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:50px;
+}
+
+.u49 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:176px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u50_normal {
+    background-image: url('../Highlighted_Venues_-_Design_files/u42_normal.png');
+}
+
+.u50_container {
+    position:absolute;
+    left:747px;
+    top:20px;
+    width:180px;
+    height:44px;
+}
+
+#u50_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:50px;
+}
+
+.u51 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:176px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+

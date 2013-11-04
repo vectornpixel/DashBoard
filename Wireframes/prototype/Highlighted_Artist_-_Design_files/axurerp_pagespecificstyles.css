@@ -1,0 +1,604 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../Content_Master_files/u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:10px;
+    top:10px;
+    width:960px;
+    height:678px;
+}
+
+#u0_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:966px;
+    height:684px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:331px;
+    width:956px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u2 {
+    position:absolute;
+    left:29px;
+    top:83px;
+    width:221px;
+    height:17px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u4_normal {
+    background-image: url('../Highlighted_Artist_-_Design_files/u4_normal.png');
+}
+
+.u4_container {
+    position:absolute;
+    left:818px;
+    top:620px;
+    width:109px;
+    height:36px;
+}
+
+#u4_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:109px;
+    height:36px;
+}
+
+.u5 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:105px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u6 {
+    position:absolute;
+    left:818px;
+    top:631px;
+    width:104px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u7 {
+    position:absolute;
+    left:514px;
+    top:206px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u8_normal {
+    background-image: url('../Highlighted_Artist_-_Design_files/u4_normal.png');
+}
+
+.u8_container {
+    position:absolute;
+    left:29px;
+    top:620px;
+    width:109px;
+    height:36px;
+}
+
+#u8_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:109px;
+    height:36px;
+}
+
+.u9 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:105px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10 {
+    position:absolute;
+    left:29px;
+    top:631px;
+    width:104px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u11 {
+    position:absolute;
+    left:513px;
+    top:140px;
+    width:120px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12 {
+    position:absolute;
+    left:514px;
+    top:177px;
+    width:23px;
+    height:25px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u13 {
+    position:absolute;
+    left:537px;
+    top:180px;
+    width:106px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u14_normal {
+    background-image: url('../Highlighted_Artist_-_Design_files/u14_normal.png');
+}
+
+.u14_container {
+    position:absolute;
+    left:513px;
+    top:340px;
+    width:74px;
+    height:63px;
+}
+
+#u14_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:80px;
+    height:69px;
+}
+
+.u15 {
+    position:absolute;
+    left:2px;
+    top:24px;
+    width:70px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u16 {
+    position:absolute;
+    left:513px;
+    top:310px;
+    width:184px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:'Arial';
+    font-size: 14px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u17 {
+    position:absolute;
+    left:512px;
+    top:284px;
+    width:100px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u18_normal {
+    background-image: url('../Highlighted_Artist_-_Design_files/u18_normal.png');
+}
+
+.u18_container {
+    position:absolute;
+    left:212px;
+    top:144px;
+    width:281px;
+    height:371px;
+}
+
+#u18_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:287px;
+    height:377px;
+}
+
+.u19 {
+    position:absolute;
+    left:2px;
+    top:178px;
+    width:277px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u20_normal {
+    background-image: url('../Highlighted_Artist_-_Design_files/u20_normal.png');
+}
+
+.u20_container {
+    position:absolute;
+    left:240px;
+    top:415px;
+    width:155px;
+    height:40px;
+}
+
+#u20_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:161px;
+    height:46px;
+}
+
+.u21 {
+    position:absolute;
+    left:2px;
+    top:12px;
+    width:151px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u22 {
+    position:absolute;
+    left:263px;
+    top:419px;
+    width:120px;
+    height:32px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u23_normal {
+    background-image: url('../Highlighted_Artist_-_Design_files/u23_normal.png');
+}
+
+.u23_container {
+    position:absolute;
+    left:240px;
+    top:385px;
+    width:128px;
+    height:26px;
+}
+
+#u23_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:134px;
+    height:32px;
+}
+
+.u24 {
+    position:absolute;
+    left:2px;
+    top:5px;
+    width:124px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u25 {
+    position:absolute;
+    left:248px;
+    top:392px;
+    width:123px;
+    height:14px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u26 {
+    position:absolute;
+    left:333px;
+    top:487px;
+    width:154px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u27_normal {
+    background-image: url('../Highlighted_Artist_-_Design_files/u27_normal.png');
+}
+
+.u27_container {
+    position:absolute;
+    left:210px;
+    top:20px;
+    width:180px;
+    height:44px;
+}
+
+#u27_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:50px;
+}
+
+.u28 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:176px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u29_normal {
+    background-image: url('../Highlighted_Artist_-_Design_files/u27_normal.png');
+}
+
+.u29_container {
+    position:absolute;
+    left:29px;
+    top:20px;
+    width:180px;
+    height:44px;
+}
+
+#u29_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:50px;
+}
+
+.u30 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:176px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u31_normal {
+    background-image: url('../Highlighted_Artist_-_Design_files/u31_normal.png');
+}
+
+.u31_container {
+    position:absolute;
+    left:389px;
+    top:20px;
+    width:180px;
+    height:44px;
+}
+
+#u31_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:50px;
+}
+
+.u32 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:176px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u33_normal {
+    background-image: url('../Highlighted_Artist_-_Design_files/u27_normal.png');
+}
+
+.u33_container {
+    position:absolute;
+    left:567px;
+    top:20px;
+    width:180px;
+    height:44px;
+}
+
+#u33_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:50px;
+}
+
+.u34 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:176px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u35_normal {
+    background-image: url('../Highlighted_Artist_-_Design_files/u27_normal.png');
+}
+
+.u35_container {
+    position:absolute;
+    left:747px;
+    top:20px;
+    width:180px;
+    height:44px;
+}
+
+#u35_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:50px;
+}
+
+.u36 {
+    position:absolute;
+    left:2px;
+    top:14px;
+    width:176px;
+    height:15px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
