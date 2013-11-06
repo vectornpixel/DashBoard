@@ -214,10 +214,6 @@
 
     });
 
-    $(function() {
-        
-    });
-
     // Sortable Showcase Javascript
     
    $(document).ready(function(){
@@ -240,11 +236,14 @@
    });
    
    // add new content type
-   $('.add').click(function(){
-   $('ul.sortable').append(this);
-   $('.sortable').sortable('refresh');
+   $('.add').click(function(){ 
+       var liitem = $(this).last().clone();
+       $('ul.sortable').append(liitem);
+       $('.sortable').sortable('refresh');
    });
+   
 
+    
 });
                 
                 
