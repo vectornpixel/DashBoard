@@ -8,18 +8,20 @@
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
     <title>Big Noiz DashBoard</title>
-
-    <!-- Bootstrap core CSS -->
+    
     <link href="assets/css/bootstrap.css" rel="stylesheet">
-     <link href="assets/fonts/ss-standard.css" rel="stylesheet" />
-    <!-- Custom styles for this template -->
+    <link href="assets/fonts/ss-standard.css" rel="stylesheet" />
     <link href="assets/css/styles.css" rel="stylesheet">
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bignoizjs.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
+
+
   </head>
 
   <body>
@@ -32,13 +34,13 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
               <li class="">
-                  <a href="#">
+                  <a class="eventloader" href="#">
                       <div class="nav-icon"><i class="ss-icon">notebook</i></div>
                       <p>Content</p>
                   </a>
               </li>
-           <li class="active">
-                  <a href="#">
+           <li class="">
+                  <a class="showcaseloader" href="#">
                       <div class="nav-icon"><i class="ss-icon">notebook</i></div>
                       <p>Showcase</p>
                   </a>
@@ -79,7 +81,7 @@
       </div>
     </div>
 
-<!-- Main Navigation-->
+
     <div class="topbar">
         <div class="container">
         <form class="navbar-form navbar-right">
@@ -91,109 +93,15 @@
         </form>
         </div>
     </div>
+
+    <div id="maincontent"></div>
     
-<!--Header Dropdown Area -->    
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Showcase</h1>
-      </div>
-    </div>
-
-    
-    <div class="container">
-<!--Filter List Area -->
-      <div class="row">
-          <div class="col-lg-4">
-          <p>
-        <select id="cd-dropdown" class="cd-select">
-                <option value="-1" selected>View: All Content</option>
-                <option value="1">All Content</option>
-                <option value="2">Highlighted Artist</option>
-                <option value="3">Highlighted Events</option>
-                <option value="4">Highlighted Venues</option>
-                <option value="5">Contents</option>
-        </select>
-          </p>
-        </div>
-
-      </div>
-      
-      
-<!--Content Order / Sortable Area -->
-      <div class="row">
-          <div class="col-lg-9">
-          <h5 class="page-alert">You are looking at the Showcase Stream content order that currently running in the app</h5>
-          </div>
-          
-      </div>
-      <hr>
-      <div class="row">
-      <div class="pull-right">
-          <p><a class="all-btns all-btns-green"><span class="glyphicon glyphicon-plus"></span>Add New Content</a></p>
-      </div>
-      </div>
-      <div class="row ">
-          <div class="container">
-        <ul class="sortable grid">
-            
-                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Artist</span><span class="glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></li>
-                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Event</span><span class="glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Venue</span><span class="glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">RSS Feed</span><span class="glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">General URLs</span><span class="glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">Contest</span><span class="glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-        </ul>
-          </div>
-   
-      </div>
-
-      <div class="row">
-      <div class="pull-right">
-          <p><a class="all-btns all-btns-green">SAVE</a></p>
-      </div>
-      </div>
-      
-      
-
       <hr>
 
       <footer>
         <p>&copy; Company 2013</p>
       </footer>
-    </div> <!-- /container -->
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/modernizr.custom.63321.js"></script>
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.sortable.js"></script>
-    <script src="assets/js/jquery.dropdown.js"></script>
-    
-    <script type="text/javascript" >
-    $( function() {
-
-        $( '#cd-dropdown' ).dropdown({
-        stack : false
-        });
-
-    });
-
-   	$(function() {
-			$('.sortable').sortable();
-			$('.handles').sortable({
-				handle: 'span'
-			});
-			$('.connected').sortable({
-				connectWith: '.connected'
-			});
-			$('.exclude').sortable({
-				items: ':not(.disabled)'
-			});
-		});
-    </script>
 
   </body>
 </html>

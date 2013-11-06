@@ -89,6 +89,22 @@ padding-top:18px;
 
 
 /* button styles */
+.addContent{
+    float:left;
+}
+.addContent li{
+     background-color: #e2e2e2;
+    float: left;
+    width: 317px;
+    list-style: none;
+    color: #1C94C4;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+}
+
 .all-btns {
 	margin-top: 10px;
 	margin-right: 10px;
@@ -244,9 +260,7 @@ li.sortable-placeholder {
 
 
 /* collapse menu */
-.view{
-    
-}
+
 .view li{
     list-style: none;
     font-size: 18px;
