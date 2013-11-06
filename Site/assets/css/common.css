@@ -80,3 +80,10 @@
 .cd-select {
 	border: 1px solid #ddd;
 }
+
+.page-nav{
+    color: inherit;
+    font-size: 21px;
+    font-weight: 200;
+    padding: 10px;
+}

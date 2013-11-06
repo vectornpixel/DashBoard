@@ -86,6 +86,14 @@ padding-top:18px;
 .jumbotron h1, .titles{
     font-weight: 100;
 }
+.dropdown-menu li{
+    color: inherit;
+    font-size: 21px;
+    font-weight: 200;
+    padding: 10px;
+}
+
+
 
 
 /* button styles */
@@ -157,6 +165,7 @@ padding-top:18px;
   margin-right: 1px !important;
 }
 .showcase-icons {
+  float:right;
   color:#3d8399;  
   background-color: #d1d1d1;
   padding:20px 15px 20px 15px;
@@ -200,6 +209,13 @@ padding-top:18px;
     padding: 15px 12px;
     text-align: left;
 }
+
+
+
+
+
+
+
 /* Showcase Sort */
 .sortable.grid {
 overflow: hidden;
@@ -259,6 +275,17 @@ li.sortable-placeholder {
 }
 
 
+/* Background Colors */
+.bg-lightgray{
+    background-color: #ededed;
+}
+.bg-darkgrey{
+    background-color: #e2e2e2;
+}
+
+
+
+
 /* collapse menu */
 
 .view li{
@@ -269,20 +296,16 @@ li.sortable-placeholder {
     margin: 5px;
 }
 .view-right li{
-    list-style: none;
-    font-size: 18px;
     background-color: #ededed;
-    padding:20px;
-    margin: 5px;
 }
 .panel-default > .panel-heading{
     background-color: #e2e2e2;
     
 }
 .panel-heading {
-
-        height:85px;
+height:85px;
 }
+
 .panel-group .panel + .panel {
     margin-top: 0px;
 }
@@ -301,8 +324,11 @@ h5.page-alert{
     font-weight: 200;
   
 }
-/* drop downs */
 
+
+
+
+/* drop downs */
 
 .cd-dropdown {
 	-webkit-perspective: 800px;

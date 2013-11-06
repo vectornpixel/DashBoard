@@ -136,12 +136,12 @@
           <div class="container">
         <ul class="sortable grid">
             
-                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Artist</span><span class="delete glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></li>
-                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Event</span><span class="delete glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Venue</span><span class="delete glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">RSS Feed</span><span class="delete glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">General URLs</span><span class="delete glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">Contest</span><span class="delete glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
+                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Artist</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></li>
+                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Event</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
+                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Venue</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
+                <li class="btn-sort"><span class="cont-title pull-left">RSS Feed</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
+                <li class="btn-sort"><span class="cont-title pull-left">General URLs</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
+                <li class="btn-sort"><span class="cont-title pull-left">Contest</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
         </ul>
           </div>
    
@@ -173,12 +173,12 @@
           <div class="container">
         <ul class="addContent">
             
-            <li class="add btn-sort"><span class="cont-title pull-left">Highlighted Artist</span><span class="glyphicon glyphicon-plus showcase-icons pull-right"></li>
-                <li class="add btn-sort"><span class="cont-title pull-left">Highlighted Event</span><span class="glyphicon glyphicon-plus showcase-icons pull-right"></span></li>
-                <li class="add btn-sort"><span class="cont-title pull-left">Highlighted Venue</span><span class="glyphicon glyphicon-plus showcase-icons pull-right"></span></li>
-                <li class="add btn-sort"><span class="cont-title pull-left">RSS Feed</span><span class="glyphicon glyphicon-plus showcase-icons pull-right"></span></li>
-                <li class="add btn-sort"><span class="cont-title pull-left">General URLs</span><span class="glyphicon glyphicon-plus showcase-icons pull-right"></span></li>
-                <li class="add btn-sort"><span class="cont-title pull-left">Contest</span><span class="glyphicon glyphicon-plus showcase-icons pull-right"></span></span></li>
+            <li class="add btn-sort"><span class="cont-title pull-left">Highlighted Artist</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add btn-sort"><span class="cont-title pull-left">Highlighted Event</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add btn-sort"><span class="cont-title pull-left">Highlighted Venue</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add btn-sort"><span class="cont-title pull-left">RSS Feed</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add btn-sort"><span class="cont-title pull-left">General URLs</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add btn-sort"><span class="cont-title pull-left">Contest</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
         </ul>
           </div>
    
@@ -240,9 +240,23 @@
        var liitem = $(this).last().clone();
        $('ul.sortable').append(liitem);
        $('.sortable').sortable('refresh');
-   });
+       
+      $('.sortable').find('li span').each(function(){
+        if ($(this).hasClass('glyphicon glyphicon-plus showcase-icons')){
+            $(this).removeClass("glyphicon glyphicon-plus showcase-icons").addClass('delete glyphicon glyphicon-remove showcase-icons').addclass('glyphicon glyphicon-pencil showcase-icons2 pull-right');
+        }
+    });
+    
+    
+    });
    
 
+   
+   
+   
+   //if icons is inside of ul addcontent then show the add sign
+   
+   //if not then show the edit and remove icon
     
 });
                 
