@@ -134,15 +134,14 @@
       </div>
       <div class="row ">
           <div class="container">
-        <ul class="sortable grid">
-            
-                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Artist</span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Event</span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Venue</span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">RSS Feed</span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">General URLs</span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">Contest</span></li>
-        </ul>
+              <ol class="sortable grid">
+                <li><span class="cont-title pull-left">Highlighted Artist</span></li>
+                <li><span class="cont-title pull-left">Highlighted Event</span></li>
+                <li><span class="cont-title pull-left">Highlighted Venue</span></li>
+                <li><span class="cont-title pull-left">RSS Feed</span></li>
+                <li><span class="cont-title pull-left">General URLs</span></li>
+                <li><span class="cont-title pull-left">Contest</span></li>
+             </ol>
           </div>
    
       </div>
@@ -174,11 +173,11 @@
         <ul class="addContent">
             
                 <li class="add btn-sort"><span class="cont-title pull-left">Highlighted Artist</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
-                <li class="add btn-sort"><span class="cont-title pull-left">Highlighted Event</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
-                <li class="add btn-sort"><span class="cont-title pull-left">Highlighted Venue</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
-                <li class="add btn-sort"><span class="cont-title pull-left">RSS Feed</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
-                <li class="add btn-sort"><span class="cont-title pull-left">General URLs</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
-                <li class="add btn-sort"><span class="cont-title pull-left">Contest</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add"><span class="cont-title pull-left">Highlighted Event</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add"><span class="cont-title pull-left">Highlighted Venue</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add"><span class="cont-title pull-left">RSS Feed</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add"><span class="cont-title pull-left">General URLs</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add"><span class="cont-title pull-left">Contest</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
         </ul>
           </div>
    
@@ -215,8 +214,7 @@
     });
 
      //sortable 
-    $('.sortable').sortable();
-
+    $('ol.sortable').sortable({axis: 'y'});
     $('.handles').sortable({
             handle: 'span'
     });
@@ -227,8 +225,13 @@
             items: ':not(.disabled)'
     });
 
-
- // Button Icons
+    // Display Numbers
+   
+  
+   
+   
+   
+   // Button Icons
    var icon1 = $('.sortable').find('li').append('<span class="delete glyphicon glyphicon-remove showcase-icons"></span>');
    var icon2 = $('.sortable').find('li').append('<span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span>');
    
@@ -236,20 +239,20 @@
    // add new content type
    $('.add').click(function(){ 
        
-       // clones the content buttons
-       var liitem = $(this).last().clone();
-       $('ul.sortable').append(liitem);
-       
-         // refresh sort list
-        $('.sortable').sortable('refresh');
-        
-       // after buttons are cloned and added, it removes the add icons and add the edit icons
-        $('.sortable').find('li span').each(function(){
-        if ($(this).hasClass('glyphicon glyphicon-plus showcase-icons')){
-            $(this).removeClass("glyphicon glyphicon-plus showcase-icons").addClass('delete glyphicon glyphicon-remove showcase-icons').after('<span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span>');  
-             }
-        });
-   });
+   // clones the content buttons
+   var liitem = $(this).last().clone();
+   $('ol.sortable').append(liitem);
+
+   // refresh sort list
+   $('ol.sortable').sortable('refresh');
+
+   // after buttons are cloned and added, it removes the add icons and add the edit icons
+   $('.sortable').find('li span').each(function(){
+    if ($(this).hasClass('glyphicon glyphicon-plus showcase-icons')){
+        $(this).removeClass("glyphicon glyphicon-plus showcase-icons").addClass('delete glyphicon glyphicon-remove showcase-icons').after('<span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span>');  
+         }
+       });
+    });
    
    
    //remove sort buttons
@@ -257,7 +260,7 @@
        $(this).parent().remove(".btn-sort");
    }); 
 
- 
+   
    
  });
                 
