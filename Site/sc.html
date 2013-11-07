@@ -172,7 +172,7 @@
           <div class="container">
         <ul class="addContent">
             
-                <li class="add btn-sort"><span class="cont-title pull-left">Highlighted Artist</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add"><span class="cont-title pull-left">Highlighted Artist</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
                 <li class="add"><span class="cont-title pull-left">Highlighted Event</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
                 <li class="add"><span class="cont-title pull-left">Highlighted Venue</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
                 <li class="add"><span class="cont-title pull-left">RSS Feed</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
@@ -209,9 +209,15 @@
     
    $(document).ready(function(){
      // drop down forms
-    $( '#cd-dropdown' ).dropdown({
-    stack : false
-    });
+     $( '#cd-dropdown' ).dropdown({
+        stack : false
+        });
+        $( '#type' ).dropdown({
+        stack : false
+        });
+        $( '#sort' ).dropdown({
+        stack : false
+        });
 
      //sortable 
     $('ol.sortable').sortable({axis: 'y'});
@@ -225,51 +231,35 @@
             items: ':not(.disabled)'
     });
 
-    // Display Numbers
-   
-  
-   
-   
-   
    // Button Icons
    var icon1 = $('.sortable').find('li').append('<span class="delete glyphicon glyphicon-remove showcase-icons"></span>');
    var icon2 = $('.sortable').find('li').append('<span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span>');
    
 
    // add new content type
-   $('.add').click(function(){ 
-       
+   $('.add').click(function(){   
    // clones the content buttons
    var liitem = $(this).last().clone();
    $('ol.sortable').append(liitem);
-
    // refresh sort list
    $('ol.sortable').sortable('refresh');
-
-   // after buttons are cloned and added, it removes the add icons and add the edit icons
+   // after buttons are cloned and added, it removes the plus icon and add the edit / remove icons
    $('.sortable').find('li span').each(function(){
     if ($(this).hasClass('glyphicon glyphicon-plus showcase-icons')){
         $(this).removeClass("glyphicon glyphicon-plus showcase-icons").addClass('delete glyphicon glyphicon-remove showcase-icons').after('<span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span>');  
          }
        });
     });
-   
-   
    //remove sort buttons
    $('.delete').click(function(){
-       $(this).parent().remove(".btn-sort");
-   }); 
+       $(this).parent().remove("ol.sortable li");
+   });
 
    
    
  });
                 
-                
-                
-                
-                
-                
-                
+               
     </script>
 
   </body>
