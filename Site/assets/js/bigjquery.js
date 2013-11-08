@@ -66,4 +66,17 @@
                 
                 
                 
-     
+         // old script for success function
+    /*var res = eval(data);
+	        var output = '';
+                for(var i=0; i< res.length; i++)
+
+	        	{
+	        		var contenttype = new Array("Contest","Highlighted Event","Highlighted Artist","Highlighted Venue","Generic URL","RSS","Featured 5");
+	        		//var position = res[i].position;
+	        		output += '<div class="row "><div class="container"><ol class="sortable grid">';
+	        		output += contenttype + '<li><span class="cont-title pull-left contenttype"></span></li>';
+	        		output += '</ol></div></div>';
+	        	}
+
+	        	$('.container').html(output);*/

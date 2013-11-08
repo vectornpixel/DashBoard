@@ -156,18 +156,21 @@
       <div class="container">
           <div class="row">
           <div id="accordion">
-             <div class=""> 
-             <span class="gridicons"></span>
-             <div class="col-lg-2">
+
+              
+               <h3>
+                 <div class="col-lg-2">
                  <span class="date">
-                 <h5 class="subtitle">12/3/13</h5>
+                 <p>12/3/13</p>
                 </span>
-             </div>
-            
-            <h3>Eminem</h3>
-            <h5>Detroit, MI - Fox Theater</h5>
-            
-             </div>
+                </div>
+                   
+                  <span class="title">Eminem</span>
+                  <span>Detroit, MI - Fox Theater</span>
+                  <span class="gridicons"></span>
+              </h3>
+              
+              
             <div>
 
             <div class="col-lg-3">
@@ -190,18 +193,20 @@
           </div>
    
             </div>
-            <div class=""> 
-             <span class="gridicons"></span>
-             <div class="col-lg-2">
+              
+               <h3>
+                 <div class="col-lg-2">
                  <span class="date">
-                 <h5 class="subtitle">12/3/13</h5>
+                 <p>12/3/13</p>
                 </span>
-             </div>
-            
-            <h3>Kesha</h3>
-            <h5>Detroit, MI - Fox Theater</h5>
-            
-             </div>
+                </div>
+                   
+                  <span class="title">Eminem</span>
+                  <span>Detroit, MI - Fox Theater</span>
+                  <span class="gridicons"></span>
+              </h3>
+              
+              
             <div>
 
             <div class="col-lg-3">
@@ -224,40 +229,8 @@
           </div>
    
             </div>
-            <div class=""> 
-             <span class="gridicons"></span>
-             <div class="col-lg-2">
-                 <span class="date">
-                 <h5 class="subtitle">12/3/13</h5>
-                </span>
-             </div>
-            
-            <h3>Taylor Swift</h3>
-            <h5>Detroit, MI - Fox Theater</h5>
-            
-             </div>
-            <div>
-
-            <div class="col-lg-3">
-              <img class="img-thumbnail" src="images/placeholder.jpg">
-            </div>
-          <div class="col-lg-4">
-              <ul class="view">
-                  <li>Date</li>
-                  <li>Venue</li>
-                  <li>Location</li>
-              </ul>
-          </div>
+  
           
-          <div class="col-lg-4">
-              <ul class="view view-right">
-                  <li>12/10/13</li>
-                  <li>Fox Theater</li>
-                  <li>Detroit, MI</li>
-              </ul>
-          </div>
-   
-            </div>
             </div>
           
           </div>
@@ -311,25 +284,18 @@
     icons: icons
     });
   var gridIcons2 = $('#accordion').find('.gridicons').append('<span class="glyphicon content-icons glyphicon-pencil pull-right"></span>');
-  var gridIcons1 = $('#accordion').find('.gridicons').append('<span class="glyphicon content-icons glyphicon-remove  pull-right"></span>');
+  var gridIcons1 = $('#accordion').find('.gridicons').append('<span class="delete glyphicon content-icons glyphicon-remove  pull-right"></span>');
 
 
-   
 
-   // add new content type
-   /*$('.accordion-toggle').click(function(){   
-   $('.panel-heading').find('.gridicons').each(function(){
-    if ($(this).hasClass('glyphicon content-icons glyphicon-chevron-down pull-right')){
-        $(this).removeClass("glyphicon content-icons glyphicon-chevron-down pull-right").addClass('glyphicon content-icons glyphicon-chevron-up pull-right');  
-         }
-       });
-    });*/
    //remove sort buttons
-   $('.delete').click(function(){
-       $(this).parent().remove("ol.sortable li");
-   });
 
-   
+   $('.delete').click(function() {
+    var parent = $(this).closest('div');
+    var head = parent.prev('h3');
+    parent.add(head).fadeOut('slow',function(){$(this).remove();});
+});
+
    
  });
     $(".collapse").collapse();

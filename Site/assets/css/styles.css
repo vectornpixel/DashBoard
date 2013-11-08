@@ -295,7 +295,7 @@ li.sortable-placeholder {
     background: #e2e2e2 !important;
     border: 1px solid #CCCCCC;
     color: #1C94C4;
-    font-weight: bold;
+    font-weight: normal !important;
     height:90px;
     padding: 10px 15px !important;
 }
@@ -304,6 +304,14 @@ li.sortable-placeholder {
     border: 1px solid #FBD850;
     color: #fff !important;
     font-weight: bold;
+}
+.ui-state-active > h3, .ui-state-active > h5{
+    color: #fff !important;
+}
+span.title{
+    font-size:24px;
+    font-weight: bold;
+
 }
 .ui-widget-content {
     background: #fff;
