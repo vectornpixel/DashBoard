@@ -1,5 +1,3 @@
-
-    
 <!--Header Dropdown Area -->    
     <div class="jumbotron">
       <div class="container">
@@ -37,20 +35,15 @@
       <hr>
       <div class="row">
       <div class="pull-right">
-          <p><a class="all-btns all-btns-green"><span class="glyphicon glyphicon-plus"></span>Add New Content</a></p>
+          <p><a class="all-btns all-btns-green " data-toggle="modal" data-target="#addContent"><span class="glyphicon glyphicon-plus"></span>Add New Content</a></p>
       </div>
       </div>
       <div class="row ">
           <div class="container">
-        <ul class="sortable grid">
-            
-                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Artist</span><span class="glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></li>
-                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Event</span><span class="glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">Highlighted Venue</span><span class="glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">RSS Feed</span><span class="glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">General URLs</span><span class="glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-                <li class="btn-sort"><span class="cont-title pull-left">Contest</span><span class="glyphicon glyphicon-remove showcase-icons pull-right"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>
-        </ul>
+              <ol class="sortable grid">
+                 
+                
+             </ol>
           </div>
    
       </div>
@@ -68,38 +61,54 @@
       <footer>
         <p>&copy; Company 2013</p>
       </footer>
+      
+      <div class="modal fade" id="addContent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Add Content</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row ">
+          <div class="container">
+        <ul class="addContent">
+            
+                <li class="add"><span class="cont-title pull-left">Highlighted Artist</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add"><span class="cont-title pull-left">Highlighted Event</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add"><span class="cont-title pull-left">Highlighted Venue</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add"><span class="cont-title pull-left">RSS Feed</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add"><span class="cont-title pull-left">General URLs</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+                <li class="add"><span class="cont-title pull-left">Contest</span><span class="glyphicon glyphicon-plus showcase-icons"></span></li>
+        </ul>
+          </div>
+   
+      </div>
+      </div>
+        
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
     </div> <!-- /container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/modernizr.custom.63321.js"></script>
-    <script src="assets/js/jquery.sortable.js"></script>
-    <script src="assets/js/jquery.dropdown.js"></script>
     
-    <script type="text/javascript" >
-    $( function() {
-
-        $( '#cd-dropdown' ).dropdown({
-        stack : false
-        });
-
+   <script type="text/javascript">
+        $(document).ready(function(){
+              // drop down forms
+    $( '#cd-dropdown' ).dropdown({
+    stack : false
     });
-
-   	$(function() {
-			$('.sortable').sortable();
-			$('.handles').sortable({
-				handle: 'span'
-			});
-			$('.connected').sortable({
-				connectWith: '.connected'
-			});
-			$('.exclude').sortable({
-				items: ':not(.disabled)'
-			});
-		});
+    $( '#type' ).dropdown({
+    stack : false
+    });
+    $( '#sort' ).dropdown({
+    stack : false
+    });
+         
+            
+        });
     </script>
-
-  </body>
-</html>

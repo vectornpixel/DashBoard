@@ -4,6 +4,18 @@ Big Noiz Ajax Calls & JS
 
 $(document).ready(function(){
 
+function header(){   
+  $.ajax({
+    type: "GET",
+    url: "header.html",
+    data: { },
+    async: true,
+    success: function(data){
+        $('#header').html(data);
+    }
+        });
+
+}
 
 function contentArea(){   
 $('.eventloader').click(function(){
@@ -47,7 +59,7 @@ $('.showcaseloader').click(function(){
         });
 }
 
-
+header();
 showcase();
 contentArea();
 
