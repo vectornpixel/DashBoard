@@ -23,9 +23,10 @@ h1,h2,h3,h4,h5{
     font-size: 18px;
     font-weight: normal;
 }
+
 .date{
     float:left;
-    padding:10px 35px 15px 15px;
+    padding:25px 35px 15px 5px;
     border-right: 1px solid #898989;
 
 }
@@ -160,7 +161,7 @@ padding-top:18px;
 	box-shadow: 0px 1px 0px 0px #0bd396;
 }
 .content-icons{
-     color:#3d8399;  
+ 
   padding:20px 10px 20px 10px;
   margin-right: 1px !important;
 }
@@ -299,15 +300,21 @@ li.sortable-placeholder {
     height:90px;
     padding: 10px 15px !important;
 }
+.ui-state-default .subs{
+    color: #898989;
+}
+.ui-state-active .subs{
+    color: #fff;
+}
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
     background: #3668A1 !important;
-    border: 1px solid #FBD850;
     color: #fff !important;
     font-weight: bold;
 }
 .ui-state-active > h3, .ui-state-active > h5{
     color: #fff !important;
 }
+
 span.title{
     font-size:24px;
     font-weight: bold;
@@ -322,7 +329,7 @@ span.title{
     padding: 10px 15px;
 }
 #accordion h3{
-    margin-top: 10px !important;
+ 
 }
 
 .view li{
