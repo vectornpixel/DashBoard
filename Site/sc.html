@@ -219,7 +219,6 @@
     });
         
 
-  
 
   // Web service call
   var baseURL = "http://54.227.240.28:8080/BigNoizAdminGen/ShowcaseMappingService?callback=jquery123";
@@ -243,9 +242,10 @@
 	        	{
                             var content = res[i].contenttype;
                             var position = res[i].position;
+                            var description = res[i].description;
                             //res[i].contenttype[2] = "Highlighted Artist";
                             //var contenttype = new Array("Contest","Highlighted Event","Highlighted Artist","Highlighted Venue","Generic URL","RSS","Featured 5");
-	        	    output += '<li><span class="cont-title pull-left">'+content+'</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>';
+	        	    output += '<li><span class="cont-title pull-left">'+description+'</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>';
 	        	
 	        	}
                  

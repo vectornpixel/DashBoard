@@ -3222,10 +3222,11 @@ input[type="button"].btn-block {
 }
 
 .dropdown-menu {
+    
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 1000;
+  z-index: 9999;
   display: none;
   float: left;
   min-width: 160px;
@@ -3255,12 +3256,16 @@ input[type="button"].btn-block {
 }
 
 .dropdown-menu > li > a {
+    background-color: #fff;
+    color: inherit;
+    font-size: 31px;
+    font-weight: 200;
+    padding: 10px;
   display: block;
   padding: 3px 20px;
   clear: both;
-  font-weight: normal;
   line-height: 1.428571429;
-  color: #333333;
+  color: #9a9a9a;
   white-space: nowrap;
 }
 
