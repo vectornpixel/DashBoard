@@ -97,7 +97,7 @@
     
     <div class="jumbotron">
       <div class="container">
-      <h1>Highlighted Events</h1>
+      <h1>Highlighted Artist</h1>
       </div>
     </div>
 
@@ -158,15 +158,16 @@
           <div id="accordion">
 
               
-               <h3>
+              <h3>
                  <div class="col-lg-2">
                  <span class="date">
                  <p>12/3/13</p>
                 </span>
                 </div>
-                   
-                  <span class="title">Eminem</span>
-                  <span>Detroit, MI - Fox Theater</span>
+                   <div class="col-lg-4">
+                  <span class="title">Kesha</span>
+                  <p>Detroit, MI - Fox Theater</p>
+                   </div>
                   <span class="gridicons"></span>
               </h3>
               
@@ -250,12 +251,14 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     
-    <script src="assets/js/modernizr.custom.63321.js"></script>
+    
     <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-ui-1.10.3.custom.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.custom.63321.js"></script>
     <script src="assets/js/jquery.sortable.js"></script>
     <script src="assets/js/jquery.dropdown.js"></script>
-    <script src="assets/js/jquery-ui-1.10.3.custom.js"></script>
+    
     <script>
           // Sortable Showcase Javascript
     
@@ -291,14 +294,16 @@
    //remove sort buttons
 
    $('.delete').click(function() {
-    var parent = $(this).closest('div');
-    var head = parent.prev('h3');
+       
+    var parent = $(this).closest('h3');
+    var head = parent.next('div');
     parent.add(head).fadeOut('slow',function(){$(this).remove();});
 });
 
+
    
  });
-    $(".collapse").collapse();
+   
 
     </script>
 

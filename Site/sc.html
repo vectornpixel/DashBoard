@@ -22,10 +22,7 @@
     <![endif]-->
     <script src="assets/js/modernizr.custom.63321.js"></script>
     <script src="assets/js/jquery.js"></script>
-    <script>
-     
 
-        </script>
   </head>
 
   <body>
@@ -141,13 +138,8 @@
       <div class="row ">
           <div class="container">
               <ol class="sortable grid">
-                  <div id="here"></div>
-                <li><span class="cont-title pull-left">Highlighted Artist</span></li>
-                <li><span class="cont-title pull-left">Highlighted Event</span></li>
-                <li><span class="cont-title pull-left">Highlighted Venue</span></li>
-                <li><span class="cont-title pull-left">RSS Feed</span></li>
-                <li><span class="cont-title pull-left">General URLs</span></li>
-                <li><span class="cont-title pull-left">Contest</span></li>
+                 
+                
              </ol>
           </div>
    
@@ -216,32 +208,69 @@
     
    $(document).ready(function(){
      // drop down forms
-     $( '#cd-dropdown' ).dropdown({
-        stack : false
-        });
-        $( '#type' ).dropdown({
-        stack : false
-        });
-        $( '#sort' ).dropdown({
-        stack : false
-        });
+    $( '#cd-dropdown' ).dropdown({
+    stack : false
+    });
+    $( '#type' ).dropdown({
+    stack : false
+    });
+    $( '#sort' ).dropdown({
+    stack : false
+    });
+        
 
-     //sortable 
-    $('ol.sortable').sortable({axis: 'y'});
-    $('.handles').sortable({
-            handle: 'span'
-    });
-    $('.connected').sortable({
-            connectWith: '.connected'
-    });
-    $('.exclude').sortable({
-            items: ':not(.disabled)'
-    });
+  
 
-   // Button Icons
-   var icon1 = $('.sortable').find('li').append('<span class="delete glyphicon glyphicon-remove showcase-icons"></span>');
-   var icon2 = $('.sortable').find('li').append('<span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span>');
-   
+  // Web service call
+  var baseURL = "http://54.227.240.28:8080/BigNoizAdminGen/ShowcaseMappingService?callback=jquery123";
+
+
+        function showcase() {
+        //alert('callling');
+        var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/ShowcaseMappingService";
+        
+       $.ajax({ 
+            type: "GET",
+            dataType: "jsonp",
+            url: urlcall,
+            contentType: 'application/json',
+               success: function (data, status) {
+                 var res = eval(data);
+                 var output = '';
+                 //alert('here');
+                 for(var i=0; i< res.length; i++)
+
+	        	{
+                            var content = res[i].contenttype;
+                            var position = res[i].position;
+                            //res[i].contenttype[2] = "Highlighted Artist";
+                            //var contenttype = new Array("Contest","Highlighted Event","Highlighted Artist","Highlighted Venue","Generic URL","RSS","Featured 5");
+	        	    output += '<li><span class="cont-title pull-left">'+content+'</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>';
+	        	
+	        	}
+                 
+                // add output to list
+                $('ol.sortable').html(output);
+                 //sortable 
+                $('ol.sortable').sortable({axis: 'y'});
+                $('.handles').sortable({
+                        handle: 'span'
+                });
+                $('.connected').sortable({
+                        connectWith: '.connected'
+                });
+                $('.exclude').sortable({
+                        items: ':not(.disabled)'
+                });
+                 //remove sort buttons
+                $('.delete').click(function(){
+                    $(this).parent().remove("ol.sortable li");
+                });
+               }
+        });
+       }
+
+    showcase();
 
    // add new content type
    $('.add').click(function(){   
@@ -257,48 +286,8 @@
          }
        });
     });
-   //remove sort buttons
-   $('.delete').click(function(){
-       $(this).parent().remove("ol.sortable li");
-   });
-
-  // Web service call
-  var baseURL = "http://54.227.240.28:8080/BigNoizAdminGen/ShowcaseMappingService?callback=jquery123";
-
-    $(document).ready(function(){
-        function showcase() {
-        alert('callling');
-        var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/ShowcaseMappingService";
-        
-       $.ajax({ 
-            type: "GET",
-            dataType: "jsonp",
-            url: urlcall,
-            contentType: 'application/json',
-               success: function (data, status) {
-                 var res = eval(data);
-                 var output = '';
-                 alert('here');
-                 for(var i=0; i< res.length; i++)
-
-	        	{
-                            var content = res[i].contenttype;
-                            var position = res[i].position;
-                            //res[i].contenttype[2] = "Highlighted Artist";
-                            output += '<li><span class="cont-title pull-left">'+content+'</span></li>';
-                            
-	        		//var contenttype = new Array("Contest","Highlighted Event","Highlighted Artist","Highlighted Venue","Generic URL","RSS","Featured 5");
-	        		//output += '<ol class="sortable grid">';
-	        		
-	        		//output += '</ol>';
-	        	}
-                 $('#here').html(output);
-               }
-        });
-       }
-
-    showcase();
-    });
+    
+   
    
  });
                 
