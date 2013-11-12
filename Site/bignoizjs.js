@@ -3,7 +3,17 @@ Big Noiz Ajax Calls & JS
  */
 
 $(document).ready(function(){
-    
+            // drop down forms
+    $( '#cd-dropdown' ).dropdown({
+    stack : false
+    });
+    $( '#type' ).dropdown({
+    stack : false
+    });
+    $( '#sort' ).dropdown({
+    stack : false
+    });
+           
 /* 
 Load external pages with Ajax
  */
@@ -145,6 +155,8 @@ Add new Content Types to Sort
         });
         
     }
+
+
 
 /* 
 All of my functions called

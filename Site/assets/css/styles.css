@@ -211,7 +211,7 @@ ol.sortable {
 }
 .sortable.grid {
         overflow: hidden;
-        padding:2px;
+        padding:0px 0px 0px 13px;
 }
 .sortable li{
         border: 1px solid #CCC;
@@ -247,7 +247,7 @@ ol.sortable {
         background-color: #e2e2e2;
         border: 1px dashed #CCCCCC;
         float: left;
-        width: 292px;
+        width: 286px;
         height: 60px;
         margin:20px;
         cursor: pointer;
