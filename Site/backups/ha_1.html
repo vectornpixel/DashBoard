@@ -29,7 +29,7 @@
     <script src="assets/js/modernizr.custom.63321.js"></script>
     <script src="assets/js/jquery.sortable.js"></script>
     <script src="assets/js/jquery.dropdown.js"></script>
-     <script src="bignoizjs.js"></script>
+        <script src="bignoizjs.js"></script>
   </head>
 
   <body>
@@ -49,37 +49,37 @@
               </li>
            <li class="">
                   <a href="sc.html">
-                      <div class="nav-icon"><i class="ss-icon">openbook</i></div>
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
                       <p>Showcase</p>
                   </a>
               </li>
               <li class="">
                   <a href="#">
-                      <div class="nav-icon"><i class="ss-icon">users</i></div>
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
                       <p>Winners</p>
                   </a>
               </li>
               <li class="">
                   <a href="#">
-                      <div class="nav-icon"><i class="ss-icon">dashboard</i></div>
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
                       <p>Brands</p>
                   </a>
               </li>
               <li class="">
                   <a href="#">
-                      <div class="nav-icon"><i class="ss-icon">cell</i></div>
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
                       <p>Filter</p>
                   </a>
               </li>
               <li class="">
                   <a href="#">
-                      <div class="nav-icon"><i class="ss-icon">mail</i></div>
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
                       <p>Messages</p>
                   </a>
               </li>
               <li class="">
                   <a href="#">
-                      <div class="nav-icon"><i class="ss-icon">settings</i></div>
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
                       <p>Settings</p>
                   </a>
               </li>
@@ -94,7 +94,7 @@
     <div class="container">
     <form class="navbar-form navbar-right">
 
-        <div class="form-group input-prepend search">
+        <div class="form-group input-prepend">
             <button type="submit" class="btn glyphicon glyphicon-search"></button>
             <input type="text" placeholder="search dashboard" class="form-control">
         </div>
@@ -179,7 +179,73 @@
           <div class="row">
           <div id="accordion">
 
-           </div>
+              
+              <h3>
+                   <div class="col-lg-4">
+                  <span class="title">Kesha</span>
+                   </div>
+                  <span class="gridicons"></span>
+              </h3>
+              
+              
+            <div>
+
+            <div class="col-lg-3">
+              <img class="img-thumbnail" src="images/placeholder.jpg">
+            </div>
+          <div class="col-lg-4">
+              <ul class="view">
+                  <li>Date</li>
+                  <li>Venue</li>
+                  <li>Location</li>
+              </ul>
+          </div>
+          
+          <div class="col-lg-4">
+              <ul class="view view-right">
+                  <li>12/10/13</li>
+                  <li>Fox Theater</li>
+                  <li>Detroit, MI</li>
+              </ul>
+          </div>
+   
+            </div>
+              
+               <h3>
+
+                  <div class="col-lg-4">
+                  <span class="title">Eminem</span>
+  
+                   </div>
+                  <span class="gridicons"></span>
+              </h3>
+              
+              
+            <div>
+
+            <div class="col-lg-3">
+              <img class="img-thumbnail" src="images/placeholder.jpg">
+            </div>
+          <div class="col-lg-4">
+              <ul class="view">
+                  <li>Date</li>
+                  <li>Venue</li>
+                  <li>Location</li>
+              </ul>
+          </div>
+          
+          <div class="col-lg-4">
+              <ul class="view view-right">
+                  <li>12/10/13</li>
+                  <li>Fox Theater</li>
+                  <li>Detroit, MI</li>
+              </ul>
+          </div>
+   
+            </div>
+  
+          
+            </div>
           
           </div>
       </div>
@@ -216,52 +282,7 @@
        stack : false
        });
 
- 
-
-
-
-/* 
-Loads Web Services
- */
- 
-  function highlightedartist() {
-  
-  // alert('yooo');
-   var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/HighlightedArtists";
-
-   $.ajax({ 
-    type: "GET",
-    dataType: "jsonp",
-    url: urlcall,
-    contentType: 'application/json',
-    success: function (data, status) {
-   // alert('boiii');
-    var res = eval(data);
-    var output = '';
-    
-    for(var i=0; i< res.length; i++)
-      {
-          var artistname = res[i].name;
-          var artistimage = res[i].imageURL;
-          var artiststartdate = res[i].startdate;
-          var artistenddate = res[i].enddate;
-          var artistevents = res[i].eventCount;
-          var artisttag = res[i].tag;
-          var artistsponsor = res[i].sponsorName;
-          
-          // left column
-          output += '<h3><div class="col-lg-4"><span class="title">'+artistname+'</span></div><span class="gridicons"></span></h3>';
-          output += '<div><div class="col-lg-3"><img class="img-thumbnail" src='+artistimage+'><span><p class="subs">'+artisttag+'</p></span></div>';
-          output += '<div class="view-list"><ul class="view"><li>Start Date</li><li>End Date</li><li>Events</li><li>Sponsor</li></ul></div>';
-         
-          // right column
-          output += '<div class="view-list"><ul class="view view-right"><li>'+artiststartdate+'</li><li>'+artistenddate+'</li><li>'+artistevents+'</li><li>'+artistsponsor+'</li></ul></div></div>';
-
-      }
-        
-    // add output to list
-    $('#accordion').html(output);
-      // Button Icons
+   // Button Icons
     var icons = {
     header: "glyphicon content-icons glyphicon-chevron-down pull-right",
     activeHeader: "glyphicon content-icons glyphicon-chevron-up pull-right "
@@ -288,12 +309,6 @@ Loads Web Services
 });
 
 
-           }
-           
-        });
-        
-    }
-highlightedartist();
    
  });
    

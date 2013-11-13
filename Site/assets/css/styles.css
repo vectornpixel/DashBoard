@@ -30,6 +30,12 @@ h1,h2,h3,h4,h5{
     border-right: 1px solid #898989;
 
 }
+.shows{
+    float:left;
+    padding:25px 5px 15px 35px;
+    border-left: 1px solid #898989;
+
+}
 .nav-icon{
     text-align: center;
     font-size:24px;
@@ -61,7 +67,8 @@ h1,h2,h3,h4,h5{
 }
 
 .navbar-nav > li > a {
-padding-top:18px; 
+padding-top:8px; 
+padding-bottom:1px !important;
 }
 .nav > li > a {
 
@@ -86,9 +93,11 @@ padding-top:18px;
 }
 .jumbotron h1, .titles{
     font-weight: 100;
+    float: left;
 }
-
-
+.jumbotron span{
+    padding: 40px;
+}
 
 
 /* button styles */
@@ -189,7 +198,9 @@ padding-top:18px;
     text-align: left;
 }
 
-
+.form-control .search{
+    
+}
 
 /* Showcase Sort */
 ol.sortable {
@@ -287,8 +298,8 @@ li.sortable-placeholder {
 /* collapse menu */
 
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-    background: #e2e2e2 !important;
-    border: 1px solid #CCCCCC;
+    background: #ececec !important;
+    border: 1px solid #e4e4e4;
     color: #1C94C4;
     font-weight: normal !important;
     height:90px;
@@ -315,7 +326,7 @@ span.title{
 
 }
 .ui-widget-content {
-    background: #fff;
+    background: #e3e3e3;
     border: 1px solid #DDDDDD;
     color: #333333;
 }
@@ -329,9 +340,15 @@ span.title{
 .view li{
     list-style: none;
     font-size: 18px;
-    background-color: #e2e2e2;
+    background-color: #c4c4c4;
     padding:20px;
-    margin: 5px;
+    margin: 1px;
+  
+
+}
+.view-list{
+      float:left;
+    width: 36.66666666666667%;
 }
 .view-right li{
     background-color: #ededed;

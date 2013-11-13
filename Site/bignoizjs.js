@@ -125,8 +125,11 @@ Sort and Remove functions
     });
 
      //remove sort buttons
-    $('.delete').click(function(){
-     $(this).parent().remove("ol.sortable li");
+
+       $('.delete').click(function(){
+           $(this).parent().remove("ol.sortable li");
+  
+     
     });
     
         
