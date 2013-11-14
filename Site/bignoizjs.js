@@ -2,34 +2,80 @@
 Big Noiz Ajax Calls & JS
 Author     : Asim Craft
  */
+/* Global functions */
 
-$(document).ready(function(){
- // Navigation Active Script
+// Set icons on each menu
+ function gridiconset(){
+         var gridIcons2 = $('#accordion').find('.gridicons').append('<span class="glyphicon content-icons glyphicon-pencil pull-right"></span>');
+         var gridIcons1 = $('#accordion').find('.gridicons').append('<span class="delete glyphicon content-icons glyphicon-remove  pull-right"></span>');
+    }
+    
+ function dropdowns(){
+    $( '#cd-dropdown' ).dropdown({
+       stack : false
+       });
+       $( '#type' ).dropdown({
+       stack : false
+       });
+       $( '#sort' ).dropdown({
+       stack : false
+       });
+    } 
+    
+ function accordion(){
+    var icons = {
+    header: "glyphicon content-icons glyphicon-chevron-down pull-right",
+    activeHeader: "glyphicon content-icons glyphicon-chevron-up pull-right "
+    };
+    
+    // Collapse options
+    $( "#accordion" ).accordion({
+    header: "h3", 
+    collapsible: true, 
+    active: false, 
+    heightStyle: "content",
+    icons: icons
+    });
+   } 
+
+ function activeNav(){
     $('.navbar-inverse .navbar-nav li').click(function(){
     $('.navbar-inverse .navbar-nav li').each(function(){
         $(this).removeClass('active'); 
     });
         $(this).addClass('active');
     });
- // drop down forms
-    $( '#cd-dropdown' ).dropdown({
-    stack : false
+   } 
+ 
+  function accordionRemove(){
+       //remove sort buttons
+   $('.delete').click(function() {
+    var parent = $(this).closest('h3');
+    var head = parent.next('div');
+    parent.add(head).fadeOut('slow',function(){$(this).remove();});
     });
-    $( '#type' ).dropdown({
-    stack : false
-    });
-    $( '#sort' ).dropdown({
-    stack : false
-    });
-           
-/* 
-Load external pages with Ajax
- */
-//$( "#nav" ).load( "header.html" );
 
+  }
+
+  function highlightedEvents(){   
+    $('#eventloader').click(function(){
+        alert('working');
+      $.ajax({
+        type: "GET",
+        url: "he.html",
+        data: { },
+        async: true,
+        success: function(data){
+            alert('shitman');
+            $('#main').html(data);
+        }
+            });
+       });
+    }
+
+$(document).ready(function(){        
 function header(){   
   $.ajax({
-    //dataType: "json",
     type: "GET",
     url: "header.html",
     data: { },
@@ -39,6 +85,7 @@ function header(){
     }
         });
 }
+
 
 function highlightedartist(){ 
 
@@ -51,17 +98,7 @@ $('#artistloader').click(function(){
     async: true,
     success: function(data){
         $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
-    
-        // drop down forms
-    $( '#cd-dropdown' ).dropdown({
-       stack : false
-       });
-       $( '#type' ).dropdown({
-       stack : false
-       });
-       $( '#sort' ).dropdown({
-       stack : false
-       });
+        dropdowns();
     }
         });
 /* 
@@ -99,28 +136,11 @@ Loads Web Services
           output += '<div class="view-list"><ul class="view view-right"><li>'+artiststartdate+'</li><li>'+artistenddate+'</li><li>'+artistevents+'</li><li>'+artistsponsor+'</li></ul></div></div>';
 
       }
-        
     // add output to list
-    $('#accordion').html(output);
-    
-    // Button Icons
-    var icons = {
-    header: "glyphicon content-icons glyphicon-chevron-down pull-right",
-    activeHeader: "glyphicon content-icons glyphicon-chevron-up pull-right "
-    };
-    
-    // Collapse options
-    $( "#accordion" ).accordion({
-    header: "h3", 
-    collapsible: true, 
-    active: false, 
-    heightStyle: "content",
-    icons: icons
-    });
-    
-    // Set icons on each menu
-    var gridIcons2 = $('#accordion').find('.gridicons').append('<span class="glyphicon content-icons glyphicon-pencil pull-right"></span>');
-    var gridIcons1 = $('#accordion').find('.gridicons').append('<span class="delete glyphicon content-icons glyphicon-remove  pull-right"></span>');
+    $('#accordion').html(output);    
+
+    accordion();
+    gridiconset();
 
    //remove accordion 
    $('.delete').click(function() {
@@ -146,9 +166,7 @@ $('#showcaseloader').click(function(){
     success: function(data){
         $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
      // drop down forms
-        $( '#cd-dropdown' ).dropdown({
-           stack : false
-           });
+      dropdowns();
     }
         });
 /* 
@@ -237,11 +255,7 @@ Add new Content Types to Sort
     success: function(data){
         
         $('#main').html(data);
-        
-    // drop down forms
-    $( '#cd-dropdown' ).dropdown({
-       stack : false
-       });
+        dropdowns();
     }
         });
 }
@@ -328,9 +342,13 @@ Add new Content Types to Sort
 
 /* 
 All of the functions called
- */    
+ */
+ // drop down forms
+dropdowns();
 header();
+activeNav();
 showcasestream();
 highlightedartist();
+highlightedEvents();
 showcase();
 });
