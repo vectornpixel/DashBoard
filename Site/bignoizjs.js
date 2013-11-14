@@ -34,12 +34,12 @@ function header(){
 
 }
 
-function contentArea(){   
+function highlightedArtist(){   
 $('.eventloader').click(function(){
   $.ajax({
     //dataType: "json",
     type: "GET",
-    url: "highlightedartist.html",
+    url: "ha.html",
     data: { },
     async: true,
     success: function(data){
@@ -166,6 +166,6 @@ All of my functions called
  */    
 header();
 showcasestream();
-contentArea();
+highlightedArtist();
 showcase();
 });

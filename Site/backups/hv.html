@@ -22,14 +22,6 @@
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
-    
-      <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/jquery-ui-1.10.3.custom.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/modernizr.custom.63321.js"></script>
-    <script src="assets/js/jquery.sortable.js"></script>
-    <script src="assets/js/jquery.dropdown.js"></script>
-     <script src="bignoizjs.js"></script>
   </head>
 
   <body>
@@ -40,7 +32,7 @@
           <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+           <ul class="nav navbar-nav">
               <li class="active">
                   <a href="ha.html">
                       <div class="nav-icon"><i class="ss-icon">notebook</i></div>
@@ -94,7 +86,7 @@
     <div class="container">
     <form class="navbar-form navbar-right">
 
-        <div class="form-group input-prepend search">
+        <div class="form-group input-prepend">
             <button type="submit" class="btn glyphicon glyphicon-search"></button>
             <input type="text" placeholder="search dashboard" class="form-control">
         </div>
@@ -105,8 +97,8 @@
     
     <div class="jumbotron">
       <div class="container">
-      <div class="dropdown">
-            <a data-toggle="dropdown" href="#"> <h1>Highlighted Artist</h1><span class="glyphicon glyphicon-chevron-down"></span></a>
+          <div class="dropdown">
+            <a data-toggle="dropdown" href="#"> <h1>Highlighted Venues</h1><span class="glyphicon glyphicon-chevron-down"></span></a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
              <li> <a href="#">Contests</a></li>
              <li><a href="ha.html">Highlighted Artist</a></li>
@@ -120,6 +112,8 @@
              
             </ul>
           </div>
+
+      
       </div>
     </div>
 
@@ -179,7 +173,89 @@
           <div class="row">
           <div id="accordion">
 
-           </div>
+              
+              <h3>
+                   <div class="col-lg-3">
+                  <span class="title">Fox Theater</span>
+                  <span>
+                  <p class="subs">Detroit, MI</p>
+                  </span>
+                   </div>
+                   <div class="col-lg-2">
+                 <span class="shows subs">
+                 <p>20 shows</p>
+                </span>
+                </div>
+                  <span class="gridicons"></span>
+              </h3>
+              
+              
+            <div>
+
+            <div class="col-lg-3">
+              <img class="img-thumbnail" src="images/placeholder.jpg">
+            </div>
+          <div class="col-lg-4">
+              <ul class="view">
+                  <li>Date</li>
+                  <li>Venue</li>
+                  <li>Location</li>
+              </ul>
+          </div>
+          
+          <div class="col-lg-4">
+              <ul class="view view-right">
+                  <li>12/10/13</li>
+                  <li>Fox Theater</li>
+                  <li>Detroit, MI</li>
+              </ul>
+          </div>
+   
+            </div>
+              
+               <h3>
+                 
+                  <div class="col-lg-3">
+                  <span class="title">State Theater</span>
+                   <span>
+                  <p class="subs">Detroit, MI</p>
+                  </span>
+                   </div>
+                   <div class="col-lg-2">
+                 <span class="shows subs">
+                 <p>30 Shows</p>
+                </span>
+                </div>
+                   
+                  <span class="gridicons"></span>
+              </h3>
+              
+              
+            <div>
+
+            <div class="col-lg-3">
+              <img class="img-thumbnail" src="images/placeholder.jpg">
+            </div>
+          <div class="col-lg-4">
+              <ul class="view">
+                  <li>Date</li>
+                  <li>Venue</li>
+                  <li>Location</li>
+              </ul>
+          </div>
+          
+          <div class="col-lg-4">
+              <ul class="view view-right">
+                  <li>12/10/13</li>
+                  <li>Fox Theater</li>
+                  <li>Detroit, MI</li>
+              </ul>
+          </div>
+   
+            </div>
+  
+          
+            </div>
           
           </div>
       </div>
@@ -199,7 +275,12 @@
     <!-- Placed at the end of the document so the pages load faster -->
     
     
-  
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-ui-1.10.3.custom.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.custom.63321.js"></script>
+    <script src="assets/js/jquery.sortable.js"></script>
+    <script src="assets/js/jquery.dropdown.js"></script>
     
     <script>
           // Sortable Showcase Javascript
@@ -216,52 +297,7 @@
        stack : false
        });
 
- 
-
-
-
-/* 
-Loads Web Services
- */
- 
-  function highlightedartist() {
-  
-  // alert('yooo');
-   var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/HighlightedArtists";
-
-   $.ajax({ 
-    type: "GET",
-    dataType: "jsonp",
-    url: urlcall,
-    contentType: 'application/json',
-    success: function (data, status) {
-   // alert('boiii');
-    var res = eval(data);
-    var output = '';
-    
-    for(var i=0; i< res.length; i++)
-      {
-          var artistname = res[i].name;
-          var artistimage = res[i].imageURL;
-          var artiststartdate = res[i].startdate;
-          var artistenddate = res[i].enddate;
-          var artistevents = res[i].eventCount;
-          var artisttag = res[i].tag;
-          var artistsponsor = res[i].sponsorName;
-          
-          // left column
-          output += '<h3><div class="col-lg-4"><span class="title">'+artistname+'</span></div><span class="gridicons"></span></h3>';
-          output += '<div><div class="col-lg-3"><img class="img-thumbnail" src='+artistimage+'><span><p class="subs">'+artisttag+'</p></span></div>';
-          output += '<div class="view-list"><ul class="view"><li>Start Date</li><li>End Date</li><li>Events</li><li>Sponsor</li></ul></div>';
-         
-          // right column
-          output += '<div class="view-list"><ul class="view view-right"><li>'+artiststartdate+'</li><li>'+artistenddate+'</li><li>'+artistevents+'</li><li>'+artistsponsor+'</li></ul></div></div>';
-
-      }
-        
-    // add output to list
-    $('#accordion').html(output);
-      // Button Icons
+   // Button Icons
     var icons = {
     header: "glyphicon content-icons glyphicon-chevron-down pull-right",
     activeHeader: "glyphicon content-icons glyphicon-chevron-up pull-right "
@@ -288,12 +324,6 @@ Loads Web Services
 });
 
 
-           }
-           
-        });
-        
-    }
-highlightedartist();
    
  });
    

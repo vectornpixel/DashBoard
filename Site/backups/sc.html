@@ -9,10 +9,9 @@
 
     <title>Big Noiz DashBoard</title>
 
-    <!-- Bootstrap core CSS -->
+
     <link href="assets/css/bootstrap.css" rel="stylesheet">
-     <link href="assets/fonts/ss-standard.css" rel="stylesheet" />
-    <!-- Custom styles for this template -->
+    <link href="assets/fonts/ss-standard.css" rel="stylesheet" />
     <link href="assets/css/styles.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -20,8 +19,14 @@
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
-    <script src="assets/js/modernizr.custom.63321.js"></script>
+
+
     <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.custom.63321.js"></script>
+    <script src="assets/js/jquery.sortable.js"></script>
+    <script src="assets/js/jquery.dropdown.js"></script>
+    <script src="bignoizjs.js"></script>
 
   </head>
 
@@ -35,13 +40,13 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
               <li class="">
-                  <a href="#">
+                  <a href="ha.html">
                       <div class="nav-icon"><i class="ss-icon">notebook</i></div>
                       <p>Content</p>
                   </a>
               </li>
            <li class="active">
-                  <a href="#">
+                  <a href="sc.html">
                       <div class="nav-icon"><i class="ss-icon">notebook</i></div>
                       <p>Showcase</p>
                   </a>
@@ -191,110 +196,28 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<!-- delete confirm -->
+   <div class="modal fade" id="removecontent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        
+      </div>
+      <div class="modal-body">
+       <h4 class="modal-title">Are You Sure you want to remove?</h4>
+      </div>
+        
+      <div class="modal-footer">
+        <button type="button" class="yes btn btn-default">Yes</button>
+        <button type="button" class="btn btn-primary">No</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
     </div> <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.sortable.js"></script>
-    <script src="assets/js/jquery.dropdown.js"></script>
-    
-    <script type="text/javascript" >
 
-    // Sortable Showcase Javascript
-    
-   $(document).ready(function(){
-     // drop down forms
-    $( '#cd-dropdown' ).dropdown({
-    stack : false
-    });
-    $( '#type' ).dropdown({
-    stack : false
-    });
-    $( '#sort' ).dropdown({
-    stack : false
-    });
-        
-
-
-  // Web service call
-  var baseURL = "http://54.227.240.28:8080/BigNoizAdminGen/ShowcaseMappingService?callback=jquery123";
-
-
-        function showcase() {
-        //alert('callling');
-        var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/ShowcaseMappingService";
-        
-       $.ajax({ 
-            type: "GET",
-            dataType: "jsonp",
-            url: urlcall,
-            contentType: 'application/json',
-               success: function (data, status) {
-                 var res = eval(data);
-                 var output = '';
-                 //alert('here');
-                 for(var i=0; i< res.length; i++)
-
-	        	{
-                            var content = res[i].contenttype;
-                            var position = res[i].position;
-                            var description = res[i].description;
-                            //res[i].contenttype[2] = "Highlighted Artist";
-                            //var contenttype = new Array("Contest","Highlighted Event","Highlighted Artist","Highlighted Venue","Generic URL","RSS","Featured 5");
-	        	    output += '<li><span class="cont-title pull-left">'+description+'</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>';
-	        	
-	        	}
-                 
-                // add output to list
-                $('ol.sortable').html(output);
-                 //sortable 
-                $('ol.sortable').sortable({axis: 'y'});
-                $('.handles').sortable({
-                        handle: 'span'
-                });
-                $('.connected').sortable({
-                        connectWith: '.connected'
-                });
-                $('.exclude').sortable({
-                        items: ':not(.disabled)'
-                });
-                 //remove sort buttons
-                $('.delete').click(function(){
-                    $(this).parent().remove("ol.sortable li");
-                });
-               }
-        });
-       }
-
-    showcase();
-
-   // add new content type
-   $('.add').click(function(){   
-   // clones the content buttons
-   var liitem = $(this).last().clone();
-   $('ol.sortable').append(liitem);
-   // refresh sort list
-   $('ol.sortable').sortable('refresh');
-   // after buttons are cloned and added, it removes the plus icon and add the edit / remove icons
-   $('.sortable').find('li span').each(function(){
-    if ($(this).hasClass('glyphicon glyphicon-plus showcase-icons')){
-        $(this).removeClass("glyphicon glyphicon-plus showcase-icons").addClass('delete glyphicon glyphicon-remove showcase-icons').after('<span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span>');  
-         }
-       });
-    });
-    
-   
-   
- });
-                
-               
-  
-  
-
-    </script>
   </body>
 </html>

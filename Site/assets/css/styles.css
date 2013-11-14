@@ -15,9 +15,12 @@
 root { 
     display: block;
 }
+
+/* Text Styles */
 h1,h2,h3,h4,h5{
     color: #3668a1 !important;
 }
+
 .subtitle{
     color: #898989 !important;
     font-size: 18px;
@@ -34,8 +37,20 @@ h1,h2,h3,h4,h5{
     float:left;
     padding:25px 5px 15px 35px;
     border-left: 1px solid #898989;
-
 }
+.all-btns, .addContent, .sortable.grid li, h5.page-alert, .view li{
+  font-size: 18px;  
+}
+
+/* Background Colors */
+.bg-lightgray{
+    background-color: #ededed;
+}
+.bg-darkgrey, .topbar, .addContent li, .btn-showcase, .sortable.grid li{
+    background-color: #e2e2e2;
+}
+
+/* Navigation */
 .nav-icon{
     text-align: center;
     font-size:24px;
@@ -57,7 +72,8 @@ h1,h2,h3,h4,h5{
 }
 .navbar-inverse .navbar-nav > .active > a, 
 .navbar-inverse .navbar-nav > .active > a:hover, 
-.navbar-inverse .navbar-nav > .active > a:focus {
+.navbar-inverse .navbar-nav > .active > a:focus,
+ body#ha a#hanav{
     background-color: #2b5381;
     border-bottom: #0bd396 4px solid;
 }
@@ -76,8 +92,9 @@ padding-bottom:1px !important;
     padding-right:35px;
   
 }
+
+/* Header & Search Bar */
 .topbar {
-  background-color: #e2e2e2;
   padding:10px;
   height:70px;
 }
@@ -89,12 +106,17 @@ padding-bottom:1px !important;
     font-weight: 200;
     line-height: 2.14286;
     margin-bottom: 30px;
-    padding: 10px;
+    padding: 0px;
 }
 .jumbotron h1, .titles{
     font-weight: 100;
     float: left;
 }
+.jumbotron h1{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
 .jumbotron span{
     padding: 40px;
 }
@@ -105,7 +127,6 @@ padding-bottom:1px !important;
     float:left;
 }
 .addContent li{
-     background-color: #e2e2e2;
     float: left;
     width: 317px;
     list-style: none;
@@ -120,8 +141,7 @@ padding-bottom:1px !important;
 .all-btns {
 	margin-top: 10px;
 	margin-right: 10px;
-	padding: 18px 36px;
-	font-size: 18px;
+	padding: 18px 66px;
 	line-height: 100%;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.4);
 	color: #fff;
@@ -186,7 +206,6 @@ padding-bottom:1px !important;
 }
 
 .btn-showcase {
-    background-color: #e2e2e2;
     border-color: #CCCCCC;
     color: #fff;
     
@@ -242,7 +261,6 @@ ol.sortable {
     border-radius: 0px;
     cursor: pointer;
     display: inline-block;
-    font-size: 18px;
     font-weight: normal;
     line-height: 1.42857;
     margin-bottom: 0;
@@ -255,14 +273,13 @@ ol.sortable {
 
 .sortable.grid li{
         list-style-type:decimal !important;
-        background-color: #e2e2e2;
         border: 1px dashed #CCCCCC;
         float: left;
         width: 286px;
         height: 60px;
         margin:20px;
         cursor: pointer;
-        font-size: 18px;
+
         font-weight: normal;
 
 }
@@ -286,13 +303,7 @@ li.sortable-placeholder {
 }
 
 
-/* Background Colors */
-.bg-lightgray{
-    background-color: #ededed;
-}
-.bg-darkgrey{
-    background-color: #e2e2e2;
-}
+
 
 
 /* collapse menu */
@@ -339,7 +350,6 @@ span.title{
 
 .view li{
     list-style: none;
-    font-size: 18px;
     background-color: #c4c4c4;
     padding:20px;
     margin: 1px;
@@ -368,7 +378,6 @@ ul.tab-info li{
 }
 h5.page-alert{
     color:#ff4c40;
-    font-size:18px;
     font-weight: 200;
   
 }
