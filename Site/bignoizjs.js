@@ -4,6 +4,13 @@ Author     : Asim Craft
  */
 
 $(document).ready(function(){
+ // Navigation Active Script
+    $('.navbar-inverse .navbar-nav li').click(function(){
+    $('.navbar-inverse .navbar-nav li').each(function(){
+        $(this).removeClass('active'); 
+    });
+        $(this).addClass('active');
+    });
  // drop down forms
     $( '#cd-dropdown' ).dropdown({
     stack : false

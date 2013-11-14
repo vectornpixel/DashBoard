@@ -31,7 +31,6 @@ h1,h2,h3,h4,h5{
     float:left;
     padding:25px 35px 15px 5px;
     border-right: 1px solid #898989;
-
 }
 .shows{
     float:left;
@@ -76,6 +75,7 @@ h1,h2,h3,h4,h5{
     background-color: #2b5381;
     border-bottom: #0bd396 4px solid;
 }
+
 .navbar-inverse .navbar-nav a:hover {
     background-color: #2b5381 !important;
     border-bottom: #0bd396 4px solid;
@@ -215,10 +215,42 @@ padding-bottom:1px !important;
     padding: 15px 12px;
     text-align: left;
 }
-
-.form-control .search{
-    
+.btn-search, .btn-contentsearch{
+    margin: 0px !important;
+    height: 44px;
+    border-radius: 0px !important;
+    padding: 15px !important;
+    background-color: #bcbcbc;
+    color: #fff !important;
+    position: relative;
+    top:0px;
+    left:4px;
 }
+.btn-contentsearch{
+    height: 58px !important;
+}
+.contentsearch{
+        height: 58px !important;
+        width: 250px !important;
+	color: #fff;
+
+}
+/*.form-control{
+    background-color: #c6c6c6;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #fff !important;
+    display: block;
+    font-size: 14px;
+    height: 44px;
+    width:250px;
+    line-height: 1.42857;
+    padding: 6px 25px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    vertical-align: middle;
+}*/
+
 
 /* Showcase Sort */
 ol.sortable {
@@ -342,9 +374,6 @@ span.title{
 }
 .panel-heading {
     padding: 10px 15px;
-}
-#accordion h3{
- 
 }
 
 .view li{
