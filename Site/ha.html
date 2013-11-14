@@ -1,7 +1,4 @@
-
-    
-    
-    <div class="jumbotron">
+<div class="jumbotron">
       <div class="container">
       <div class="dropdown">
             <a data-toggle="dropdown" href="#"> <h1>Highlighted Artist</h1><span class="glyphicon glyphicon-chevron-down"></span></a>
@@ -86,117 +83,8 @@
 
       <hr>
 
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
+
     </div> <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    
-    
-  
-    
-    <script>
-          // Sortable Showcase Javascript
-    
-   $(document).ready(function(){
-    // drop down forms
-    $( '#cd-dropdown' ).dropdown({
-       stack : false
-       });
-       $( '#type' ).dropdown({
-       stack : false
-       });
-       $( '#sort' ).dropdown({
-       stack : false
-       });
 
- 
-
-
-
-/* 
-Loads Web Services
- */
- 
-  function highlightedartist() {
-  
-  // alert('yooo');
-   var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/HighlightedArtists";
-
-   $.ajax({ 
-    type: "GET",
-    dataType: "jsonp",
-    url: urlcall,
-    contentType: 'application/json',
-    success: function (data, status) {
-   // alert('boiii');
-    var res = eval(data);
-    var output = '';
-    
-    for(var i=0; i< res.length; i++)
-      {
-          var artistname = res[i].name;
-          var artistimage = res[i].imageURL;
-          var artiststartdate = res[i].startdate;
-          var artistenddate = res[i].enddate;
-          var artistevents = res[i].eventCount;
-          var artisttag = res[i].tag;
-          var artistsponsor = res[i].sponsorName;
-          
-          // left column
-          output += '<h3><div class="col-lg-4"><span class="title">'+artistname+'</span></div><span class="gridicons"></span></h3>';
-          output += '<div><div class="col-lg-3"><img class="img-thumbnail" src='+artistimage+'><span><p class="subs">'+artisttag+'</p></span></div>';
-          output += '<div class="view-list"><ul class="view"><li>Start Date</li><li>End Date</li><li>Events</li><li>Sponsor</li></ul></div>';
-         
-          // right column
-          output += '<div class="view-list"><ul class="view view-right"><li>'+artiststartdate+'</li><li>'+artistenddate+'</li><li>'+artistevents+'</li><li>'+artistsponsor+'</li></ul></div></div>';
-
-      }
-        
-    // add output to list
-    $('#accordion').html(output);
-      // Button Icons
-    var icons = {
-    header: "glyphicon content-icons glyphicon-chevron-down pull-right",
-    activeHeader: "glyphicon content-icons glyphicon-chevron-up pull-right "
-    };
-    
-    // Collapse options
-    $( "#accordion" ).accordion({
-    header: "h3", 
-    collapsible: true, 
-    active: false, 
-    heightStyle: "content",
-    icons: icons
-    });
-    
-    // Set icons on each menu
-    var gridIcons2 = $('#accordion').find('.gridicons').append('<span class="glyphicon content-icons glyphicon-pencil pull-right"></span>');
-    var gridIcons1 = $('#accordion').find('.gridicons').append('<span class="delete glyphicon content-icons glyphicon-remove  pull-right"></span>');
-
-   //remove sort buttons
-   $('.delete').click(function() {
-    var parent = $(this).closest('h3');
-    var head = parent.next('div');
-    parent.add(head).fadeOut('slow',function(){$(this).remove();});
-});
-
-
-           }
-           
-        });
-        
-    }
-highlightedartist();
-   
- });
-   
-
-    </script>
-
-  </body>
-</html>
