@@ -2,6 +2,7 @@
 Big Noiz Ajax Calls & JS
 Author     : Asim Craft
  */
+
 /* Global functions */
 
 // Set icons on each menu
@@ -72,26 +73,60 @@ Author     : Asim Craft
             });
        });
     }
+    
+  function sortContent(){
+    //Declare sortable 
+    $('ol.sortable').sortable({axis: 'y'});
+    $('.handles').sortable({
+            handle: 'span'
+    });
+    $('.connected').sortable({
+            connectWith: '.connected'
+    });
+    $('.exclude').sortable({
+            items: ':not(.disabled)'
+    });
+
+     //remove sort buttons
+     $('.delete').click(function(){
+        $(this).parent().remove("ol.sortable li");
+    });
+        
+   // add new content type
+   $('.add').click(function(){  
+   // clones the content buttons
+   var liitem = $(this).last().clone();
+   $('ol.sortable').append(liitem);
+
+   // refresh sort list
+   $('ol.sortable').sortable('refresh');
+   // after buttons are cloned and added, it removes the plus icon and add the edit / remove icons
+   $('.sortable').find('li span').each(function(){
+    if ($(this).hasClass('glyphicon glyphicon-plus showcase-icons')){
+        $(this).removeClass("glyphicon glyphicon-plus showcase-icons").addClass('delete glyphicon glyphicon-remove showcase-icons').after('<span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span>');  
+         }
+       });
+    });
+    
+    }
 
 $(document).ready(function(){        
-function header(){   
-  $.ajax({
-    type: "GET",
-    url: "header.html",
-    data: { },
-    async: true,
-    success: function(data){
-        $('#nav').html(data);
+  function header(){   
+      $.ajax({
+        type: "GET",
+        url: "header.html",
+        data: { },
+        async: true,
+        success: function(data){
+            $('#nav').html(data);
+        }
+            });
     }
-        });
-}
 
 
 function highlightedartist(){ 
-
 $('#artistloader').click(function(){
   $.ajax({
-    //dataType: "json",
     type: "GET",
     url: "ha.html",
     data: { },
@@ -104,7 +139,6 @@ $('#artistloader').click(function(){
 /* 
 Loads Web Services
  */
-  // alert('yooo');
    var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/HighlightedArtists";
 
    $.ajax({ 
@@ -113,7 +147,6 @@ Loads Web Services
     url: urlcall,
     contentType: 'application/json',
     success: function (data, status) {
-   // alert('boiii');
     var res = eval(data);
     var output = '';
     
@@ -136,18 +169,11 @@ Loads Web Services
           output += '<div class="view-list"><ul class="view view-right"><li>'+artiststartdate+'</li><li>'+artistenddate+'</li><li>'+artistevents+'</li><li>'+artistsponsor+'</li></ul></div></div>';
 
       }
-    // add output to list
+
     $('#accordion').html(output);    
-
     accordion();
-    gridiconset();
-
-   //remove accordion 
-   $('.delete').click(function() {
-    var parent = $(this).closest('h3');
-    var head = parent.next('div');
-    parent.add(head).fadeOut('slow',function(){$(this).remove();});
-});
+    gridiconset(); 
+    accordionRemove();
 
            }
            
@@ -156,7 +182,7 @@ Loads Web Services
 }
 
 function showcasestream(){   
-
+// Showcase web service call when clicked
 $('#showcaseloader').click(function(){
   $.ajax({
     type: "GET",
@@ -165,14 +191,10 @@ $('#showcaseloader').click(function(){
     async: true,
     success: function(data){
         $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
-     // drop down forms
       dropdowns();
     }
         });
-/* 
-Loads Web Services
- */
-   //alert('callling');
+        
    var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/ShowcaseMappingService";
 
    $.ajax({ 
@@ -189,60 +211,12 @@ Loads Web Services
           var content = res[i].contenttype;
           var position = res[i].position;
           var description = res[i].description;
-          //res[i].contenttype[2] = "Highlighted Artist";
-          //var contenttype = new Array("Contest","Highlighted Event","Highlighted Artist","Highlighted Venue","Generic URL","RSS","Featured 5");
           output += '<li><span class="cont-title pull-left">'+description+'</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>';
       }
         
-/* 
-Sort and Remove functions
- */
-
-    // add output to list
     $('ol.sortable').html(output);
-
-     //sortable 
-    $('ol.sortable').sortable({axis: 'y'});
-    $('.handles').sortable({
-            handle: 'span'
-    });
-    $('.connected').sortable({
-            connectWith: '.connected'
-    });
-    $('.exclude').sortable({
-            items: ':not(.disabled)'
-    });
-
-     //remove sort buttons
-
-       $('.delete').click(function(){
-           $(this).parent().remove("ol.sortable li");
-    });
-        
-/* 
-Add new Content Types to Sort
- */
- 
-   // add new content type
-   $('.add').click(function(){  
-   // clones the content buttons
-   var liitem = $(this).last().clone();
-   $('ol.sortable').append(liitem);
-
-   // refresh sort list
-   $('ol.sortable').sortable('refresh');
-   
-   // after buttons are cloned and added, it removes the plus icon and add the edit / remove icons
-   $('.sortable').find('li span').each(function(){
-    if ($(this).hasClass('glyphicon glyphicon-plus showcase-icons')){
-        $(this).removeClass("glyphicon glyphicon-plus showcase-icons").addClass('delete glyphicon glyphicon-remove showcase-icons').after('<span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span>');  
-         }
-       });
-    });
-    
- 
+    sortContent();
            }
-           
         });
    });
    
@@ -260,13 +234,9 @@ Add new Content Types to Sort
         });
 }
 
-/* 
-Loads Web Services
- */
- 
+// Showcase webservice
   function showcase() {
   
-   //alert('callling');
    var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/ShowcaseMappingService";
 
    $.ajax({ 
@@ -277,73 +247,22 @@ Loads Web Services
     success: function (data, status) {
     var res = eval(data);
     var output = '';
-    //alert('here');
     for(var i=0; i< res.length; i++)
       {
           var content = res[i].contenttype;
           var position = res[i].position;
           var description = res[i].description;
-          //res[i].contenttype[2] = "Highlighted Artist";
-          //var contenttype = new Array("Contest","Highlighted Event","Highlighted Artist","Highlighted Venue","Generic URL","RSS","Featured 5");
           output += '<li><span class="cont-title pull-left">'+description+'</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>';
       }
-        
-/* 
-Sort and Remove functions
- */
-
-    // add output to list
     $('ol.sortable').html(output);
-
-     //sortable 
-    $('ol.sortable').sortable({axis: 'y'});
-    $('.handles').sortable({
-            handle: 'span'
-    });
-    $('.connected').sortable({
-            connectWith: '.connected'
-    });
-    $('.exclude').sortable({
-            items: ':not(.disabled)'
-    });
-
-     //remove sort buttons
-
-       $('.delete').click(function(){
-           $(this).parent().remove("ol.sortable li");
-    });
-    
-        
-/* 
-Add new Content Types to Sort
- */
- 
-   // add new content type
-   $('.add').click(function(){  
-   // clones the content buttons
-   var liitem = $(this).last().clone();
-   $('ol.sortable').append(liitem);
-
-   // refresh sort list
-   $('ol.sortable').sortable('refresh');
-   
-   // after buttons are cloned and added, it removes the plus icon and add the edit / remove icons
-   $('.sortable').find('li span').each(function(){
-    if ($(this).hasClass('glyphicon glyphicon-plus showcase-icons')){
-        $(this).removeClass("glyphicon glyphicon-plus showcase-icons").addClass('delete glyphicon glyphicon-remove showcase-icons').after('<span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span>');  
-         }
-       });
-    });
+    sortContent();
            }
-           
         });
-        
     }
 
 /* 
 All of the functions called
  */
- // drop down forms
 dropdowns();
 header();
 activeNav();

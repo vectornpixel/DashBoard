@@ -3235,11 +3235,7 @@ input[type="button"].btn-block {
   font-size: 14px;
   list-style: none;
   background-color: #ffffff;
-  border: 1px solid #cccccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  border-radius: 0px;
   background-clip: padding-box;
 }
 
@@ -3256,11 +3252,11 @@ input[type="button"].btn-block {
 }
 
 .dropdown-menu > li > a {
-    background-color: #fff;
-    color: inherit;
-    font-size: 31px;
-    font-weight: 200;
-    padding: 10px;
+  background-color: #fff;
+  color: inherit;
+  font-size: 24px;
+  font-weight: 200;
+  padding: 10px;
   display: block;
   padding: 3px 20px;
   clear: both;
