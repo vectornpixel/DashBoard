@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+    <title>Big Noiz DashBoard</title>
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/fonts/ss-standard.css" rel="stylesheet" />
+    <link href="assets/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/smart_wizard.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-ui-1.10.3.custom.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.custom.63321.js"></script>
+    <script src="assets/js/jquery.sortable.js"></script>
+    <script src="assets/js/jquery.dropdown.js"></script>
+    <script src="assets/js/jquery.smartWizard-2.0.js"></script>
+    <script src="bignoizjs.js"></script>
+     
+     <script type="text/javascript">
+    $(document).ready(function(){
+    	// Smart Wizard 	
+  		$('#wizard').smartWizard();
+      
+      function onFinishCallback(){
+        $('#wizard').smartWizard('showMessage','Finish Clicked');
+      }     
+     });
+     function setupLabel() {
+        if ($('.label_radio input').length) {
+            $('.label_radio').each(function(){ 
+                $(this).removeClass('r_on');
+            });
+            $('.label_radio input:checked').each(function(){ 
+                $(this).parent('label').addClass('r_on');
+            });
+        };
+    };
+    $(document).ready(function(){
+        $('body').addClass('has-js');
+        $('.label_check, .label_radio').click(function(){
+            setupLabel();
+        });
+        setupLabel(); 
+    });
+    </script>
+  </head>
+
+  <body>
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="topbar">
+    <div class="container">
+    <form class="navbar-form navbar-right">
+
+        <div class="form-group input-prepend search">
+            
+        </div>
+    </form>
+    </div>
+</div>
+    <br>
+    <br>
+    
+
+    <div class="container">   
+        <form id="contentcreation">
+<table align="center" border="0" cellpadding="0" cellspacing="0">
+<tr><td> 
+<!-- Smart Wizard -->
+  		<div id="wizard" class="swMain">
+  	   <ul>
+  		<li>
+                <a href="#step-1">
+                <div class="circle"></div>
+                <span class="stepDesc">Content Type</span>
+                </a>
+                </li>
+  		<li>
+                <a href="#step-2">
+                <div class="circle"></div>
+                <span class="stepDesc">Setup</span>
+                </a>
+                </li>
+  		<li>
+                <a href="#step-3">
+                <div class="circle"></div>
+                <span class="stepDesc">Design</span>
+                </a>
+                </li>
+  		<li>
+                <a href="#step-4">
+                <div class="circle"></div>
+                <span class="stepDesc">Details</span>
+                </a>
+                </li>
+                <li>
+                <a href="#step-5">
+                <div class="circle"></div>
+                <span class="stepDesc">Summary</span>
+                </a>
+                </li>
+                
+  	   </ul>
+  	
+                    
+            <div id="step-1" >	
+            <fieldset>
+                <h2 class="StepTitle">Select Content Type</h2>
+                <hr>
+                <div class="radiobg"><label class="label_radio" for="radio-01"><input name="sample-radio" id="radio-01" value="1" type="radio" checked /> Contests</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-02"><input name="sample-radio" id="radio-02" value="1" type="radio" /> Highlighted Event</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-03"><input name="sample-radio" id="radio-03" value="1" type="radio" /> Highlighted Artist</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-04"><input name="sample-radio" id="radio-04" value="1" type="radio" /> Highlighted Venue</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-05"><input name="sample-radio" id="radio-05" value="1" type="radio" /> RSS</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-06"><input name="sample-radio" id="radio-06" value="1" type="radio" /> Generic URL</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-07"><input name="sample-radio" id="radio-07" value="1" type="radio" /> Featured 5</label></div>
+	    </fieldset>
+            </div>
+  	    <div id="step-2">
+            <h2 class="StepTitle">Step 2 Content</h2>	
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p> 
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>          
+           </div>                      
+  	   <div id="step-3">
+            <h2 class="StepTitle">Step 3 Content</h2>	
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>               				          
+           </div>
+          <div id="step-4">
+            <h2 class="StepTitle">Step 4 Content</h2>	
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>                			
+          </div>
+           <div id="step-5">
+            <h2 class="StepTitle">Step 5 Content</h2>	
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>                			
+          </div>
+  		</div>
+<!-- End SmartWizard Content -->  		
+ 		
+</td></tr>
+</table>
+        </form>
+    </div>    	
+
+
+
+
+  </body>
+</html>
