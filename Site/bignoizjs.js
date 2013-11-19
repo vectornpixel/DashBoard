@@ -21,6 +21,17 @@ Author     : Asim Craft
        $( '#sort' ).dropdown({
        stack : false
        });
+        $( '#interval' ).dropdown({
+       stack : false
+       });
+        $( '#winners' ).dropdown({
+       stack : false
+       });
+        $( '#tickets' ).dropdown({
+       stack : false
+       });
+
+       
     } 
     
  function accordion(){
