@@ -1,19 +1,12 @@
 
 .cd-select {
 	position: relative;
-	width: 300px;
+	width: 200px;
 	display: block;
 }
 .cd-dropdown{
 	position: relative;
-	width: 300px;
 	display: block;
-}
-.form-select {
-	position: relative;
-	width: 300px;
-	display: block;
-
 }
 
 .cd-dropdown > span {

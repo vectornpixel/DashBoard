@@ -17,8 +17,8 @@
     <link href="assets/css/styles.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
+      <script src="assets/js/html5shiv.js"></script>
+      <script src="assets/js/respond.min.js"></script>
     <![endif]-->
     
     <script src="assets/js/jquery.js"></script>
@@ -28,6 +28,22 @@
     <script src="assets/js/jquery.sortable.js"></script>
     <script src="assets/js/jquery.dropdown.js"></script>
     <script src="bignoizjs.js"></script>
+        <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+    <script src="assets/js/vendor/jquery.ui.widget.js"></script>
+    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+    <script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>
+    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+    <script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+    <script src="assets/js/jquery.iframe-transport.js"></script>
+    <!-- The basic File Upload plugin -->
+    <script src="assets/js/jquery.fileupload.js"></script>
+    <!-- The File Upload processing plugin -->
+    <script src="assets/js/jquery.fileupload-process.js"></script>
+    <!-- The File Upload image preview & resize plugin -->
+    <script src="assets/js/jquery.fileupload-image.js"></script>
+    <!-- The File Upload validation plugin -->
+    <script src="assets/js/jquery.fileupload-validate.js"></script>
     <script src="assets/js/jquery.smartWizard-2.0.js"></script>
      
      <script type="text/javascript">
@@ -66,18 +82,15 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="topbar">
     <div class="container">
-    <form class="navbar-form navbar-right">
-
-        <div class="form-group input-prepend search">
-            
-        </div>
-    </form>
+        
+    <div class="navbar-right">
+    <a class="all-btns all-btns-darkgray" href="index.html">Cancel</a>
     </div>
-</div>
+    </div>
+   
+</div>    
     <br>
     <br>
-    
-
     <div class="container">   
         <form id="contentcreation">
 <table align="center" border="0" cellpadding="0" cellspacing="0">
@@ -136,55 +149,87 @@
   	    <div id="step-2">
                 
             <h2 class="StepTitle">Contest</h2>	
+            <div class="row">
                 <div class="navbar-form pull-left">
                     <div class="form-group input-prepend">
                         <button type="submit" class="btn-contentsearch btn glyphicon glyphicon-search"></button>
                         <input type="text" placeholder="search events" class="contentsearch form-control">
                     </div>
                 </div> 
-            <div class="row">
-          <div id="accordion"> 
-              <h3>
-                 <div class="col-lg-2">
-                 <span class="date subs">
-                 <p>12/3/13</p>
-                </span>
-                </div>
-                   <div class="col-lg-4">
-                  <span class="title">Kesha</span>
-                  <span>
-                  <p class="subs">Detroit, MI - Fox Theater</p>
-                  </span>
-                   </div>
-              </h3>
-
-              
-               <h3>
-                 <div class="col-lg-2">
-                 <span class="date subs">
-                 <p>12/3/13</p>
-                </span>
-                </div>
-                   
-                  <div class="col-lg-4">
-                  <span class="title">Eminem</span>
-                   <span>
-                  <p class="subs">Detroit, MI - Fox Theater</p>
-                  </span>
-                   </div>
-              </h3>
             </div>
+            <fieldset>
+            <div class="row">
+              <ul class="searcResults">
+                  <li>
+                      <div class="col-lg-2">
+                        <span class="date subs">
+                        <p>12/3/13</p>
+                       </span>
+                     </div>
+                     <div class="col-lg-4">
+                        <span class="title">Kesha</span>
+                        <span>
+                        <p class="subs">Detroit, MI - Fox Theater</p>
+                        </span>
+                     </div>
+                     <div class="pull-right">
+                        <input type="checkbox" name="kesha" value="idnumber">
+                     </div>
+                  </li>
+                  <li>
+                      <div class="col-lg-2">
+                        <span class="date subs">
+                        <p>12/3/13</p>
+                       </span>
+                     </div>
+                     <div class="col-lg-4">
+                        <span class="title">Kesha</span>
+                        <span>
+                        <p class="subs">Detroit, MI - Fox Theater</p>
+                        </span>
+                     </div>
+                     <div class="pull-right">
+                        <input type="checkbox" name="kesha" value="idnumber">
+                     </div>
+                  </li>
+                  <li>
+                      <div class="col-lg-2">
+                        <span class="date subs">
+                        <p>12/3/13</p>
+                       </span>
+                     </div>
+                     <div class="col-lg-4">
+                        <span class="title">Kesha</span>
+                        <span>
+                        <p class="subs">Detroit, MI - Fox Theater</p>
+                        </span>
+                     </div>
+                     <div class="pull-right">
+                        <input type="checkbox" name="kesha" value="idnumber">
+                     </div>
+                  </li>
+                  
+              </ul>
           
           </div>
-            
+            </fieldset>
             </div>  
                     
   	   <div id="step-3">
-               
+
                <fieldset>
                 <h2 class="StepTitle">Contest</h2>	
                 <div class="preview">
+                      <div id="files" class="files"></div>
                     <div class="previewBox">
+                      
+                        <div class="nav-icon previewPhoto">
+                            <span class="btn btn-default fileinput-button">
+                            <i class="ss-icon">camera</i>
+                            <span>edit photo</span>
+                            <input id="fileupload" type="file" name="files[]" multiple>
+                            </span>
+                        </div>
                         <ul class="previewDate">
                            <li><h3>02</h3></li>
                            <li><h3>DEC</h3></li>
@@ -198,8 +243,6 @@
 
                         </ul>
                         
-                        <div class="previewPhoto">
-                        </div>
                     </div>
                 </div>
                 
@@ -218,7 +261,7 @@
                     
                     <label>Select Sponsor</label>
                     <div class="col-lg-4">
-                    <select id="cd-dropdown" class="cd-select">
+                    <select id="sponsor" class="cd-select">
                             <option value="-1" selected>Pepsi</option>
                             <option value="1" selected>Coke</option>
                     </select>
@@ -249,8 +292,8 @@
                    <div class="row">
                     <label class="designLabel">Interval</label>
                     
-                    <div class="col-lg-2">
-                    <select id="interval" class="form-select">
+                    <div class="col-lg-4">
+                    <select id="interval" class="cd-select">
                             <option value="-1" selected>Pepsi</option>
                             <option value="1" selected>Coke</option>
                     </select>
@@ -258,7 +301,7 @@
                     </div>
                         <div class="row">
                     <label># Of Winners</label>
-                    <div class="col-lg-2">
+                    <div class="col-lg-4">
                     <select id="winners" class="form-select">
                             <option value="-1" selected>Pepsi</option>
                             <option value="1" selected>Coke</option>
@@ -267,7 +310,7 @@
                         </div>
                         <div class="row">
                     <label># Tickets per winner</label>
-                    <div class="col-lg-2">
+                    <div class="col-lg-4">
                     <select id="tickets" class="form-select">
                             <option value="-1" selected>Pepsi</option>
                             <option value="1" selected>Coke</option>
@@ -284,7 +327,7 @@
                         </div>
                         <div class="row">
                     <label>Location</label>
-                    <div class="col-lg-2">
+                    <div class="col-lg-4">
                     <select id="cd-dropdown" class="form-select">
                             <option value="-1" selected>Pepsi</option>
                             <option value="1" selected>Coke</option>
@@ -292,7 +335,7 @@
                    </div>
                         </div>
                 </div>
-                   </div>>
+                   </div>
                   </fieldset>
               
           </div>
@@ -326,9 +369,8 @@
 </table>
         </form>
     </div>    	
- <script src="contenttypes.js"></script>
-
-
+<script src="contenttypes.js"></script>
+<script src="assets/js/wizard.js"></script>
 
   </body>
 </html>

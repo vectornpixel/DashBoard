@@ -337,7 +337,7 @@
           errorSteps:[],    // Array Steps with errors
           labelNext:'NEXT',
           labelPrevious:'BACK',
-          labelFinish:'Finish',          
+          labelFinish:'FINISH',          
           onLeaveStep: null, // triggers when leaving a step
           onShowStep: null,  // triggers when showing a step
           onFinish: null  // triggers when Finish button is clicked

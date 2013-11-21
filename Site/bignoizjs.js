@@ -22,6 +22,11 @@ Author     : Asim Craft
        stack : false
        });
         $( '#interval' ).dropdown({
+           
+       stack : false
+       });
+        $( '#sponsor' ).dropdown({
+           
        stack : false
        });
         $( '#winners' ).dropdown({
@@ -59,7 +64,7 @@ Author     : Asim Craft
     });
    } 
  
-  function accordionRemove(){
+ function accordionRemove(){
        //remove sort buttons
    $('.delete').click(function() {
     var parent = $(this).closest('h3');
@@ -122,7 +127,7 @@ Author     : Asim Craft
     }
 
 $(document).ready(function(){        
-  function header(){   
+function header(){   
       $.ajax({
         type: "GET",
         url: "header.html",
@@ -191,6 +196,7 @@ Loads Web Services
         });
    });
 }
+
 
 function showcasestream(){   
 // Showcase web service call when clicked
