@@ -6,6 +6,7 @@ Author     : Asim Craft
 /* Global functions */
 
 // Set icons on each menu
+
  function gridiconset(){
          var gridIcons2 = $('#accordion').find('.gridicons').append('<span class="glyphicon content-icons glyphicon-pencil pull-right"></span>');
          var gridIcons1 = $('#accordion').find('.gridicons').append('<span class="delete glyphicon content-icons glyphicon-remove  pull-right"></span>');

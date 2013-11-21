@@ -243,21 +243,6 @@ padding-bottom:1px !important;
 	color: #fff;
 
 }
-/*.form-control{
-    background-color: #c6c6c6;
-    border: 1px solid #CCCCCC;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-    color: #fff !important;
-    display: block;
-    font-size: 14px;
-    height: 44px;
-    width:250px;
-    line-height: 1.42857;
-    padding: 6px 25px;
-    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    vertical-align: middle;
-}*/
 
 
 /* Showcase Sort */
@@ -336,19 +321,6 @@ li.sortable-placeholder {
 }
 .cont-title {
     padding: 20px 0px 15px 20px;
-}
-/* contest creation setup */
-.searcResults {
-
-}
-.searcResults li {
-    list-style: none;
-    background: #ececec;
-    border: 1px solid #e4e4e4;
-    color: #1C94C4;
-    font-weight: normal;
-    height:90px;
-    padding: 10px 15px;
 }
 
 /* collapse menu */
@@ -528,26 +500,28 @@ display: block;
 
 }
 
-/* Design Preview */
+/* contest creation setup */
+.searcResults {
+
+}
+.searcResults li {
+    list-style: none;
+    background: #ececec;
+    border: 1px solid #e4e4e4;
+    color: #1C94C4;
+    font-weight: normal;
+    height:90px;
+    padding: 10px 15px;
+}
+
+/* Content Type Design Preview */
 .preview{
     float:left;
 }
 
-.files img,
-.files canvas {
-   position: absolute;
-   z-index: -1;
-  }
-.files div{
-      position: absolute;
-      top:40px;
-
-  }
-  .files div button{
-      position: relative;
-      top:400px;
-      left:275px;
-  }
+.previewPhoto{
+    float:right;
+}
 .previewBox{
     width:350px;
     height:450px;
@@ -587,9 +561,6 @@ ul.previewInfo h2{
     margin-top: 5px;
 }
 
-.previewPhoto{
-    float:right;
-}
 ul.previewDate{
     color:#fff !important;
     background-color: #505050;
@@ -602,6 +573,8 @@ ul.previewDate li h3, ul.previewDate li p{
     margin-bottom: 0px;
     margin-top: 0px;
 }
+
+/* file upload */
 .fileinput-button {
   position: relative;
   overflow: hidden;
@@ -617,4 +590,18 @@ ul.previewDate li h3, ul.previewDate li p{
   direction: ltr;
   cursor: pointer;
 }
+.files img,
+.files canvas {
+       position: absolute;
+       z-index: -1;
+  }
+.files div{
+      position: absolute;
+      top:40px;
 
+  }
+.files div button{
+      position: relative;
+      top:400px;
+      left:275px;
+  }

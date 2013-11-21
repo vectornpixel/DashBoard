@@ -136,13 +136,13 @@
             <fieldset>
                 <h2 class="StepTitle">Select Content Type</h2>
                 <hr>
-                <div class="radiobg"><label class="label_radio" for="radio-01"><input name="sample-radio" id="radio-01" value="1" type="radio" checked /> Contests</label></div>
-            <div class="radiobg"><label class="label_radio" for="radio-02"><input name="sample-radio" id="radio-02" value="1" type="radio" /> Highlighted Event</label></div>
-            <div class="radiobg"><label class="label_radio" for="radio-03"><input name="sample-radio" id="radio-03" value="1" type="radio" /> Highlighted Artist</label></div>
-            <div class="radiobg"><label class="label_radio" for="radio-04"><input name="sample-radio" id="radio-04" value="1" type="radio" /> Highlighted Venue</label></div>
-            <div class="radiobg"><label class="label_radio" for="radio-05"><input name="sample-radio" id="radio-05" value="1" type="radio" /> RSS</label></div>
-            <div class="radiobg"><label class="label_radio" for="radio-06"><input name="sample-radio" id="radio-06" value="1" type="radio" /> Generic URL</label></div>
-            <div class="radiobg"><label class="label_radio" for="radio-07"><input name="sample-radio" id="radio-07" value="1" type="radio" /> Featured 5</label></div>
+                <div class="radiobg"><label class="label_radio" for="radio-01"><input name="sample-radio" id="radio-01" value="selected_contests" type="radio" checked /> Contests</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-02"><input name="sample-radio" id="radio-02" value="selected_he" type="radio" /> Highlighted Event</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-03"><input name="sample-radio" id="radio-03" value="selected_artist" type="radio" /> Highlighted Artist</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-04"><input name="sample-radio" id="radio-04" value="selected_venue" type="radio" /> Highlighted Venue</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-05"><input name="sample-radio" id="radio-05" value="selected_rss" type="radio" /> RSS</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-06"><input name="sample-radio" id="radio-06" value="selected_url" type="radio" /> Generic URL</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-07"><input name="sample-radio" id="radio-07" value="selected_f5" type="radio" /> Featured 5</label></div>
 	    </fieldset>
             </div>
              
@@ -249,19 +249,19 @@
                 <div class="designForm pull-right col-lg-4">
                    
                     <label class="designLabel">Title</label>
-                    <input type="text" name="title" value="Title Here" class="form-all" />
+                    <input type="text" name="title" class="form-all" />
                     <label>Tag</label>
-                    <input type="text" name="title" value="Title Here" />
+                    <input type="text" name="title" />
                     <label>Venue</label>
-                    <input type="text" name="title" value="Title Here" />
+                    <input type="text" name="title" id="jambaseVenueId_txt" />
                     <label>Location</label>
-                    <input type="text" name="title" value="Title Here" />
+                    <input type="text" name="title" id="location_txt"/>
                     <label>Date</label>
-                    <input type="text" name="title" value="Title Here" />
+                    <input type="text" name="title" id="concertDate_txt"/>
                     
                     <label>Select Sponsor</label>
                     <div class="col-lg-4">
-                    <select id="sponsor" class="cd-select">
+                    <select id="sponsor" class="cd-select" id="sponsorId_txt">
                             <option value="-1" selected>Pepsi</option>
                             <option value="1" selected>Coke</option>
                     </select>
@@ -277,8 +277,6 @@
                    
                     <label class="designLabel">Desc. Head</label>
                     <input type="text" name="title" value="Title Here" class="form-all" />
-                    <label>Desc. Text</label>
-                    <input type="text" name="title" value="Title Here" />
                     <label>Desc. Image</label>
                     <input type="file" name="file" id="file">
                     <label>Desc. Text</label>
@@ -370,7 +368,7 @@
         </form>
     </div>    	
 <script src="contenttypes.js"></script>
-<script src="assets/js/wizard.js"></script>
+
 
   </body>
 </html>
