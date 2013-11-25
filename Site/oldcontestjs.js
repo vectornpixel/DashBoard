@@ -7,8 +7,9 @@ var token ='pwpwpwppwpw';
 //var baseURL = "http://glassfish-lb-862187038.us-east-1.elb.amazonaws.com/BigNoiseRest/admin/";
 //var appBaseURL = "http://glassfish-lb-862187038.us-east-1.elb.amazonaws.com/BigNoiseRest/";
 //var baseURL = "http://localhost:8080/BigNoiseRest/admin/";
-var baseURL = "http://54.227.240.28:8080/BigNoizAdminGen/Contests/Add";    	
-alert('url');
+var baseURL = "http://54.227.240.28:8080/BigNoizAdminGen/";    	
+//var baseURL = "http://localhost:8080/BigNoizAdminGen/";  
+
 function loadEmUp()
 {
 	getAllContests();
@@ -20,9 +21,9 @@ function CallbackError(data) {
 }
 
 function submitContest2() {
-        var tag='';
-        var numWinners='';
-        var numTickets='';
+		var tag='';
+		var numWinners='';
+		var numTickets='';
     	var concertName ='';
     	var jambaseArtistId ='';
     	var jambaseConcertId ='';
@@ -46,6 +47,7 @@ function submitContest2() {
     	var sponsorId ='';
     	var contestdescriptionheader ='';
     	var contestdescriptionimage = '';
+    	var contestimageurl='';
     	var prizeValue='';
     	//get field values
 		tag=$("#tag_txt").val();
@@ -54,9 +56,9 @@ function submitContest2() {
     	contestdescriptionheader=$("#contestdescriptionheader_txt").val();
     	contestdescriptionimage=$("#contestdescriptionimage_txt").val();
    	
-    	concertName = $("#concertName_txt").val();
-    	jambaseArtistId = $("#jambaseArtistId_txt").val();
-    	jambaseConcertId = $("#jambaseConcertId_txt").val();
+    	//concertName = $("#concertName_txt").val();
+    	//jambaseArtistId = $("#jambaseArtistId_txt").val();
+    	//jambaseConcertId = $("#jambaseConcertId_txt").val();
     	jambaseVenueId  = $("#jambaseVenueId_txt").val();
     	location = $("#location_txt").val();
     	latitude = $("#latitude_txt").val();
@@ -65,12 +67,12 @@ function submitContest2() {
     	startDate = $("#startDate_txt").val();
     	endDate = $("#endDate_txt").val();
     	description = $("#description_txt").val();
-    	description2 = $("#description2_txt").val();
-    	legalDetailsURL = $("#legalDetailsURL_txt").val();
-    	legalDetailsText = $("#legalDetailsText_txt").val();
+    	//description2 = $("#description2_txt").val();
+    	//legalDetailsURL = $("#legalDetailsURL_txt").val();
+    	//legalDetailsText = $("#legalDetailsText_txt").val();
     	interval = $("#interval_txt").val();
-    	contentLabel = $("#contentLabel_txt").val();
-    	contentIconURL = $("#contentIconURL_txt").val();
+    	//contentLabel = $("#contentLabel_txt").val();
+    	//contentIconURL = $("#contentIconURL_txt").val();
     	sponsorId = $("#sponsorId_txt").val();
     	prizeValue = $("#prizeValue_txt").val();
     	
@@ -92,73 +94,53 @@ function submitContest2() {
     			smallImageURL = this.href;
     		}
     	});
-    	//alert("submitContest(): "+baseURL);
+    	
     	var urlcall = baseURL;
+    	
+    	//alert("smallImageURL: "+smallImageURL);
+    	//alert("iphoneBGImageURL: "+iphoneBGImageURL);
+    	//alert("androidBGImageURL: "+androidBGImageURL);
+    	
+    	
     	urlcall += "Contests/Add?";
-    	urlcall += "adminId="+adminId;
-    	urlcall += "&token="+token;
-    	urlcall += "&concertName="+concertName;
-    	urlcall += "&jambaseArtistId="+jambaseArtistId;
-    	urlcall += "&jambaseConcertId="+jambaseConcertId;
+    	//urlcall += "adminId="+adminId;
+    	//urlcall += "&token="+token;
+    	//urlcall += "&concertName="+concertName;
+    	//urlcall += "&jambaseArtistId="+jambaseArtistId;
+    	//urlcall += "&jambaseConcertId="+jambaseConcertId;
     	urlcall += "&jambaseVenueId="+jambaseVenueId;
     	urlcall += "&location="+location;
     	urlcall += "&concertlatitude="+latitude;
     	urlcall += "&concertlongitude="+longitude;
-    	urlcall += "&concertDate="+concertDate;
+    	//urlcall += "&concertDate="+concertDate;
     	urlcall += "&conteststartdate="+startDate;
     	urlcall += "&contestenddate="+endDate;
     	urlcall += "&contestdescription="+description;
-    	urlcall += "&contestdescription2="+description2;
-    	urlcall += "&contestlegaldetailsurl="+legalDetailsURL;
-    	urlcall += "&contestlegaldetailstext="+legalDetailsText;
+    	//urlcall += "&contestdescription2="+description2;
+    	//urlcall += "&contestlegaldetailsurl="+legalDetailsURL;
+    	//urlcall += "&contestlegaldetailstext="+legalDetailsText;
     	urlcall += "&interval="+interval;
-    	urlcall += "&contentLabel="+contentLabel;
-    	urlcall += "&contentIconURL="+contentIconURL;
+    	//urlcall += "&contentLabel="+contentLabel;
+    	//urlcall += "&contentIconURL="+contentIconURL;
     	urlcall += "&sponsorId="+sponsorId;
-    	urlcall += "&concertbigimageurlIphone="+iphoneBGImageURL;
-    	urlcall += "&androidBGImageURL="+androidBGImageURL;
-    	urlcall += "&concertsmallimageurl="+smallImageURL;
+    	//urlcall += "&concertbigimageurlIphone="+iphoneBGImageURL;
+    	//urlcall += "&androidBGImageURL="+androidBGImageURL;
+    	//urlcall += "&concertsmallimageurl="+smallImageURL;
     	urlcall += "&tag="+tag;
     	urlcall += "&numWinners="+numWinners;
     	urlcall += "&numTickets="+numTickets;
     	urlcall += "&contestdescriptionheader="+contestdescriptionheader;
-    	urlcall += "&contestdescriptionimage="+contestdescriptionimage;
+    	urlcall += "&contestdescriptionimage="+androidBGImageURL;
     	urlcall += "&prizeValue="+prizeValue;
-    
-/*    	
-    	urlcall += "Contests/Add?";
-    	urlcall += "adminId="+adminId;
-    	urlcall += "&token="+token;
-    	urlcall += "&concertName="+concertName;
-    	urlcall += "&jambaseArtistId="+jambaseArtistId;
-    	urlcall += "&jambaseConcertId="+jambaseConcertId;
-    	urlcall += "&jambaseVenueId="+jambaseVenueId;
-    	urlcall += "&location="+location;
-    	urlcall += "&latitude="+latitude;
-    	urlcall += "&longitude="+longitude;
-    	urlcall += "&concertDate="+concertDate;
-    	urlcall += "&startDate="+startDate;
-    	urlcall += "&endDate="+endDate;
-    	urlcall += "&description="+description;
-    	urlcall += "&description2="+description2;
-    	urlcall += "&legalDetailsURL="+legalDetailsURL;
-    	urlcall += "&legalDetailsText="+legalDetailsText;
-    	urlcall += "&interval="+interval;
-    	urlcall += "&contentLabel="+contentLabel;
-    	urlcall += "&contentIconURL="+contentIconURL;
-    	urlcall += "&sponsorId="+sponsorId;
-    	urlcall += "&iphoneBGImageURL="+iphoneBGImageURL;
-    	urlcall += "&androidBGImageURL="+androidBGImageURL;
-    	urlcall += "&smallImageURL="+smallImageURL;
-    	alert("about to GET: "+urlcall);
-    	*/
+    	urlcall += "&contestimageurl="+iphoneBGImageURL;
+    	urlcall += "&title="+description;
+
     	$.ajax({ 
     		   type: "GET",
     		   dataType: "jsonp",
     		   url: urlcall,
     		   contentType: 'application/json',
     		      success: function (data, status) {
-                          alert('workding');
     		        var res = eval(data);
     		        var newContestId = res[0].result;  //result is the new contest id. if == 0 then must have errored
     		        alert("new contest id: "+newContestId);

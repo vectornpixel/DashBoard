@@ -515,6 +515,9 @@ display: block;
 }
 
 /* Content Type Design Preview */
+.listhover{
+    background-color:#00c1ff;
+}
 .preview{
     float:left;
 }
@@ -605,3 +608,49 @@ ul.previewDate li h3, ul.previewDate li p{
       top:400px;
       left:275px;
   }
+select{
+  background:transparent;
+   width: 100%;
+   padding: 2px;
+   font-size:16px;
+   font-weight:700;
+   color:#818181;
+   line-height: 1;
+   border: 0;
+   
+   border-radius: 0;
+   height: 22px;
+         text-indent: 0.01px;
+ text-overflow: "";
+  border: 0 !important;  /*Removes border*/
+     -webkit-appearance: none;  /*Removes default chrome and safari style*/
+     -moz-appearance: none;  /*Removes default style Firefox*/
+ 
+  }
+
+.select-div{
+        display:block;
+	width: 300px;
+	height: 60px;
+	overflow: hidden;
+	background: url(images/arrow-down.png) no-repeat right #e0e0e0;
+         background-position: 95%;
+        line-height: 60px;
+        
+}
+.create-div{
+        display:block;
+	width: 300px;
+	height: 60px;
+	overflow: hidden;
+	background: url(images/arrow-down.png) no-repeat right #0bd396;
+         background-position: 95%;
+        line-height: 60px;
+}
+.create-div select{
+     color:#fff;
+}
+select > option {
+  background: #e0e0e0;
+ 
+}

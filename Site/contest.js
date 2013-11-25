@@ -21,12 +21,14 @@ function submitContest(){
     var numWinners = $("#numWinners").val();
     var prizeValue = $("#prizeValue").val();
     var sponsorId = $("#sponsorId").val();
-    var tag = $("#tag").val();
+    var tag = $("#tag").val(); 
     var title = $("#title").val();
     
     
     var urlcall = baseURL;
+ 
     urlcall += "Contests/Add?";
+    //alert('testing');
     urlcall += "&concertlatitude="+concertlatitude;
     urlcall += "&concertlongitude="+concertlongitude;
     urlcall += "&contestdescription="+contestdescription;
@@ -45,12 +47,12 @@ function submitContest(){
     urlcall += "&title="+title;
 
     $.ajax({ 
-       type: "POST",
+       type: "GET",
        dataType: "jsonp",
        url: urlcall,
        contentType: 'application/json',
           success: function (data, status) {
-            alert('sucess works');
+           // alert('sucess works');
             var res = eval(data);
             var newContestId = res[0].result; 
             alert("new contest id: "+newContestId);
@@ -72,6 +74,7 @@ contentType: 'application/json',
 success: function (data, status) {
 var res = eval(data);
 var output = '';
+var outputdesign = '';
 for(var i=0; i< res.length; i++)
   {
       var eventArtist = res[i].artistName;
@@ -79,16 +82,47 @@ for(var i=0; i< res.length; i++)
       var eventState = res[i].venuCity;
       var eventDate = res[i].date;
       var eventID = res[i].id;
-      output += '<li><div class="col-lg-2"><span class="date subs"><p>'+eventDate+'</p></span></div>'
-      output += '<div class="col-lg-4"><span class="title">'+eventArtist+'</span><span><p class="subs">'+eventState+eventVenue+'</p></span></div>'
-      output += '<div class="pull-right"><input type="checkbox" value='+eventID+' id='+eventID+'></div></li>'
+      output += '<li><div class="col-lg-4"><span class="date subs"><p>'+eventDate+'</p></span></div>';
+      output += '<div class="col-lg-4"><span class="title">'+eventArtist+'</span> <span><p class="subs">'+eventState+ ' - ' +eventVenue+'</p></span></div>';
+      output += '<div class="pull-right"><input type="checkbox" name="checkbox" value='+eventID+' id="checkthis"></div></li>';  
   }
+
+
 $('ul.searcResults').html(output);
+
+$('#checkthis').click(function () {
+
+    if ($(this).val() == eventID){
+      outputdesign += ' <label>Venue</label><input type="text" name="venue" id="venue" value='+eventVenue+' />';
+      outputdesign += ' <label>Location</label><input type="text" name="location" id="location" value='+eventState+' />';
+       $('.ctestdetails').html(outputdesign);
+    }
+   
+    
+    //$("#txtAge").toggle(this.checked);
+});
 sortContent();
        }
     });
 }
 
+/*function contestEventsDesign(){
+$('#radio_button :checked').live('change',function(){
+alert('Something is checked.');
+});
 
+}*/
+function contestEventsDesign(){
+
+/*$('#checkthis').change(function() {
+  if ($(this).is(':checked')) {
+    alert('Checked');
+  } else {
+    alert('Unchecked');
+  }
+});*/
+
+}
+contestEventsDesign();
 submitContest();
 contestEvents();

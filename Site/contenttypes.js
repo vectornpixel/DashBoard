@@ -44,6 +44,7 @@ $('#venueloader').click(function(){
     
 function loadContest(){
 $('#contestloader').click(function(){
+    alert('test');
     $.ajax({
     type: "GET",
     url: "contestview.html",
@@ -102,8 +103,7 @@ $('#contestloader').click(function(){
 function fileupload(){
 'use strict';
 // Change this to the location of your server-side upload handler:
-var url = window.location.hostname === 'blueimp.github.io' ?
-            '//jquery-file-upload.appspot.com/' : 'server/php/',
+var url = "http://54.227.240.28:8080/BigNoizAdminGen/fileUpload",
     uploadButton = $('<button/>')
         .addClass('btn btn-primary')
         .prop('disabled', true)
@@ -122,8 +122,9 @@ var url = window.location.hostname === 'blueimp.github.io' ?
                 $this.remove();
             });
         });
-    $('#fileupload').fileupload({
+    $('#contestimageurl').fileupload({
         url: url,
+        type: "POST",
         dataType: 'json',
         autoUpload: false,
         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,

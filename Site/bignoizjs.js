@@ -25,10 +25,7 @@ Author     : Asim Craft
         $( '#sponsor' ).dropdown({
            
        stack : false
-       });
-
-
-       
+       }); 
     } 
     
  function accordion(){
@@ -140,6 +137,7 @@ $('#artistloader').click(function(){
     data: { },
     async: true,
     success: function(data){
+
         $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
         dropdowns();
     }

@@ -24,9 +24,7 @@
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-ui-1.10.3.custom.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/modernizr.custom.63321.js"></script>
     <script src="assets/js/jquery.sortable.js"></script>
-    <script src="assets/js/jquery.dropdown.js"></script>
     <script src="bignoizjs.js"></script>
         <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
     <script src="assets/js/vendor/jquery.ui.widget.js"></script>
@@ -45,7 +43,7 @@
     <!-- The File Upload validation plugin -->
     <script src="assets/js/jquery.fileupload-validate.js"></script>
     <script src="assets/js/jquery.smartWizard-2.0.js"></script>
-     
+
      <script type="text/javascript">
     $(document).ready(function(){
     	// Smart Wizard 	
@@ -72,7 +70,17 @@
         });
         setupLabel(); 
     });
-    
+     $(document).ready(function(){
+            $('input#title').keyup(function(){
+                var output = $(this).val();
+                $('#previewtitle').text(output);
+            });
+             $('input#tag').keyup(function(){
+                var output = $(this).val();
+                $('#previewtag').text(output);
+            });
+           
+        });
     </script>
   </head>
 
@@ -92,7 +100,7 @@
     <br>
     <br>
     <div class="container">   
-        <form id="contentcreation">
+        <div id="contentcreation">
 <table align="center" border="0" cellpadding="0" cellspacing="0">
 <tr><td> 
 <!-- Smart Wizard -->
@@ -136,7 +144,7 @@
             <fieldset>
                 <h2 class="StepTitle">Select Content Type</h2>
                 <hr>
-                <div class="radiobg"><label class="label_radio" for="radio-01"><input name="sample-radio" id="radio-01" value="selected_contests" type="radio" checked /> Contests</label></div>
+            <div class="radiobg"><label class="label_radio" for="radio-01"><input name="sample-radio" id="radio-01" value="selected_contests" type="radio" checked /> Contests</label></div>
             <div class="radiobg"><label class="label_radio" for="radio-02"><input name="sample-radio" id="radio-02" value="selected_he" type="radio" /> Highlighted Event</label></div>
             <div class="radiobg"><label class="label_radio" for="radio-03"><input name="sample-radio" id="radio-03" value="selected_artist" type="radio" /> Highlighted Artist</label></div>
             <div class="radiobg"><label class="label_radio" for="radio-04"><input name="sample-radio" id="radio-04" value="selected_venue" type="radio" /> Highlighted Venue</label></div>
@@ -170,7 +178,7 @@
                     
   	   <div id="step-3">
 
-               <fieldset>
+              
                 <h2 class="StepTitle">Contest</h2>	
                 <div class="preview">
                       <div id="files" class="files"></div>
@@ -180,7 +188,8 @@
                             <span class="btn btn-default fileinput-button">
                             <i class="ss-icon">camera</i>
                             <span>edit photo</span>
-                            <input id="fileupload" type="file" name="files[]" multiple>
+                            <input type="file" name="file" id="contestimageurl">
+
                             </span>
                         </div>
                         <ul class="previewDate">
@@ -190,10 +199,8 @@
                             
                         </ul>
                         <ul class="previewInfo">
-                            <li><h3>Featured Contest</h3></li>
-                            <li><h2>EMINEM</h2></li>
-                            <li><h2>TICKET GIVEAWAY</h2></li>
-
+                            <li><h3 id="previewtag"></h3></li>
+                            <li><h2 id="previewtitle"></h2></li>
                         </ul>
                         
                     </div>
@@ -202,25 +209,26 @@
                 <div class="designForm pull-right col-lg-4">
                    
                     <label class="designLabel">Title</label>
-                    <input type="text" name="title" class="form-all" id="title"/>
+                    <input type="text" id="title" name="title" class="form-all"/>
                     <label>Tag</label>
-                    <input type="text" name="tag" id="tag"/>
-                    <label>Venue</label>
-                    <input type="text" name="venue" id="jambaseVenueId_txt" />
-                    <label>Location</label>
-                    <input type="text" name="location" id="location_txt"/>
+                    <input type="text" id="tag"/>
+                    <div class="ctestdetails">
+                    
+                    </div>
                     <label>Date</label>
-                    <input type="text" name="date" id="conteststartdate"/>
+                    <input type="text" name="date" id="contestenddate"/>
                     
                     <label>Select Sponsor</label>
                     <div class="col-lg-4">
-                    <select id="sponsorId" class="cd-select">
-                            <option value="-1" selected>Pepsi</option>
-                            <option value="1" selected>Coke</option>
+                        <div class="create-div">
+                    <select>
+                            <option value="pepsi" selected>Pepsi</option>
+                            <option value="coke" selected>Coke</option>
                     </select>
+                        </div>
                    </div>
                 </div>
-               </fieldset>
+           
            </div>
                     
           <div id="step-4">
@@ -231,7 +239,8 @@
                     <label class="designLabel">Desc. Head</label>
                     <input type="text" name="Desc Head" class="form-all" id="contestdescriptionheader" />
                     <label>Desc. Image</label>
-                    <input type="file" name="file" id="file">
+                    
+                    <input type="file" name="file" id="contestdescriptionimage">
                     <label>Desc. Text</label>
                     <textarea rows="4" cols="30" id="contestdescription">
                     </textarea> 
@@ -244,30 +253,37 @@
                     <label class="designLabel">Interval</label>
                     
                     <div class="col-lg-4">
-                    <select id="interval" class="cd-select">
-                            <option value="-1" selected>15</option>
-                            <option value="1" selected>30</option>
+                        <div class="create-div">
+                    <select>
+                            <option value="15" selected>15</option>
+                            <option value="30" selected>30</option>
                     </select>
+                        </div>
                    </div>
+               
                     </div>
                         <div class="row">
                     <label># Of Winners</label>
                     <div class="col-lg-4">
-                    <select id="numWinners" class="cd-select">
-                            <option value="-1" selected>1</option>
-                            <option value="1" selected>2</option>
-                            <option value="1" selected>3</option>
+                        <div class="create-div">
+                    <select>
+                            <option value="1" selected>1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3" selected>3</option>
                     </select>
+                        </div>
                    </div>
                         </div>
                         <div class="row">
                     <label># Tickets per winner</label>
                     <div class="col-lg-4">
-                    <select id="numTickets" class="cd-select">
-                            <option value="-1" selected>1</option>
-                            <option value="1" selected>2</option>
-                            <option value="1" selected>3</option>
+                        <div class="create-div">
+                    <select>
+                            <option value="1" selected>1</option>
+                            <option value="2" selected>2</option>
+                            <option value="3" selected>3</option>
                     </select>
+                        </div>
                    </div>
                         </div>
                         <div class="row">
@@ -281,10 +297,7 @@
                         <div class="row">
                     <label>Location</label>
                     <div class="col-lg-4">
-                    <select class="cd-select">
-                            <option value="-1" selected>Pepsi</option>
-                            <option value="1" selected>Coke</option>
-                    </select>
+                    <input type="text" name="date" id="location"/>
                    </div>
                         </div>
                 </div>
@@ -313,7 +326,7 @@
                         </div>
                     </div>
                 </div>    
-<button onClick="submitContest()">Submits</button>            
+<input type="submit" onClick="submitContest();" value="submit">   
           </div>
                
   		</div>
@@ -321,7 +334,7 @@
  		
 </td></tr>
 </table>
-        </form>
+        </div>
     </div>
 <script src="contest.js"></script>
 <script src="contenttypes.js"></script>

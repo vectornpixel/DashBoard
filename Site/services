@@ -13,3 +13,34 @@
 "tag":"Contest",
 "f5position":0,
 "interval":0}
+
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <style>
+            #contenthere{
+                height:200px;
+                width:500px;
+                padding:20px;
+            }   
+        </style>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('input').keydown(function(){
+                var output = $(this).val();
+                //$("#contenthere").css("background-color","yellow");
+                $('#contenthere').text(output);
+            });
+           
+        });
+        </script>
+    </head>
+    <body>
+        <form>
+            <input type="text" id="name">
+        </form>
+        <div id="contenthere"></div>
+    </body>
+</html>
