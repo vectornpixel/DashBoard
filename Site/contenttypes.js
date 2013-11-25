@@ -41,34 +41,6 @@ $('#venueloader').click(function(){
         });
    });
 }
-
-function contentEvents() {
-
-var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/ShowcaseMappingService";
-
-$.ajax({ 
-type: "GET",
-dataType: "jsonp",
-url: urlcall,
-contentType: 'application/json',
-success: function (data, status) {
-var res = eval(data);
-var output = '';
-for(var i=0; i< res.length; i++)
-  {
-      var content = res[i].contenttype;
-      var position = res[i].position;
-      var description = res[i].description;
-      output += '<li><span class="cont-title pull-left">'+description+'</span><span class="delete glyphicon glyphicon-remove showcase-icons"></span><span class="glyphicon glyphicon-pencil showcase-icons2 pull-right"></span></li>';
-      output += '<li><div class="col-lg-2"><span class="date subs"><p>12/3/13</p></span></div>'
-      output += '<div class="col-lg-4"><span class="title">Kesha</span><span><p class="subs">Detroit, MI - Fox Theater</p></span></div>'
-      output += '<div class="pull-right"><input type="checkbox" name="kesha1" value="idnumber"></div></li>'
-  }
-$('').html(output);
-sortContent();
-       }
-    });
-}
     
 function loadContest(){
 $('#contestloader').click(function(){
@@ -128,28 +100,28 @@ $('#contestloader').click(function(){
 });
 }
 function fileupload(){
-    'use strict';
-    // Change this to the location of your server-side upload handler:
-    var url = window.location.hostname === 'blueimp.github.io' ?
-                '//jquery-file-upload.appspot.com/' : 'server/php/',
-        uploadButton = $('<button/>')
-            .addClass('btn btn-primary')
-            .prop('disabled', true)
-            .text('Processing...')
-            .on('click', function () {
-                var $this = $(this),
-                    data = $this.data();
-                $this
-                    .off('click')
-                    .text('Abort')
-                    .on('click', function () {
-                        $this.remove();
-                        data.abort();
-                    });
-                data.submit().always(function () {
+'use strict';
+// Change this to the location of your server-side upload handler:
+var url = window.location.hostname === 'blueimp.github.io' ?
+            '//jquery-file-upload.appspot.com/' : 'server/php/',
+    uploadButton = $('<button/>')
+        .addClass('btn btn-primary')
+        .prop('disabled', true)
+        .text('Processing...')
+        .on('click', function () {
+            var $this = $(this),
+                data = $this.data();
+            $this
+                .off('click')
+                .text('Abort')
+                .on('click', function () {
                     $this.remove();
+                    data.abort();
                 });
+            data.submit().always(function () {
+                $this.remove();
             });
+        });
     $('#fileupload').fileupload({
         url: url,
         dataType: 'json',
@@ -210,6 +182,7 @@ function fileupload(){
     }).prop('disabled', !$.support.fileInput)
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
 };
+
 
 fileupload();
 loadHE();

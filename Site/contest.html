@@ -51,7 +51,7 @@
     	// Smart Wizard 	
   		$('#wizard').smartWizard();
       
-      function onFinishCallback(){
+     function onFinishCallback(){
         $('#wizard').smartWizard('showMessage','Finish Clicked');
       }     
      });
@@ -160,54 +160,7 @@
             <fieldset>
             <div class="row">
               <ul class="searcResults">
-                  <li>
-                      <div class="col-lg-2">
-                        <span class="date subs">
-                        <p>12/3/13</p>
-                       </span>
-                     </div>
-                     <div class="col-lg-4">
-                        <span class="title">Kesha</span>
-                        <span>
-                        <p class="subs">Detroit, MI - Fox Theater</p>
-                        </span>
-                     </div>
-                     <div class="pull-right">
-                        <input type="checkbox" name="kesha" value="idnumber">
-                     </div>
-                  </li>
-                  <li>
-                      <div class="col-lg-2">
-                        <span class="date subs">
-                        <p>12/3/13</p>
-                       </span>
-                     </div>
-                     <div class="col-lg-4">
-                        <span class="title">Kesha</span>
-                        <span>
-                        <p class="subs">Detroit, MI - Fox Theater</p>
-                        </span>
-                     </div>
-                     <div class="pull-right">
-                        <input type="checkbox" name="kesha" value="idnumber">
-                     </div>
-                  </li>
-                  <li>
-                      <div class="col-lg-2">
-                        <span class="date subs">
-                        <p>12/3/13</p>
-                       </span>
-                     </div>
-                     <div class="col-lg-4">
-                        <span class="title">Kesha</span>
-                        <span>
-                        <p class="subs">Detroit, MI - Fox Theater</p>
-                        </span>
-                     </div>
-                     <div class="pull-right">
-                        <input type="checkbox" name="kesha" value="idnumber">
-                     </div>
-                  </li>
+                  
                   
               </ul>
           
@@ -249,19 +202,19 @@
                 <div class="designForm pull-right col-lg-4">
                    
                     <label class="designLabel">Title</label>
-                    <input type="text" name="title" class="form-all" />
+                    <input type="text" name="title" class="form-all" id="title"/>
                     <label>Tag</label>
-                    <input type="text" name="title" />
+                    <input type="text" name="tag" id="tag"/>
                     <label>Venue</label>
-                    <input type="text" name="title" id="jambaseVenueId_txt" />
+                    <input type="text" name="venue" id="jambaseVenueId_txt" />
                     <label>Location</label>
-                    <input type="text" name="title" id="location_txt"/>
+                    <input type="text" name="location" id="location_txt"/>
                     <label>Date</label>
-                    <input type="text" name="title" id="concertDate_txt"/>
+                    <input type="text" name="date" id="conteststartdate"/>
                     
                     <label>Select Sponsor</label>
                     <div class="col-lg-4">
-                    <select id="sponsor" class="cd-select" id="sponsorId_txt">
+                    <select id="sponsorId" class="cd-select">
                             <option value="-1" selected>Pepsi</option>
                             <option value="1" selected>Coke</option>
                     </select>
@@ -273,14 +226,14 @@
           <div id="step-4">
                <fieldset>
                    <div class="col-lg-6">
-                  <div class="designForm pull-left">
+                    <div class="designForm pull-left">
                    
                     <label class="designLabel">Desc. Head</label>
-                    <input type="text" name="title" value="Title Here" class="form-all" />
+                    <input type="text" name="Desc Head" class="form-all" id="contestdescriptionheader" />
                     <label>Desc. Image</label>
                     <input type="file" name="file" id="file">
                     <label>Desc. Text</label>
-                    <textarea rows="4" cols="30">
+                    <textarea rows="4" cols="30" id="contestdescription">
                     </textarea> 
                      </div>
                    </div>
@@ -292,41 +245,43 @@
                     
                     <div class="col-lg-4">
                     <select id="interval" class="cd-select">
-                            <option value="-1" selected>Pepsi</option>
-                            <option value="1" selected>Coke</option>
+                            <option value="-1" selected>15</option>
+                            <option value="1" selected>30</option>
                     </select>
                    </div>
                     </div>
                         <div class="row">
                     <label># Of Winners</label>
                     <div class="col-lg-4">
-                    <select id="winners" class="form-select">
-                            <option value="-1" selected>Pepsi</option>
-                            <option value="1" selected>Coke</option>
+                    <select id="numWinners" class="cd-select">
+                            <option value="-1" selected>1</option>
+                            <option value="1" selected>2</option>
+                            <option value="1" selected>3</option>
                     </select>
                    </div>
                         </div>
                         <div class="row">
                     <label># Tickets per winner</label>
                     <div class="col-lg-4">
-                    <select id="tickets" class="form-select">
-                            <option value="-1" selected>Pepsi</option>
-                            <option value="1" selected>Coke</option>
+                    <select id="numTickets" class="cd-select">
+                            <option value="-1" selected>1</option>
+                            <option value="1" selected>2</option>
+                            <option value="1" selected>3</option>
                     </select>
                    </div>
                         </div>
                         <div class="row">
                     <label>Contest Name</label>
-                    <input type="text" name="title" value="Title Here" />
+                    <input type="text" name="title"/>
                     </div>
                         <div class="row">
                     <label>Date</label>
-                    <input type="text" name="title" value="Title Here" />
+                    <input type="text" name="title"/>
                         </div>
                         <div class="row">
                     <label>Location</label>
                     <div class="col-lg-4">
-                    <select id="cd-dropdown" class="form-select">
+                    <select class="cd-select">
                             <option value="-1" selected>Pepsi</option>
                             <option value="1" selected>Coke</option>
                     </select>
@@ -339,7 +294,7 @@
           </div>
            <div id="step-5">
             <h2 class="StepTitle">Summary</h2>	
-             <div class="preview">
+              <div class="preview">
                     <div class="previewBox">
                         <ul class="previewDate">
                            <li><h3>02</h3></li>
@@ -357,7 +312,8 @@
                         <div class="previewPhoto">
                         </div>
                     </div>
-                </div>              			
+                </div>    
+<button onClick="submitContest()">Submits</button>            
           </div>
                
   		</div>
@@ -366,7 +322,8 @@
 </td></tr>
 </table>
         </form>
-    </div>    	
+    </div>
+<script src="contest.js"></script>
 <script src="contenttypes.js"></script>
 
 

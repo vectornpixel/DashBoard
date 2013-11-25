@@ -22,20 +22,11 @@ Author     : Asim Craft
        $( '#sort' ).dropdown({
        stack : false
        });
-        $( '#interval' ).dropdown({
-           
-       stack : false
-       });
         $( '#sponsor' ).dropdown({
            
        stack : false
        });
-        $( '#winners' ).dropdown({
-       stack : false
-       });
-        $( '#tickets' ).dropdown({
-       stack : false
-       });
+
 
        
     } 
@@ -208,7 +199,7 @@ $('#showcaseloader').click(function(){
     data: { },
     async: true,
     success: function(data){
-        $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
+    $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
       dropdowns();
     }
         });
