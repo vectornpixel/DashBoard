@@ -9,13 +9,6 @@
 @import url('common.css');
 @import url('icons.css');
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-body {
-	font-weight: 300;
-	font-size: 14px;
-	color: #333;
-	overflow: scroll;
-	overflow-x: hidden;
-}
 .container {
     max-width: 1000px;
   }
@@ -27,9 +20,7 @@ root {
 h1,h2,h3,h4,h5{
     color: #3668a1 !important;
 }
-hr{
-    border-color: #c9c9c9 !important;
-}
+
 .subtitle{
     color: #898989 !important;
     font-size: 18px;
@@ -339,6 +330,8 @@ li.sortable-placeholder {
     border: 1px solid #e4e4e4;
     color: #1C94C4;
     font-weight: normal !important;
+    height:90px;
+    padding: 10px 15px !important;
 }
 .ui-state-default .subs{
     color: #898989;
@@ -400,6 +393,82 @@ h5.page-alert{
     font-weight: 200; 
 }
 
+
+/* drop downs */
+
+.cd-dropdown {
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    -ms-perspective: 800px;
+    perspective: 800px;
+}
+
+.cd-dropdown > span {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 0%;
+    -moz-transform-origin: 50% 0%;
+    -o-transform-origin: 50% 0%;
+    -ms-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transition: -webkit-transform .3s;
+    -moz-transition: -moz-transform .3s;
+    -o-transition: -o-transform .3s;
+    -ms-transition: -ms-transform .3s;
+    transition: transform .3s;
+}
+
+.cd-dropdown > span:active {
+    -webkit-transform: rotateX(60deg);
+    -moz-transform: rotateX(60deg);
+    -o-transform: rotateX(60deg);
+    -ms-transform: rotateX(60deg);
+    transform: rotateX(60deg);
+}
+
+.cd-dropdown > span,
+.cd-dropdown ul li:nth-last-child(-n+3) span {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.cd-dropdown ul {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.cd-dropdown ul li {
+    position: absolute;
+    width: 100%;
+}
+
+.cd-active.cd-dropdown > span {
+    color: #818181;
+}
+
+.cd-active.cd-dropdown > span,
+.cd-active.cd-dropdown ul li span {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.cd-active.cd-dropdown ul li span {
+    -webkit-transition: all 0.2s linear 0s;
+    -moz-transition: all 0.2s linear 0s;
+    -ms-transition: all 0.2s linear 0s;
+    -o-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+}
+
+.cd-active.cd-dropdown ul li span:hover {
+    background: #b9b9b9;
+    color: #fff;
+}
+
+
 /* Form Styles */
 .designForm label{
     font-size:18px !important; 
@@ -420,6 +489,7 @@ display: block;
   height: 44px;
   width:250px;
   line-height: 1.42857;
+  padding: 6px 25px;
   color: #777777;
   vertical-align: middle;
   background-color: #ededed;
@@ -428,25 +498,23 @@ display: block;
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
           transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-}
-textarea{
-    background-color: #ededed;
+
 }
 
 /* contest creation setup */
+.searcResults {
 
+}
 .searcResults li {
     list-style: none;
     background: #ececec;
     border: 1px solid #e4e4e4;
+    color: #1C94C4;
     font-weight: normal;
     height:90px;
     padding: 10px 15px;
 }
-.searcResults li:hover{
-background: #00c1ff;
-color: #fff;
-}
+
 /* Content Type Design Preview */
 .listhover{
     background-color:#00c1ff;
@@ -580,8 +648,7 @@ select{
 	background: url(images/arrow-down-white.png) no-repeat right #0bd396;
         background-position: 95%;
         line-height: 60px;
-        margin-bottom: 2px;
-        margin-top: 2px;
+        margin-bottom: 3px;
 }
 .create-div select{
      color:#fff;
@@ -592,27 +659,5 @@ select{
 
 select > option {
   background: #e0e0e0;
+ 
 }
-.small-div{
-    margin: 8px;
-    display:block;
-    width: 100px;
-    height: 60px;
-    overflow: hidden;
-    background: url(images/arrow-down-white.png) no-repeat right #a9a9a9;
-    background-position: 95%;
-    line-height: 60px;
-}
-.small-div select > option {
-  background: #a9a9a9;
-}
-.small-div select {
-  color: #fff;
-}
-
-/*Summary*/
-.formsummary{
-    float:right;
-    display: block;
-}
-

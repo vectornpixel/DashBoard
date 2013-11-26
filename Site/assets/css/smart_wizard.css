@@ -14,7 +14,7 @@
   border: 0px solid #CCC;
   overflow:visible;
   float:left;
-  width:968px;
+  width:960px;
 }
 .swMain .stepContainer {
   display:block;
@@ -38,7 +38,7 @@
   text-align:left;
   overflow:visible;    
   z-index:88; 
-  width:968px;
+  width:960px;
   clear:both;
 }
 
@@ -46,23 +46,20 @@
   display:block;
   position: relative; 
   clear:both;
-  padding:            0;    
-  color:              #5A5655;   
+  padding:25px;    
+  color:#5A5655;   
   background-color:#e2e2e2;  
-  height:40px;
+  height:100px;
   text-align:left;
   overflow:auto;    
   z-index:88; 
-  -webkit-border-radius: 5px;
-  -moz-border-radius  : 5px;
   left:0;
 }
 
 .swMain .stepContainer .StepTitle {
   font-size: 34px;
-  text-transform: uppercase;
-  color: #959595;
-  margin-bottom: 10px;
+  color: #959595 !important;
+  font-weight: 100;
   display:block;
   position: relative;
   margin:0;   
@@ -71,8 +68,7 @@
   clear:both;
   text-align:left; 
   z-index:88;
-  -webkit-border-radius: 5px;
-  -moz-border-radius  : 5px;    
+ 
 }
 .swMain ul.anchor {
   position: relative;
@@ -80,7 +76,7 @@
   float:left;
   list-style: none;
   padding: 0px;  
-  margin: 10px 0;      
+  margin: 0px 0 !important;      
   clear: both;
   background: transparent; /*#EEEEEE */
   border-bottom: 8px solid #00c1ff;
@@ -105,8 +101,6 @@
   width:192px;
   text-decoration: none;
   outline-style:none;
-  -moz-border-radius  : 5px;
-  -webkit-border-radius: 5px;
   z-index:99;
 }
 
@@ -189,17 +183,14 @@
   display:block;
   float:right;
   margin:5px 3px 0 3px;
-  padding:5px;
   text-decoration: none;
   text-align: center;
-  font: bold 13px Verdana, Arial, Helvetica, sans-serif;
-  width:100px;
+  width:150px;
   color:#FFF;
-  outline-style:none;
-  background-color:   #5A5655;
-  border: 1px solid #5A5655;
-  -moz-border-radius  : 5px; 
-  -webkit-border-radius: 5px;    
+  background-color:#0bd396;
+  cursor: pointer;
+  padding: 15px;
+  font-size:18px;
 }
 .swMain .buttonDisabled {
   color:#F8F8F8  !important;
@@ -208,36 +199,32 @@
   cursor:text;    
 }
 .swMain .buttonPrevious {
-  display:block;
   float:left;
+  display:block;
   margin:5px 3px 0 3px;
-  padding:5px;
   text-decoration: none;
   text-align: center;
-  font: bold 13px Verdana, Arial, Helvetica, sans-serif;
-  width:100px;
+  width:150px;
   color:#FFF;
-  outline-style:none;
-  background-color:   #5A5655;
-  border: 1px solid #5A5655;
-  -moz-border-radius  : 5px; 
-  -webkit-border-radius: 5px;    
+  background-color:   #A9A9A9;
+  cursor: pointer;
+  padding: 15px;
+  font-size:18px;
 }
 .swMain .buttonFinish {
+   float:right;
   display:block;
-  float:right;
-  margin:5px 10px 0 3px;
-  padding:5px;
+  margin:5px 3px 0 3px;
   text-decoration: none;
   text-align: center;
-  font: bold 13px Verdana, Arial, Helvetica, sans-serif;
-  width:100px;
+  width:150px;
   color:#FFF;
-  outline-style:none;
-  background-color:   #5A5655;
-  border: 1px solid #5A5655;
-  -moz-border-radius  : 5px; 
-  -webkit-border-radius: 5px;    
+  background-color:   #A9A9A9;
+  cursor: pointer;
+  padding: 15px;
+  font-size:18px; 
+  
+  
 }
 
 /* Form Styles */

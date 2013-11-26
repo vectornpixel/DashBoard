@@ -12,21 +12,6 @@ Author     : Asim Craft
          var gridIcons1 = $('#accordion').find('.gridicons').append('<span class="delete glyphicon content-icons glyphicon-remove  pull-right"></span>');
     }
     
- function dropdowns(){
-    $( '#cd-dropdown' ).dropdown({
-       stack : false
-       });
-       $( '#type' ).dropdown({
-       stack : false
-       });
-       $( '#sort' ).dropdown({
-       stack : false
-       });
-        $( '#sponsor' ).dropdown({
-           
-       stack : false
-       }); 
-    } 
     
  function accordion(){
     var icons = {
@@ -139,7 +124,6 @@ $('#artistloader').click(function(){
     success: function(data){
 
         $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
-        dropdowns();
     }
         });
 /* 
@@ -198,7 +182,6 @@ $('#showcaseloader').click(function(){
     async: true,
     success: function(data){
     $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
-      dropdowns();
     }
         });
         
@@ -236,7 +219,6 @@ $('#showcaseloader').click(function(){
     success: function(data){
         
         $('#main').html(data);
-        dropdowns();
     }
         });
 }
@@ -270,7 +252,7 @@ $('#showcaseloader').click(function(){
 /* 
 All of the functions called
  */
-dropdowns();
+
 header();
 activeNav();
 showcasestream();

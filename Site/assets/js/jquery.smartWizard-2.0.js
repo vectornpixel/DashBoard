@@ -62,7 +62,9 @@
                   elmStepContainer = $('<div></div>').addClass("stepContainer");
                   btNext = $('<a>'+options.labelNext+'</a>').attr("href","#").addClass("buttonNext");
                   btPrevious = $('<a>'+options.labelPrevious+'</a>').attr("href","#").addClass("buttonPrevious");
-                  btFinish = $('<a>'+options.labelFinish+'</a>').attr("href","#").addClass("buttonFinish");
+                  btFinish = $('<a>'+options.labelFinish+'</a>').click(submitContest()).attr("href","#").addClass("buttonFinish");
+                 
+                          ////$(this).addClass("buttonFinish").click(submitContest());
                   
                   // highlight steps with errors
                   if(options.errorSteps && options.errorSteps.length>0){
@@ -97,6 +99,7 @@
                       return false;
                   }); 
                   $(btFinish).click(function() {
+                      submitContest();
                       if(!$(this).hasClass('buttonDisabled')){
                          if($.isFunction(options.onFinish)) {
                             if(!options.onFinish.call(this,$(steps))){
@@ -112,6 +115,7 @@
 
                       return false;
                   }); 
+             
                   
                   $(steps).bind("click", function(e){
                       if(steps.index(this) == curStepIdx){
