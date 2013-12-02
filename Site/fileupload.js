@@ -26,7 +26,7 @@ var url = "http://54.227.240.28:8080/BigNoizAdminGen/fileUpload",
                 $this.remove();
             });
         });
-    $('#contestimageurl').fileupload({
+    $('#contestimageurl_txt').fileupload({
         url: url,
         type: "POST",
         dataType: 'json',
@@ -42,7 +42,7 @@ var url = "http://54.227.240.28:8080/BigNoizAdminGen/fileUpload",
         previewMaxHeight: 440,
         previewCrop: true
     }).on('fileuploadadd', function (e, data) {
-        data.context = $('<div/>').appendTo('#files');
+        data.context = $('<div/>').appendTo('#files', '.files2');
         $.each(data.files, function (index, file) {
             var node = $('<div>');   
             if (!index) {

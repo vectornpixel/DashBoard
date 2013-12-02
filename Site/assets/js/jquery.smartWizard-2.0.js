@@ -100,6 +100,7 @@
                   }); 
                   $(btFinish).click(function() {
                       submitContest();
+                      //window.location = 'contest.html';
                       if(!$(this).hasClass('buttonDisabled')){
                          if($.isFunction(options.onFinish)) {
                             if(!options.onFinish.call(this,$(steps))){

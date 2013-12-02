@@ -4,58 +4,177 @@
  */
 
 // Set icons on each menu
-function loadHA(){   
-$('#artistloader').click(function(){
+function loadHA(){ 
+$('#artistload').click(function(){
   $.ajax({
-    //dataType: "json",
     type: "GET",
     url: "ha.html",
     data: { },
     async: true,
     success: function(data){
+
         $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
-        accordion();
-        gridiconset();
-        accordionRemove();
     }
+        });
+/* 
+Loads Web Services
+ */
+   var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/HighlightedArtists";
+
+   $.ajax({ 
+    type: "GET",
+    dataType: "jsonp",
+    url: urlcall,
+    contentType: 'application/json',
+    success: function (data, status) {
+    var res = eval(data);
+    var output = '';
+    
+    for(var i=0; i< res.length; i++)
+      {
+          var artistname = res[i].name;
+          var artistimage = res[i].imageURL;
+          var artiststartdate = res[i].startdate;
+          var artistenddate = res[i].enddate;
+          var artistevents = res[i].eventCount;
+          var artisttag = res[i].tag;
+          var artistsponsor = res[i].sponsorName;
+          
+          // left column
+          output += '<h3><div class="col-lg-4"><span class="title">'+artistname+'</span></div><span class="gridicons"></span></h3>';
+          output += '<div><div class="col-lg-3"><img class="img-thumbnail" src='+artistimage+'><span><p class="subs">'+artisttag+'</p></span></div>';
+          output += '<div class="view-list"><ul class="view"><li>Start Date</li><li>End Date</li><li>Events</li><li>Sponsor</li></ul></div>';
+         
+          // right column
+          output += '<div class="view-list"><ul class="view view-right"><li>'+artiststartdate+'</li><li>'+artistenddate+'</li><li>'+artistevents+'</li><li>'+artistsponsor+'</li></ul></div></div>';
+
+      }
+
+    $('#accordion').html(output);    
+    accordion();
+    gridiconset(); 
+    accordionRemove();
+
+           }
+           
         });
    });
 }
-function loadHE(){   
+
+
+function loadHE(){ 
 $('#eventloader').click(function(){
   $.ajax({
-    //dataType: "json",
     type: "GET",
     url: "he.html",
     data: { },
     async: true,
     success: function(data){
+
         $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
-        accordion();
-        gridiconset();
-        accordionRemove();
     }
         });
+/* 
+Loads Web Services
+ */
+   var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/HighlightedEvents";
+   $.ajax({ 
+    type: "GET",
+    dataType: "jsonp",
+    url: urlcall,
+    contentType: 'application/json',
+    success: function (data, status) {
+
+    var res = eval(data);
+    var output = '';
+    
+    for(var i=0; i< res.length; i++)
+      {
+          var artistname = res[i].artistName;
+          var venuename = res[i].venuName;
+          var venuecity = res[i].venuCity;
+          var venuestate = res[i].venuState;
+          var eventdate = res[i].date;
+
+   
+          
+          // left column
+          output += '<h3><span class="date subs"><p>'+eventdate+'</p></span><div class="col-lg-4"><span class="title">'+artistname+'</span><span><p class="subs">'+venuecity+', '+venuestate+' - '+venuename+'</p></span></div><span class="gridicons"></span></h3>';
+          output += '<div><div class="col-lg-3"><img class="img-thumbnail"></div>';
+          output += '<div class="view-list"><ul class="view"><li>Artist Name</li><li>Venue</li><li>Location</li></ul></div>';
+         
+          // right column
+          output += '<div class="view-list"><ul class="view view-right"><li>'+artistname+'</li><li>'+venuename+'</li><li>'+venuecity+', '+venuestate+'</li></ul></div></div>';
+
+      }
+
+    $('#accordion').html(output);    
+    accordion();
+    gridiconset(); 
+    accordionRemove();
+
+
+           }
+           
+        });
    });
-}
-function loadHV(){   
+} 
+function loadHV(){ 
 $('#venueloader').click(function(){
   $.ajax({
-    //dataType: "json",
     type: "GET",
     url: "hv.html",
     data: { },
     async: true,
     success: function(data){
+
         $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
-        accordion();
-        gridiconset();
-        accordionRemove();
     }
         });
-   });
-}
+/* 
+Loads Web Services
+ */
+   var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/HighlightedVenues";
+   $.ajax({ 
+    type: "GET",
+    dataType: "jsonp",
+    url: urlcall,
+    contentType: 'application/json',
+    success: function (data, status) {
+
+    var res = eval(data);
+    var output = '';
     
+    for(var i=0; i< res.length; i++)
+      {
+          var venuename = res[i].venueName;
+          var eventcount = res[i].eventCount;
+          var venueimage = res[i].imageurl;
+          var venuecity = res[i].city;
+          var venuestate = res[i].state;
+
+   
+          
+          // left column
+          output += '<h3><div class="col-lg-3"><span class="title">'+venuename+'</span><span><p class="subs">'+venuecity+', '+venuestate+'</p></span></div><div class="col-lg-2"><span class="shows subs"><p>'+eventcount+' Shows</p></span></div><span class="gridicons"></span></h3>';
+          output += '<div><div class="col-lg-3"><img class="img-thumbnail" src='+venueimage+'></div>';
+          output += '<div class="view-list"><ul class="view"><li>Shows</li><li>Venue</li><li>Location</li></ul></div>';
+         
+          // right column
+          output += '<div class="view-list"><ul class="view view-right"><li>'+eventcount+'</li><li>'+venuename+'</li><li>'+venuecity+'</li></ul></div></div>';
+
+      }
+
+    $('#accordion').html(output);    
+    accordion();
+    gridiconset(); 
+    accordionRemove();
+
+           }
+           
+        });
+   });
+}    
 function loadContest(){
 $('#contestloader').click(function(){
     $.ajax({

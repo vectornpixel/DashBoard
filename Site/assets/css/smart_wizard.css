@@ -24,7 +24,7 @@
   border: 0px solid #CCC;    
   overflow:hidden;
   clear:both;
-
+  background-color: #E2E2E2;
 }
 
 .swMain .stepContainer div.content {

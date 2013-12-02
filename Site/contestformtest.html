@@ -1,73 +1,100 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         
+        <script type="text/javascript">
+            
+var baseURL = "http://54.227.240.28:8080/BigNoizAdminGen/";
 
-    <title>Big Noiz DashBoard</title>
+function submitContest(){
 
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/fonts/ss-standard.css" rel="stylesheet" />
-    <link href="assets/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-
-    <link href="assets/css/smart_wizard.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/styles.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
-      <script src="assets/js/respond.min.js"></script>
-    <![endif]-->
+    var concertlatitude = '';
+    var concertlongitude = '';
+    var contestdescription = '';  
+    var contestdescriptionheader = '';
+    var contestdescriptionimage = '';
+    var contestenddate = '';
+    var contestimageurl = '';
+    var conteststartdate = '';
+    var interval = '';
+    var jambaseeventid = '';
+    var numTickets = '';
+    var numWinners = '';
+    var prizeValue = '';
+    var sponsorId = '';
+    var tag = ''; 
+    var title = '';
     
-<script src="assets/js/jquery.js"></script>
-<script src="assets/js/jquery-ui-1.10.3.custom.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/modernizr.custom.63321.js"></script>
-<script src="assets/js/jquery.sortable.js"></script>
-<script src="bignoizjs.js"></script>
-    <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
-<script src="assets/js/vendor/jquery.ui.widget.js"></script>
-<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-<script src="http://blueimp.github.io/JavaScript-Load-Image/js/load-image.min.js"></script>
-<!-- The Canvas to Blob plugin is included for image resizing functionality -->
-<script src="http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
-<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-<script src="assets/js/jquery.iframe-transport.js"></script>
-<!-- The basic File Upload plugin -->
-<script src="assets/js/jquery.fileupload.js"></script>
-<!-- The File Upload processing plugin -->
-<script src="assets/js/jquery.fileupload-process.js"></script>
-<!-- The File Upload image preview & resize plugin -->
-<script src="assets/js/jquery.fileupload-image.js"></script>
-<!-- The File Upload validation plugin -->
-<script src="assets/js/jquery.fileupload-validate.js"></script>
-<script src="assets/js/jquery.smartWizard-2.0.js"></script>
+     concertlatitude = $("#concertlatitude").val();
+     concertlongitude = $("#concertlongitude").val();
+     contestdescription = $("#contestdescription").val();  
+     contestdescriptionheader = $("#contestdescriptionheader").val();
+     contestdescriptionimage = $("#contestdescriptionimage").val();
+     contestenddate = $("#contestenddate").val();
+     contestimageurl = $("#contestimageurl").val();
+     conteststartdate = $("#conteststartdate").val();
+     interval = $("#interval").val();
+     jambaseeventid = $("#jambaseeventid").val();
+     numTickets = $("#numTickets").val();
+     numWinners = $("#numWinners").val();
+     prizeValue = $("#prizeValue").val();
+     sponsorId = $("#sponsorId").val();
+     tag = $("#tag").val(); 
+     title = $("#title").val();
     
-  </head>
+    
+    var urlcall = baseURL;
+    urlcall += "Contests/Add?";
+    urlcall += "&concertlatitude="+concertlatitude;
+    urlcall += "&concertlongitude="+concertlongitude;
+    urlcall += "&contestdescription="+contestdescription;
+    urlcall += "&contestdescriptionheader="+contestdescriptionheader;
+    urlcall += "&contestdescriptionimage="+contestdescriptionimage;
+    urlcall += "&contestenddate="+contestenddate;
+    urlcall += "&contestimageurl="+contestimageurl;
+    urlcall += "&conteststartdate="+conteststartdate;
+    urlcall += "&interval="+interval;
+    urlcall += "&jambaseeventid="+jambaseeventid;
+    urlcall += "&numTickets="+numTickets;
+    urlcall += "&numWinners="+numWinners;
+    urlcall += "&prizeValue="+prizeValue;
+    urlcall += "&sponsorId="+sponsorId;
+    urlcall += "&tag="+tag;
+    urlcall += "&title="+title;
 
-  <body>
-
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="topbar">
-    <div class="container">
+    $.ajax({ 
         
-    <div class="navbar-right">
-    <a class="all-btns all-btns-darkgray" href="index.html">Cancel</a>
-    </div>
-    </div>
-   
-</div>    
-    <br>
-    <br>
-    <div class="container">   
-        <div id="contentcreation">
-<table align="center" border="0" cellpadding="0" cellspacing="0">
-<tr><td> 
-<!-- Smart Wizard -->
-  		<div id="wizard" class="swMain">
+       type: "GET",
+       dataType: "jsonp",
+       url: urlcall,
+       contentType: 'application/json',
+          success: function (data, status) {
+          alert('sux');
+            var res = eval(data);
+            var newContestId = res[0].result; 
+            alert("new contest id: "+newContestId);
+           
+          }
+    });
+
+}
+submitContest();
+
+            
+         </script>
+    </head>
+    <body>
+
+        
+        
+        
+        	<div id="wizard" class="swMain">
   	   <ul>
   		<li>
                 <a href="#step-1">
@@ -151,17 +178,15 @@
   	   <div id="step-3">
 
               <h2 class="StepTitle">Contest Design</h2>
-     	<form id="fileupload"  method="POST"  enctype="multipart/form-data" action="http://54.227.240.28:8080/BigNoizAdminGen/fileUpload" name="uploadForm">
+             <hr>	
                 <div class="preview">
-                    
                    <div id="files" class="files"></div>
-                   
                     <div class="previewBox">
                         <div class="nav-icon previewPhoto">
                             <span class="btn btn-default fileinput-button">
                             <i class="ss-icon">camera</i>
                             <span>edit photo</span>
-                            <input type="file" name="file" id="contestimageurl_txt">
+                            <input type="file" name="file" id="contestimageurl">
                             </span>
                         </div>
                         <ul class="previewDate">
@@ -176,20 +201,20 @@
                         </ul>
                     </div>
                 </div>
-        </form>    
+                
                 <div class="designForm pull-right col-lg-4">
                    
                     <label>Title</label>
-                    <input type="text" id="title_txt" name="title" class="form-all"/>
+                    <input type="text" id="title" name="title" class="form-all"/>
                     <label>Tag</label>
-                    <input type="text" id="tag_txt"/>
+                    <input type="text" id="tag"/>
                     <div class="ctestdetails">
                     
                     </div>
                     
                     <label>Select Sponsor</label>
                         <div class="create-div">
-                    <select id="sponsorId_txt">
+                    <select id="sponsorId">
                         <option value="pepsi" selected>Pepsi</option>
                         <option value="coke" selected>Coke</option>
                     </select>
@@ -206,13 +231,12 @@
                     <div class="designForm pull-left">
                    
                     <label class="designLabel">Desc. Head</label>
-                    
-                    <input type="text" name="Desc Head" class="form-all" id="contestdescriptionheader_txt" />
+                    <input type="text" name="Desc Head" class="form-all" id="contestdescriptionheader" />
                     <label>Desc. Image</label>
                     
-                    <input type="file" name="file" id="contestdescriptionimage_txt">
+                    <input type="file" name="file" id="contestdescriptionimage">
                     <label>Desc. Text</label>
-                    <textarea rows="4" cols="30" id="contestdescription_txt">
+                    <textarea rows="4" cols="30" id="contestdescription">
                     </textarea> 
                      </div>
                    </div>
@@ -224,7 +248,7 @@
                     
                  
                         <div class="create-div">
-                    <select id="interval_txt">
+                    <select id="interval">
                             <option value="15" selected>15</option>
                             <option value="30" selected>30</option>
                     </select>
@@ -236,7 +260,7 @@
                     <label># Of Winners</label>
                
                         <div class="create-div">
-                    <select id="numWinners_txt">
+                    <select id="numWinners">
                             <option value="1" selected>1</option>
                             <option value="2" selected>2</option>
                             <option value="3" selected>3</option>
@@ -247,7 +271,7 @@
                     <div class="row">
                     <label># Tickets per winner</label>
                     <div class="create-div">
-                        <select id="numTickets_txt">
+                        <select id="numTickets">
                         <option value="1" selected>1</option>
                         <option value="2" selected>2</option>
                         <option value="3" selected>3</option>
@@ -261,13 +285,13 @@
                     </div>
                     <div class="row">
                         <label>Date From</label>
-                        <input type="text" id="conteststartdate_txt" name="from">
+                        <input type="text" id="conteststartdate" name="from">
                         <label>Date To</label>
-                        <input type="text" id="contestenddate_txt" name="to">
+                        <input type="text" id="contestenddate" name="to">
                     </div>
                     <div class="row">
                         <label>Location</label>
-                        <input type="text" name="date" id="location_txt"/>
+                        <input type="text" name="date" id="location"/>
                     </div>
                 </div>
                    </div>
@@ -279,9 +303,14 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="preview">
-                        <div id="files" class="files2"></div>
                       <div class="previewBox">
-
+                        <div class="nav-icon previewPhoto">
+                            <span class="btn btn-default fileinput-button">
+                            <i class="ss-icon">camera</i>
+                            <span>edit photo</span>
+                            <input type="file" name="file" id="contestimageurl">
+                            </span>
+                        </div>
                         <ul class="previewDate">
                            <li><h3>02</h3></li>
                            <li><h3>DEC</h3></li>
@@ -292,8 +321,7 @@
                             <li><h3 class="summaryTag"></h3></li>
                             <li><h2 class="summaryTitle"></h2></li>
                         </ul>
-                          <div class="nav-icon previewPhoto">
-                      
+                          <div class="previewPhoto">
                         </div>
                     </div>
  
@@ -301,7 +329,20 @@
                 </div>
             <div class="col-lg-4">
                  <div class="formsummary">
-                        
+                        <p>Title: <span class="summaryTitle"></span></p>
+                        <p>Tag: <span class="summaryTag"></span></p>
+                        <p>Venue: <span id="summaryVenue"></span></p>
+                        <p>Location: <span id="summaryLocation"></span></p>
+                        <p>Date: <span id="summaryDate"></span></p>
+                        <p>Sponsor: <span id="summarySponsor"></span></p>
+                        <p>Desc. Head: <span id="summaryDescHead"></span></p>
+                        <p>Desc. Image: <span id="summaryDescImg"></span></p>
+                        <p>Desc. Text: <span id="summaryDescText"></span></p>
+                        <p>Interval: <span id="summaryInterval"></span></p>
+                        <p>Winners: <span id="summaryWinners"></span></p>
+                        <p>Tickets: <span id="summaryTickets"></span></p>
+                        <p>Contest Name: <span id="summaryContestName"></span></p>
+                        <p>Contest Date: <span id="summaryContestDate"></span></p>
               </div>
             
             </div>
@@ -311,18 +352,8 @@
             </div>
            
           </div>
-               
+               <button onClick="submitContest();">Submits</button>
   		</div>
-<!-- End SmartWizard Content -->  		
- 		
-</td></tr>
-</table>
-        </div>
-    </div>
-
-<script src="contentcreation.js"></script>
-<script src="fileupload.js"></script>
-
-
-  </body>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    </body>
 </html>

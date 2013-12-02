@@ -6,7 +6,39 @@ Author     : Asim Craft
 /* Global functions */
 
 // Set icons on each menu
+function dateformat(){
+    var oldDate = "Jan 21, 2014 12:00:00 AM";
+var newDate = new Date(oldDate);
+var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+var month = monthNames[newDate.getMonth()];
+$('.month').html(month);
+
+var date = newDate.getDate();
+$('.date').html(date);
+
+var year = newDate.getFullYear();
+$('.year').html(year);
+
+var postscript = 'PM';
+var hours = newDate.getHours();
+console.log(hours);
+//sets time to US standard 12 hours, and figures am or pm
+if (hours > 12) {
+    hours -= 12;
+} else if (hours === 0) {
+    hours = 12;
+    postscript = 'AM';
+}
+var minutes = newDate.getMinutes();
+var time = hours + ':' + pad(minutes) + ' ' + postscript;
+$('.time').html(time);
+
+//adds leading zeroes
+function pad(n) {
+    return (n < 10) ? '0' + n : n;
+}
+}
  function gridiconset(){
          var gridIcons2 = $('#accordion').find('.gridicons').append('<span class="glyphicon content-icons glyphicon-pencil pull-right"></span>');
          var gridIcons1 = $('#accordion').find('.gridicons').append('<span class="delete glyphicon content-icons glyphicon-remove  pull-right"></span>');
