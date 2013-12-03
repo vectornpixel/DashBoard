@@ -42,14 +42,17 @@ var url = "http://54.227.240.28:8080/BigNoizAdminGen/fileUpload",
         previewMaxHeight: 440,
         previewCrop: true
     }).on('fileuploadadd', function (e, data) {
-        data.context = $('<div/>').appendTo('#files', '.files2');
+        data.context = $('<div/>').appendTo('#files');
+   
         $.each(data.files, function (index, file) {
             var node = $('<div>');   
             if (!index) {
                 node.append('<br>').append(uploadButton.clone(true).data(data));
             }
             node.appendTo(data.context);
+            
         });
+        
     }).on('fileuploadprocessalways', function (e, data) {
         var index = data.index,
             file = data.files[index],

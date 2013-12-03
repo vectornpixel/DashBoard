@@ -7,7 +7,7 @@ Author     : Asim Craft
 
 // Set icons on each menu
 function dateformat(){
-    var oldDate = "Jan 21, 2014 12:00:00 AM";
+var oldDate = "Jan 21, 2014 12:00:00 AM";
 var newDate = new Date(oldDate);
 var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 

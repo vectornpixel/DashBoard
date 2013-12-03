@@ -100,6 +100,10 @@
                   }); 
                   $(btFinish).click(function() {
                       submitContest();
+                      if (submitContest = true){
+                          alert('Conest Submitted');
+                          window.location = 'contest.html';
+                      }
                       //window.location = 'contest.html';
                       if(!$(this).hasClass('buttonDisabled')){
                          if($.isFunction(options.onFinish)) {

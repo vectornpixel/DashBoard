@@ -156,7 +156,7 @@ Loads Web Services
    
           
           // left column
-          output += '<h3><div class="col-lg-3"><span class="title">'+venuename+'</span><span><p class="subs">'+venuecity+', '+venuestate+'</p></span></div><div class="col-lg-2"><span class="shows subs"><p>'+eventcount+' Shows</p></span></div><span class="gridicons"></span></h3>';
+          output += '<h3><div class="col-lg-5"><span class="title">'+venuename+'</span><span><p class="subs">'+venuecity+', '+venuestate+'</p></span></div><div class="col-lg-2"><span class="shows subs"><p>'+eventcount+' Shows</p></span></div><span class="gridicons"></span></h3>';
           output += '<div><div class="col-lg-3"><img class="img-thumbnail" src='+venueimage+'></div>';
           output += '<div class="view-list"><ul class="view"><li>Shows</li><li>Venue</li><li>Location</li></ul></div>';
          

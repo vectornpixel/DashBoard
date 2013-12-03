@@ -410,6 +410,8 @@ h5.page-alert{
     display: block;
     text-align: right;
     width:120px;
+    line-height: 30px;
+
 }
 .designForm{
     width:500px;
@@ -432,7 +434,21 @@ display: block;
 textarea{
     background-color: #ededed;
 }
-
+.disabledform{
+  background-color: #EDEDED;
+    border: 1px solid #E0E0E0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #777777;
+    display: block;
+    height: 44px;
+    line-height: 3;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    vertical-align: middle;
+    width: 250px;   
+    float:right;
+    margin-right:50px;
+    margin-bottom:1px;
+}
 /* contest creation setup */
 
 .searcResults li {
@@ -616,3 +632,7 @@ select > option {
     display: block;
 }
 
+#summaryImage{
+    height:250px;
+    width:250px;
+}

@@ -91,7 +91,7 @@ function submitContest(){
        url: urlcall,
        contentType: 'application/json',
           success: function (data, status) {
-          alert('sucess works');
+          //alert('Contest Submitted');
             var res = eval(data);
             var newContestId = res[0].result; 
             alert("new contest id: "+newContestId);
@@ -111,6 +111,7 @@ success: function (data, status) {
 var res = eval(data);
 var output = '';
 var outputdesign = '';
+//var dates = '';
 for(var i=0; i< res.length; i++)
   {
       var eventArtist = res[i].artistName;
@@ -133,12 +134,18 @@ $('ul.searcResults').html(output);
 
 $('#checkthis').click(function () {
     if ($(this).val() == eventID){
-      outputdesign += ' <label>Venue</label><input type="text" name="venue" id="venue" value='+eventVenue+' />';
-      outputdesign += ' <label>Location</label><input type="text" name="location" id="location" value='+eventState+' />';
-      outputdesign += ' <label>Date</label><input type="text" name="date" id="date" value='+eventDate+' />';
+      outputdesign += ' <label>Venue</label><div class="disabledform">'+eventVenue+'</div>';
+      outputdesign += ' <label>Location</label><div class="disabledform">'+eventState+'</div>';
+      outputdesign += ' <label>Date</label><div class="disabledform">'+eventDate+'</div>';
+      //dates += ' <li><h3 class="day">'+eventDate+'</h3></li>';
+      //dates += ' <li><h3 class="month"></h3></li>';
+      //dates += '<li><p></p></li>';
        $('.ctestdetails').html(outputdesign);
+       //$('ul.previewDate').html(dates);
+       //dateformat();
     }
 });
+
  $("#attachevent").change(function(){
             $( "#attachevent option:selected").each(function(){
                 if($(this).attr("value")=="No"){
@@ -150,6 +157,7 @@ $('#checkthis').click(function () {
             });
         }).change();
 sortContent();
+
        }
     });
 }
@@ -162,7 +170,7 @@ var interval = $("#interval_txt").val();
 var numTickets = $("#numTickets_txt").val();
 var numWinners = $("#numWinners_txt").val();
 var sponsorId = $("#sponsorId_txt").val();
-//var contestimageurl = $("#contestimageurl").val();
+//var contestimageurl = $("#contestimageurl_txt").val();
 //var title = $("#title").val();
 $('#title_txt').keyup(function(){
      $('.summaryTitle').text($(this).val());
@@ -192,7 +200,10 @@ $('#conteststartdate_txt').change(function(){
 $('#contestenddate_txt').change(function(){
      $('#summaryContestEnd').text($(this).val());
 });
-
+/*$('#contestimageurl_txt').change(function(){
+     $('#summaryImage').attr('src', $(this).val());
+             .text($(this).val());
+});*/
  output += '<h4>Title: <span class="summaryTitle"></span></h4>';
  output += '<h4>Tag: <span class="summaryTag"></span></h4>';
  output += '<h4>Sponsor: <span id="summarySponsor">'+sponsorId+'</span></h4>';
@@ -203,6 +214,7 @@ $('#contestenddate_txt').change(function(){
  output += '<h4>Tickets: <span id="summaryTickets">'+numTickets+'</span></h4>';
  output += '<h4>Contest Start Date: <span id="summaryContestStart">'+conteststartdate+'</span></h4>';
  output += '<h4>Contest End Date: <span id="summaryContestEnd">'+contestenddate+'</span></h4>';
+  //output += '<h4>Contest image: <img id="summaryImage">'+contestimageurl+'</h4>';
 
  $('.formsummary').html(output);
   
