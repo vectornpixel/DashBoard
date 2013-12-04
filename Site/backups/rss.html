@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+    <title>Big Noiz DashBoard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+     <link href="assets/fonts/ss-standard.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="assets/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+      <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-ui-1.10.3.custom.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.custom.63321.js"></script>
+    <script src="assets/js/jquery.sortable.js"></script>
+    <script src="assets/js/jquery.dropdown.js"></script>
+        <script src="bignoizjs.js"></script>
+  </head>
+
+  <body>
+
+      <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li class="active">
+                  <a href="ha.html">
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
+                      <p>Content</p>
+                  </a>
+              </li>
+           <li class="">
+                  <a href="sc.html">
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
+                      <p>Showcase</p>
+                  </a>
+              </li>
+              <li class="">
+                  <a href="#">
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
+                      <p>Winners</p>
+                  </a>
+              </li>
+              <li class="">
+                  <a href="#">
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
+                      <p>Brands</p>
+                  </a>
+              </li>
+              <li class="">
+                  <a href="#">
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
+                      <p>Filter</p>
+                  </a>
+              </li>
+              <li class="">
+                  <a href="#">
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
+                      <p>Messages</p>
+                  </a>
+              </li>
+              <li class="">
+                  <a href="#">
+                      <div class="nav-icon"><i class="ss-icon">notebook</i></div>
+                      <p>Settings</p>
+                  </a>
+              </li>
+          </ul>
+        
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="topbar">
+    <div class="container">
+    <form class="navbar-form navbar-right">
+
+        <div class="form-group input-prepend">
+            <button type="submit" class="btn glyphicon glyphicon-search"></button>
+            <input type="text" placeholder="search dashboard" class="form-control">
+        </div>
+    </form>
+    </div>
+</div>
+    
+    
+    <div class="jumbotron">
+      <div class="container">
+          <div class="dropdown">
+              <a data-toggle="dropdown" href="#"> <h1>RSS Feed</h1><span class="glyphicon glyphicon-chevron-down"></span></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+             <li><a href="#" id="contestloader">Contests</a></li>
+             <li><a href="#" id="artistload">Highlighted Artist</a></li>
+             <li><a href="#" id="eventloader">Highlighted Event</a></li>
+             <li><a href="#" id="venueloader">Highlighted Venue</a></li>
+             <li><a href="#">Generic URL</a></li>
+             <li><a href="#">Featured 5s</a></li>
+             <li><a href="#">RSS</a></li>
+             <li><a href="#">Major Venues</a></li>
+             <li><a href="#">Minor Venues</a></li>
+             
+            </ul>
+          </div>
+
+      
+      </div>
+    </div>
+
+    
+    <div class="container">
+        
+        <!--Filter List Area -->
+      <div class="row">
+          <div class="col-lg-4">
+              <div class="select-div">
+            <select>
+                    <option value="-1" selected>Where: National</option>
+                    <option value="1">Detroit, MI</option>
+            </select>
+              </div>
+          </div>
+
+          <div class="col-lg-4">
+              <div class="select-div">
+            <select>
+                    <option value="-1" selected>Type: All</option>
+                    <option value="1">Active</option>
+                    <option value="2">Inactive</option>
+            </select>
+              </div>
+          </div>
+
+          <div class="col-lg-4">
+              <div class="select-div">
+            <select>
+                    <option value="-1" selected>Sort By: Event Date</option>
+                    <option value="1">A-Z</option>
+            </select>
+              </div>
+          </div>
+
+      </div>
+      
+
+<!--Content Order / Sortable Area -->
+      <div class="row">
+          <div class="col-lg-9">
+          <h5 class="page-alert">You are looking at the Showcase Stream content order that currently running in the app</h5>
+          </div>
+          
+      </div>
+      <hr>
+      <div class="row">
+          <form class="navbar-form pull-left">
+
+        <div class="form-group input-prepend">
+            <button type="submit" class="btn-contentsearch btn glyphicon glyphicon-search"></button>
+            <input type="text" placeholder="search events" class="contentsearch form-control">
+        </div>
+        </form>
+      <div class="pull-right">
+          <p><a class="all-btns all-btns-green"><span class="glyphicon glyphicon-plus"></span>Create New Feed</a></p>
+      </div>
+    
+      </div>
+      
+      <div class="container">
+          <div class="row">
+          <div id="accordion">
+
+              
+              <h3>
+
+                   <div class="col-lg-4">
+                  <span class="title">www.thisis50.com</span>
+                  <span><p class="subs">Thisis50</p></span>
+                   </div>
+                  <span class="gridicons"></span>
+              </h3>
+              
+              
+            <div>
+
+            <div class="col-lg-3">
+              <img class="img-thumbnail" src="images/placeholder.jpg">
+              <ul class="rssview">
+                  <li>Article Title</li>
+                  <li>feedurl.com</li>
+              </ul>
+            </div>
+          <div class="col-lg-3">
+              <img class="img-thumbnail" src="images/placeholder.jpg">
+              <ul class="rssview">
+                  <li>Article Title</li>
+                  <li>feedurl.com</li>
+              </ul>
+            </div>
+                <div class="col-lg-3">
+              <img class="img-thumbnail" src="images/placeholder.jpg">
+              <ul class="rssview">
+                  <li>Article Title</li>
+                  <li>feedurl.com</li>
+              </ul>
+            </div>
+                <div class="col-lg-3">
+              <img class="img-thumbnail" src="images/placeholder.jpg">
+              <ul class="rssview">
+                  <li>Article Title</li>
+                  <li>feedurl.com</li>
+              </ul>
+            </div>
+   
+            </div>
+              
+               <h3>
+
+                  <div class="col-lg-4">
+                   <span class="title">www.rapradar.com</span>
+                  <span><p class="subs">Rap Radar</p></span>
+  
+                   </div>
+                  <span class="gridicons"></span>
+              </h3>
+              
+              
+            <div>
+
+            <div class="col-lg-3">
+              <img class="img-thumbnail" src="images/placeholder.jpg">
+              <ul class="rssview">
+                  <li>Article Title</li>
+                  <li>feedurl.com</li>
+              </ul>
+            </div>
+          <div class="col-lg-3">
+              <img class="img-thumbnail" src="images/placeholder.jpg">
+              <ul class="rssview">
+                  <li>Article Title</li>
+                  <li>feedurl.com</li>
+              </ul>
+            </div>
+                <div class="col-lg-3">
+              <img class="img-thumbnail" src="images/placeholder.jpg">
+              <ul class="rssview">
+                  <li>Article Title</li>
+                  <li>feedurl.com</li>
+              </ul>
+            </div>
+                <div class="col-lg-3">
+              <img class="img-thumbnail" src="images/placeholder.jpg">
+              <ul class="rssview">
+                  <li>Article Title</li>
+                  <li>feedurl.com</li>
+              </ul>
+            </div>
+   
+   
+            </div>
+  
+          
+            </div>
+          
+          </div>
+      </div>
+      
+
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    
+  
+    
+    <script>
+          // Sortable Showcase Javascript
+    
+   $(document).ready(function(){
+    // drop down forms
+    $( '#cd-dropdown' ).dropdown({
+       stack : false
+       });
+       $( '#type' ).dropdown({
+       stack : false
+       });
+       $( '#sort' ).dropdown({
+       stack : false
+       });
+
+   // Button Icons
+    var icons = {
+    header: "glyphicon content-icons glyphicon-chevron-down pull-right",
+    activeHeader: "glyphicon content-icons glyphicon-chevron-up pull-right "
+    };
+    
+    // Collapse options
+    $( "#accordion" ).accordion({
+    header: "h3", 
+    collapsible: true, 
+    active: false, 
+    heightStyle: "content",
+    icons: icons
+    });
+    
+    // Set icons on each menu
+    var gridIcons2 = $('#accordion').find('.gridicons').append('<span class="glyphicon content-icons glyphicon-pencil pull-right"></span>');
+    var gridIcons1 = $('#accordion').find('.gridicons').append('<span class="delete glyphicon content-icons glyphicon-remove  pull-right"></span>');
+
+   //remove sort buttons
+   $('.delete').click(function() {
+    var parent = $(this).closest('h3');
+    var head = parent.next('div');
+    parent.add(head).fadeOut('slow',function(){$(this).remove();});
+});
+
+
+   
+ });
+   
+
+    </script>
+
+  </body>
+</html>

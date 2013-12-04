@@ -231,6 +231,159 @@ $('#contestloader').click(function(){
   
 });
 }
+function loadF5(){ 
+$('#f5loader').click(function(){
+  $.ajax({
+    type: "GET",
+    url: "featured5.html",
+    data: { },
+    async: true,
+    success: function(data){
+
+        $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
+    }
+        });
+/* 
+Loads Web Services
+ */
+   var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/Featured5Headers";
+   $.ajax({ 
+    type: "GET",
+    dataType: "jsonp",
+    url: urlcall,
+    contentType: 'application/json',
+    success: function (data, status) {
+
+    var res = eval(data);
+    var output = '';
+    
+    for(var i=0; i< res.length; i++)
+      {
+          var f5title = res[i].title;
+          var f5image = res[i].imageurl;
+          var f5tag = res[i].tag;
+          var f5date = res[i].enddate;
+
+
+   
+          
+          // left column
+         // output += '<h3><div class="col-lg-4"><span class="title">Featured 5</span></div><span class="gridicons"></span></h3>';
+          output += '<div><div class="col-lg-3"><img class="img-thumbnail" src="'+f5image+'"><ul class="rssview"><li>'+f5title+'</li></ul></div></div>';
+      }
+
+    $('#accordion').html(output);    
+    accordion();
+    gridiconset(); 
+    accordionRemove();
+
+
+           }
+           
+        });
+   });
+}
+function loadRSS(){ 
+$('#rssloader').click(function(){
+  $.ajax({
+    type: "GET",
+    url: "rss.html",
+    data: { },
+    async: true,
+    success: function(data){
+
+        $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
+    }
+        });
+/* 
+Loads Web Services
+ */
+   var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/RSSFeeds";
+   $.ajax({ 
+    type: "GET",
+    dataType: "jsonp",
+    url: urlcall,
+    contentType: 'application/json',
+    success: function (data, status) {
+
+    var res = eval(data);
+    var output = '';
+    
+    for(var i=0; i< res.length; i++)
+      {
+          var rsstitle = res[i].title;
+          var rssarticle = res[i].title;
+          var rssurl = res[i].url;
+
+          // left column
+          output += '<h3><div class="col-lg-4"><span class="title">'+rsstitle+'</span></div><span class="gridicons"></span></h3>';
+          output += '<div><div class="col-lg-3"><img class="img-thumbnail" src="images/placeholder.jpg"><ul class="rssview"><li><a href='+rssurl+'>'+rssarticle+'</a></li></ul></div></div>';
+      }
+
+    $('#accordion').html(output);    
+    accordion();
+    gridiconset(); 
+    accordionRemove();
+
+
+           }
+           
+        });
+   });
+}
+function loadURL(){ 
+$('#urlloader').click(function(){
+  $.ajax({
+    type: "GET",
+    url: "urls.html",
+    data: { },
+    async: true,
+    success: function(data){
+
+        $('#main').html(data).css({ opacity: 0 }).fadeTo('normal', 1);
+    }
+        });
+/* 
+Loads Web Services
+ */
+   var urlcall = "http://54.227.240.28:8080/BigNoizAdminGen/GenericURLs";
+   $.ajax({ 
+    type: "GET",
+    dataType: "jsonp",
+    url: urlcall,
+    contentType: 'application/json',
+    success: function (data, status) {
+
+    var res = eval(data);
+    var output = '';
+    
+    for(var i=0; i< res.length; i++)
+      {
+          var urltitle = res[i].title;
+          var urlimage = res[i].imageurl;
+          var urltag = res[i].tag;
+          var urlurl = res[i].url;
+          var urldate = res[i].enddate;
+
+          // left column
+          //output += '<h3><div class="col-lg-4"><span class="title">General URLs</span></div><span class="gridicons"></span></h3>';
+          output += '<div><div class="col-lg-3"><img class="img-thumbnail" src='+urlimage+'><ul class="rssview"><li>'+urltag+'</li><li><a href='+urlurl+'>'+urltitle+'</a></li></ul></div></div>';
+      }
+
+    $('#accordion').html(output);    
+    accordion();
+    gridiconset(); 
+    accordionRemove();
+
+
+           }
+           
+        });
+   });
+}
+loadURL();
+loadRSS();
+loadF5();
 loadHA();
 loadHE();
 loadHV();

@@ -40,6 +40,7 @@ function pad(n) {
 }
 }
  function gridiconset(){
+         var gridIcons3 = $('#accordion').find('.gridicons').append('<span class="glyphicon content-icons glyphicon-chevron-down pull-right"></span>');
          var gridIcons2 = $('#accordion').find('.gridicons').append('<span class="glyphicon content-icons glyphicon-pencil pull-right"></span>');
          var gridIcons1 = $('#accordion').find('.gridicons').append('<span class="delete glyphicon content-icons glyphicon-remove  pull-right"></span>');
     }

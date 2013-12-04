@@ -5,7 +5,7 @@ defaultDate: "+1w",
 changeMonth: true,
 numberOfMonths: 1,
 onClose: function( selectedDate ) {
-$( "#contestenddate_txt" ).datepicker( "option", "minDate", selectedDate );
+$( "#contestenddate_txt" ).datepicker( "option", "minDate", selectedDate);
 }
 });
 $( "#contestenddate_txt" ).datepicker({
@@ -13,9 +13,11 @@ defaultDate: "+1w",
 changeMonth: true,
 numberOfMonths: 1,
 onClose: function( selectedDate ) {
-$( "#conteststartdate_txt" ).datepicker( "option", "maxDate", selectedDate );
+$( "#conteststartdate_txt" ).datepicker( "option", "maxDate", selectedDate ).val();
 }
 });
+$( "#contestenddate_txt" ).datepicker("option","dateFormat", "yy-mm-dd");
+$( "#conteststartdate_txt" ).datepicker("option","dateFormat", "yy-mm-dd");
 });
 
 function setupLabel() {
@@ -28,6 +30,7 @@ if ($('.label_radio input').length) {
     });
 };
 };
+
 $(document).ready(function(){
     $('body').addClass('has-js');
     $('.label_check, .label_radio').click(function(){
@@ -53,9 +56,9 @@ function submitContest(){
     var contestdescription = $("#contestdescription_txt").val();  
     var contestdescriptionheader = $("#contestdescriptionheader_txt").val();
     var contestdescriptionimage = $("#contestdescriptionimage_txt").val();
-    //var contestenddate = $("#contestenddate_txt").val();
+    var contestenddate = $("#contestenddate_txt").val();
     var contestimageurl = $("#contestimageurl_txt").val();
-   // var conteststartdate = $("#conteststartdate_txt").val();
+    var conteststartdate = $("#conteststartdate_txt").val();
     var interval = $("#interval_txt").val();
     //var jambaseeventid = $("#jambaseeventid_txt").val();
     var numTickets = $("#numTickets_txt").val();
@@ -73,9 +76,9 @@ function submitContest(){
     urlcall += "&contestdescription="+contestdescription;
     urlcall += "&contestdescriptionheader="+contestdescriptionheader;
     urlcall += "&contestdescriptionimage="+contestdescriptionimage;
-    //urlcall += "&contestenddate="+contestenddate;
+    urlcall += "&contestenddate="+contestenddate;
     urlcall += "&contestimageurl="+contestimageurl;
-   // urlcall += "&conteststartdate="+conteststartdate;
+    urlcall += "&conteststartdate="+conteststartdate;
     urlcall += "&interval="+interval;
     //urlcall += "&jambaseeventid="+jambaseeventid;
     urlcall += "&numTickets="+numTickets;

@@ -399,7 +399,13 @@ h5.page-alert{
     color:#ff4c40;
     font-weight: 200; 
 }
-
+.rssview{
+    list-style: none;
+    background-color: #ededed;
+    padding:18px;
+    margin: 1px; 
+    text-align: center;
+}
 /* Form Styles */
 .designForm label{
     font-size:18px !important; 

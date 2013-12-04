@@ -63,7 +63,7 @@
                   btNext = $('<a>'+options.labelNext+'</a>').attr("href","#").addClass("buttonNext");
                   btPrevious = $('<a>'+options.labelPrevious+'</a>').attr("href","#").addClass("buttonPrevious");
                   btFinish = $('<a>'+options.labelFinish+'</a>').click(submitContest()).attr("href","#").addClass("buttonFinish");
-                 
+                  
                           ////$(this).addClass("buttonFinish").click(submitContest());
                   
                   // highlight steps with errors
