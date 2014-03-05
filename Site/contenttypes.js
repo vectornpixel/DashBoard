@@ -1,6 +1,6 @@
 /* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+Big Noiz Ajax Calls & JS
+Author     : Asim Craft.
  */
 
 // Set icons on each menu

@@ -1,6 +1,6 @@
 /* 
 Big Noiz Ajax Calls & JS
-Author     : Asim Craft
+Author     : Asim Craft.
  */
 
 /* Global functions */

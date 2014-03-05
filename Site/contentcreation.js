@@ -1,3 +1,8 @@
+/* 
+Big Noiz Ajax Calls & JS
+Author     : Asim Craft.
+ */
+
 $('#wizard').smartWizard();
  $(function() {
 $( "#conteststartdate_txt" ).datepicker({
